@@ -1,0 +1,2 @@
+Trac #12889: make is_irreducible on zero polynomial behavior consistent with other fields
+Trac #12889: make is_irreducible on zero polynomial behavior consistent with other fields

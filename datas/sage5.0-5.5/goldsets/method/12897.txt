@@ -1,0 +1,6 @@
+sage.coding.sd_codes.MS
+sage.coding.sd_codes.matA
+sage.coding.sd_codes.MS2
+sage.coding.sd_codes.MS
+sage.coding.sd_codes.matA
+sage.coding.sd_codes.MS2

@@ -1,0 +1,4 @@
+Trac #10678: Trac 10678 - fix more links found in reviewing original patch.
+Trac #10678: Trac 10678 - fix more links found in reviewing original patch.
+
+In particular, added several files to the reference manual.

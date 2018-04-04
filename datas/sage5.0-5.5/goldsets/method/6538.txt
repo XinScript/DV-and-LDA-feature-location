@@ -1,0 +1,12 @@
+sage.combinat.integer_list.lower_regular
+sage.combinat.integer_list.next
+sage.combinat.integer_list.IntegerListsLex.__init__
+sage.combinat.integer_list.IntegerListsLex.floor
+sage.combinat.integer_list.IntegerListsLex.first
+sage.combinat.partition.Partitions_constraints.__setstate__
+sage.combinat.integer_list.lower_regular
+sage.combinat.integer_list.next
+sage.combinat.integer_list.IntegerListsLex.__init__
+sage.combinat.integer_list.IntegerListsLex.floor
+sage.combinat.integer_list.IntegerListsLex.first
+sage.combinat.partition.Partitions_constraints.__setstate__

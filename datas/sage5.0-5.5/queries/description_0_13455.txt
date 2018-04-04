@@ -1,0 +1,2 @@
+Trac #13455: Remove </> encoding in verbatib strings passed to MathJax.
+Trac #13455: Remove </> encoding in verbatib strings passed to MathJax.

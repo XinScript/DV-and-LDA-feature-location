@@ -1,0 +1,2 @@
+sage.schemes.elliptic_curves.isogeny_class.IsogenyClass_EC_Rational
+sage.schemes.elliptic_curves.isogeny_class.IsogenyClass_EC_Rational

@@ -1,0 +1,4 @@
+Trac #4529:  - add some examples for log scale to other user facing functions
+Trac #4529:  - add some examples for log scale to other user facing functions
+ - also add a minor check in parametric_plot
+ - finally add loglog_*, semilogx_*, semilogy_* plots

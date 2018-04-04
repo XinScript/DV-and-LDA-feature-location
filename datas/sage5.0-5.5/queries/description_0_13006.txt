@@ -1,0 +1,2 @@
+Trac #13006: trac 13006: fix all_paths() when start and end vertex is the same
+Trac #13006: trac 13006: fix all_paths() when start and end vertex is the same

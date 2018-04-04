@@ -1,0 +1,2 @@
+sage.misc.prandom.gammavariate
+sage.misc.prandom.gammavariate

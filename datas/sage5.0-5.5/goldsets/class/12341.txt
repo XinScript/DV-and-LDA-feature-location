@@ -1,0 +1,8 @@
+sage.databases.cremona.LargeCremonaDatabase
+sage.schemes.elliptic_curves.ell_torsion.EllipticCurveTorsionSubgroup
+sage.schemes.elliptic_curves.lseries_ell.Lseries_ell
+sage.schemes.elliptic_curves.padic_lseries.pAdicLseriesSupersingular
+sage.databases.cremona.LargeCremonaDatabase
+sage.schemes.elliptic_curves.ell_torsion.EllipticCurveTorsionSubgroup
+sage.schemes.elliptic_curves.lseries_ell.Lseries_ell
+sage.schemes.elliptic_curves.padic_lseries.pAdicLseriesSupersingular

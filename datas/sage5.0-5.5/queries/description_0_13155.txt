@@ -1,0 +1,2 @@
+Trac #13155: fix BooleanPolynomialIdeal.dimension() bug
+Trac #13155: fix BooleanPolynomialIdeal.dimension() bug

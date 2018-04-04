@@ -1,0 +1,2 @@
+sage.plot.animate.Animation.__add__
+sage.plot.animate.Animation.__add__

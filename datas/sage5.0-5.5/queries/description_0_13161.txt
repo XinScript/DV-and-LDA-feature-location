@@ -1,0 +1,2 @@
+Trac #13161: Added real life example for french accent in axes labels
+Trac #13161: Added real life example for french accent in axes labels

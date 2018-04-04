@@ -1,0 +1,2 @@
+Trac #13294: Add test for not necessarily induced subgraphs to Graph.is_subgraph() method
+Trac #13294: Add test for not necessarily induced subgraphs to Graph.is_subgraph() method

@@ -1,0 +1,2 @@
+Trac #13140: 13140: normalize by rescaling columns inplace
+Trac #13140: 13140: normalize by rescaling columns inplace

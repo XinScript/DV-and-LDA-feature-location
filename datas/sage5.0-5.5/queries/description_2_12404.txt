@@ -1,0 +1,3 @@
+Trac #12404: Trac 12404: Distinguish zero and non-zero characteristic in is_squarefree for univariate polynomials.
+Trac #12404: Trac 12404: Distinguish zero and non-zero characteristic in is_squarefree for univariate polynomials.
+More could be done for polynomials defined over perfect rings but this will go into another patch.

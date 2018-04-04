@@ -1,0 +1,8 @@
+Trac #13586: Fix search for existing functions based on the same BuiltinFunction subclass.
+Trac #13586: Fix search for existing functions based on the same BuiltinFunction subclass.
+
+ATM, we only check the class to decide if a given BuiltinFunction defines the
+same symbolic function. If the class corresponds to a factory style design,
+this leads to confusing results.
+
+Checking for the function name as well as the class fixes the issue.

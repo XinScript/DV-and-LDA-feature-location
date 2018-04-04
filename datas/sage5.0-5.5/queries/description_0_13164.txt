@@ -1,0 +1,2 @@
+Trac #13164: update Givaro to 3.7.0 (patch applies to Sage 5.1.beta5 and above)
+Trac #13164: update Givaro to 3.7.0 (patch applies to Sage 5.1.beta5 and above)

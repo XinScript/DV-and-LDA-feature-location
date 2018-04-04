@@ -1,0 +1,2 @@
+Trac #13650: Adding base_ring() and zero() to ppl and generic backends
+Trac #13650: Adding base_ring() and zero() to ppl and generic backends

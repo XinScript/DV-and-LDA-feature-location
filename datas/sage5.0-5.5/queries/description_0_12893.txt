@@ -1,0 +1,2 @@
+Trac #12893: Trac 12893: increase doctest coverage of sage/coding/linear_code.py to 100%
+Trac #12893: Trac 12893: increase doctest coverage of sage/coding/linear_code.py to 100%

@@ -1,0 +1,2 @@
+Trac #12346: Re-enable PARI HNF with flag=4 and include_zero_rows=False
+Trac #12346: Re-enable PARI HNF with flag=4 and include_zero_rows=False

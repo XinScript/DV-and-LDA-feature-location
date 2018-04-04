@@ -1,0 +1,48 @@
+Trac #13550: improvements and additions to dyck_words.py
+Trac #13550: improvements and additions to dyck_words.py
+
+Additions of the following methods to DyckWord class:
+number_of_parking_functions(self)
+rise_composition(self)
+number_of_touch_points(self)
+touch_composition(self)
+touch_points(self)
+return_to_zero(self)
+dinv(self, labeling = None)
+bounce_path(self)
+number_of_double_rises(self)
+positions_of_double_rises(self)
+position_of_first_return(self)
+area_dinv_to_bounce_area_map(self)
+decomposition_reverse(self)
+first_return_decomposition(self)
+reverse(self)
+number_of_tunnels(self,tunnel_type='centered')
+tunnels(self)
+pyramid_weight( self )
+major_index(self)
+number_of_valleys(self)
+number_of_peaks(self)
+from_area_sequence(cls, code)
+to_area_sequence(self)
+from_Catalan_code(cls, code)
+to_Catalan_code(self)
+to_noncrossing_partition(self, bijection=None)
+to_132_avoiding_permutation(self)
+to_321_avoiding_permutation(self)
+to_noncrossing_permutation(self)
+to_312_avoiding_permutation(self)
+to_pair_of_standard_tableaux(self)
+characteristic_symmetric_function(self, q=None, R=QQ['q','t'].fraction_field())
+reading_permutation(self)
+list_parking_functions( self )
+to_partition(self)
+_latex_(self)
+pretty_print( self, labels=None )
+to_path_string(self)
+latex_options(self)
+set_latex_options(self,D)
+
+Deprecation of a_statistic, b_statistic and these functions were renamed to area and bounce
+* * *
+13550: review part 1 containing many changes

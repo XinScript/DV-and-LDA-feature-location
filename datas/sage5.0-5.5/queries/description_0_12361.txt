@@ -1,0 +1,2 @@
+Trac #12361: Trac #12361: Fix index_in_saturation for zero-sized matrices
+Trac #12361: Trac #12361: Fix index_in_saturation for zero-sized matrices

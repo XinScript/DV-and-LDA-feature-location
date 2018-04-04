@@ -1,0 +1,2 @@
+Trac #13043: Trac 13043: fixed a bug in the dir_with_other_class() helper function
+Trac #13043: Trac 13043: fixed a bug in the dir_with_other_class() helper function

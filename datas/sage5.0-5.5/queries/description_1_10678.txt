@@ -1,0 +1,3 @@
+Trac #10678: trac #10678: properly link "derivative" in sage.symbolic.expression.derivative documentation;
+Trac #10678: trac #10678: properly link "derivative" in sage.symbolic.expression.derivative documentation;
+mention that .derivative() is smart for single-variable functions

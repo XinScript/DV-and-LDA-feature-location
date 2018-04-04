@@ -1,0 +1,2 @@
+Trac #11793: #11793: Autogenerate LANGUAGES in build_options
+Trac #11793: #11793: Autogenerate LANGUAGES in build_options

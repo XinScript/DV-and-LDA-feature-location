@@ -1,0 +1,6 @@
+sage.geometry.polytope.Polytope.__add__
+sage.geometry.polytope.Polytope.vertices
+sage.geometry.polytope.Polytope.n_facets
+sage.geometry.polytope.Polytope.__add__
+sage.geometry.polytope.Polytope.vertices
+sage.geometry.polytope.Polytope.n_facets

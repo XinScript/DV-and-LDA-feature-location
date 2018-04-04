@@ -1,0 +1,2 @@
+Trac #13067: Graph.is_strongly_regular method
+Trac #13067: Graph.is_strongly_regular method

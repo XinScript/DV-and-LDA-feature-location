@@ -1,0 +1,2 @@
+Trac #12905: Fixing memory leaks in Cliquer
+Trac #12905: Fixing memory leaks in Cliquer

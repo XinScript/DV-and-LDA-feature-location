@@ -1,0 +1,4 @@
+sage.databases.jones.JonesDatabase.unramified_outside
+sage.databases.jones.JonesDatabase.ramified_at
+sage.databases.jones.JonesDatabase.unramified_outside
+sage.databases.jones.JonesDatabase.ramified_at

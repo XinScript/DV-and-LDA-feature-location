@@ -1,0 +1,2 @@
+sage.all.quit_sage
+sage.all.quit_sage

@@ -1,0 +1,4 @@
+sage.coding.linear_code.bounds_minimum_distance
+sage.coding.linear_code.LinearCodeFromVectorSpace
+sage.coding.linear_code.bounds_minimum_distance
+sage.coding.linear_code.LinearCodeFromVectorSpace

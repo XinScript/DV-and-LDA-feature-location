@@ -1,0 +1,2 @@
+Trac #13133: Trac #13133: workaround crach inside PolyBori (BooleanMonomial.index() on constants)
+Trac #13133: Trac #13133: workaround crach inside PolyBori (BooleanMonomial.index() on constants)

@@ -1,0 +1,2 @@
+Trac #5512: CombinatorialSpeciesStructures with different labels are equal
+Trac #5512: CombinatorialSpeciesStructures with different labels are equal

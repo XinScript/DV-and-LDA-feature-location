@@ -1,0 +1,2 @@
+Trac #13616: Fixes segfault in unit_part() for ZZpXCRElements and adds some documentation for fixed modulus elements describing how the unit_part of zero is handled.
+Trac #13616: Fixes segfault in unit_part() for ZZpXCRElements and adds some documentation for fixed modulus elements describing how the unit_part of zero is handled.

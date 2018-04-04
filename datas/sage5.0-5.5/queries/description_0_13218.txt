@@ -1,0 +1,6 @@
+Trac #13218: incorporate reviewer's suggestions
+Trac #13218: incorporate reviewer's suggestions
+
+* fixed bug in is_field
+* added more doctests for _coerce_impl
+* clarified change_ringinterrupted!

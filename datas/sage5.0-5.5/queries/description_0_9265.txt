@@ -1,0 +1,2 @@
+Trac #9265: Fixing outdated pickles caused by deprecation of old class names
+Trac #9265: Fixing outdated pickles caused by deprecation of old class names

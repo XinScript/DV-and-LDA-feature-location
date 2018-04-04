@@ -1,0 +1,2 @@
+sage.modular.etaproducts.qexp_eta
+sage.modular.etaproducts.qexp_eta

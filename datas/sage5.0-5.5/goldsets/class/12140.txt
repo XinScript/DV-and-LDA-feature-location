@@ -1,0 +1,2 @@
+sage.combinat.sf.classical.SymmetricFunctionAlgebra_classical
+sage.combinat.sf.classical.SymmetricFunctionAlgebra_classical

@@ -1,0 +1,2 @@
+Trac #11770: omit checks for speed
+Trac #11770: omit checks for speed

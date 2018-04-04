@@ -1,0 +1,2 @@
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab.ramified_primes
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab.ramified_primes

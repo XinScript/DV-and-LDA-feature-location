@@ -1,0 +1,4 @@
+Trac #12883: remove mentions of LinBox in Matrix_modn_dense (#12883)
+Trac #12883: remove mentions of LinBox in Matrix_modn_dense (#12883)
+We use LinBox in dedicated classes now, so Matrix_modn_dense cannot be
+constructed for dimensions where LinBox is available

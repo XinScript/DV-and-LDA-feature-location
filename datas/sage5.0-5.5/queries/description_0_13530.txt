@@ -1,0 +1,2 @@
+Trac #13530: spline list method exposes interpolation points
+Trac #13530: spline list method exposes interpolation points

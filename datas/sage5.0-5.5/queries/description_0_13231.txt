@@ -1,0 +1,2 @@
+Trac #13231: add is_atomic for lattices
+Trac #13231: add is_atomic for lattices

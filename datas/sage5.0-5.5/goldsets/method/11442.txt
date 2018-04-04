@@ -1,0 +1,4 @@
+sage.combinat.partition.Partition_class.plancherel_measure
+sage.combinat.partition.RestrictedPartitions_nsk.cardinality
+sage.combinat.partition.Partition_class.plancherel_measure
+sage.combinat.partition.RestrictedPartitions_nsk.cardinality

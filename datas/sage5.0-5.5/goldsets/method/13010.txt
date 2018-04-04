@@ -1,0 +1,2 @@
+sage.interfaces.mathematica.MathematicaElement.__getitem__
+sage.interfaces.mathematica.MathematicaElement.__getitem__

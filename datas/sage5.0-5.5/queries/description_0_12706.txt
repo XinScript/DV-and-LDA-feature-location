@@ -1,0 +1,2 @@
+Trac #12706: trac #12706 : ensures that 0 has no monomials
+Trac #12706: trac #12706 : ensures that 0 has no monomials

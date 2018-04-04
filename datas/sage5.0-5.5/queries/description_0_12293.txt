@@ -1,0 +1,2 @@
+Trac #12293: Trac #11293: Document Graph(n) construction pattern.
+Trac #12293: Trac #11293: Document Graph(n) construction pattern.

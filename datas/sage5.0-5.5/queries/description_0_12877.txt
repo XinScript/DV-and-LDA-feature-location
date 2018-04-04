@@ -1,0 +1,9 @@
+Trac #12877: #12877: Categories for more rings and schemes
+Trac #12877: #12877: Categories for more rings and schemes
+
+
+This patch fixes the following classes to use categories:
+
+- padics
+- RealLazyField, ComplexLazyField
+- AlgebraicScheme's and subclasses

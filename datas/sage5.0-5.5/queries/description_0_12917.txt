@@ -1,0 +1,2 @@
+Trac #12917: Method Graph.is_cartesian_product
+Trac #12917: Method Graph.is_cartesian_product

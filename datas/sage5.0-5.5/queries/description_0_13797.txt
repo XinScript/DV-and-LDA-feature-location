@@ -1,0 +1,2 @@
+Trac #13797: Fix overflow in hash and cmp() for LinearFunction
+Trac #13797: Fix overflow in hash and cmp() for LinearFunction

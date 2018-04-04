@@ -1,0 +1,4 @@
+Trac #13502: Vector norms don't work if p is a python int since the calculation involves a 1/p where 1 is a python int
+Trac #13502: Vector norms don't work if p is a python int since the calculation involves a 1/p where 1 is a python int
+
+Fix is to change the 1 in the 1/p to a Sage integer.

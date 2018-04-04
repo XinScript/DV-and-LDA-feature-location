@@ -1,0 +1,2 @@
+Trac #13161: allow unicode strings in axes_label
+Trac #13161: allow unicode strings in axes_label

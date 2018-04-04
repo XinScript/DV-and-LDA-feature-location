@@ -1,0 +1,2 @@
+Trac #12767: Trac 12767: document INPUT in `maximal_order`
+Trac #12767: Trac 12767: document INPUT in `maximal_order`

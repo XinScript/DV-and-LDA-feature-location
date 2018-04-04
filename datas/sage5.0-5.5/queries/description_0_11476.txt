@@ -1,0 +1,2 @@
+Trac #11476: Fixing bug in computation of the cardinality of the number of partition tuples
+Trac #11476: Fixing bug in computation of the cardinality of the number of partition tuples

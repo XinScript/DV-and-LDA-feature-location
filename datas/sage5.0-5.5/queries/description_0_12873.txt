@@ -1,0 +1,2 @@
+Trac #12873: On i386 hardware, execute emms instruction in signal handler
+Trac #12873: On i386 hardware, execute emms instruction in signal handler

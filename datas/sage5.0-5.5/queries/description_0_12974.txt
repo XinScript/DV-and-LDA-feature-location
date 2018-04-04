@@ -1,0 +1,2 @@
+Trac #12974: Trac 12974 - fix final few double-underscores in colors.py
+Trac #12974: Trac 12974 - fix final few double-underscores in colors.py

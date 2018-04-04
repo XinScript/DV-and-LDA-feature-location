@@ -1,0 +1,2 @@
+Trac #4735: #4735: Make e^A for A a generic matrix work
+Trac #4735: #4735: Make e^A for A a generic matrix work

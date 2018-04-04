@@ -1,0 +1,2 @@
+sage.modules.free_module.is_FreeModule
+sage.modules.free_module.is_FreeModule

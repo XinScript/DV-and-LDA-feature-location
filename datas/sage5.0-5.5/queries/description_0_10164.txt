@@ -1,0 +1,2 @@
+Trac #10164: Trac #10164: round up log(10,2) approximations
+Trac #10164: Trac #10164: round up log(10,2) approximations

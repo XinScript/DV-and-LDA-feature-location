@@ -1,0 +1,14 @@
+sage.graphs.graph_generators.GraphGenerators.HarriesGraph
+sage.graphs.graph_generators.GraphGenerators.HouseGraph
+sage.graphs.graph_generators.GraphGenerators.ChvatalGraph
+sage.graphs.graph_generators.GraphGenerators.FranklinGraph
+sage.graphs.graph_generators.GraphGenerators.GrayGraph
+sage.graphs.graph_generators.GraphGenerators.DoubleStarSnark
+sage.graphs.graph_generators.GraphGenerators.FosterGraph
+sage.graphs.graph_generators.GraphGenerators.HarriesGraph
+sage.graphs.graph_generators.GraphGenerators.HouseGraph
+sage.graphs.graph_generators.GraphGenerators.ChvatalGraph
+sage.graphs.graph_generators.GraphGenerators.FranklinGraph
+sage.graphs.graph_generators.GraphGenerators.GrayGraph
+sage.graphs.graph_generators.GraphGenerators.DoubleStarSnark
+sage.graphs.graph_generators.GraphGenerators.FosterGraph

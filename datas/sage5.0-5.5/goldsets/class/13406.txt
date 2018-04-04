@@ -1,0 +1,4 @@
+sage.combinat.free_module.CombinatorialFreeModuleElement
+sage.combinat.free_module.CombinatorialFreeModule_Tensor
+sage.combinat.free_module.CombinatorialFreeModuleElement
+sage.combinat.free_module.CombinatorialFreeModule_Tensor

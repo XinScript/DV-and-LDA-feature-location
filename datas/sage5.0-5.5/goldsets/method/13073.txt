@@ -1,0 +1,8 @@
+sage.combinat.species.species.GenericCombinatorialSpecies._add_to_digraph
+sage.combinat.words.nfactor_enumerable_word.Word_nfactor_enumerable.reduced_rauzy_graph
+sage.geometry.hasse_diagram.Hasse_diagram_from_incidences
+sage.graphs.graph.compare_edges
+sage.combinat.species.species.GenericCombinatorialSpecies._add_to_digraph
+sage.combinat.words.nfactor_enumerable_word.Word_nfactor_enumerable.reduced_rauzy_graph
+sage.geometry.hasse_diagram.Hasse_diagram_from_incidences
+sage.graphs.graph.compare_edges

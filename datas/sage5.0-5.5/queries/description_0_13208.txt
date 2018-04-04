@@ -1,0 +1,2 @@
+Trac #13208: trac #13208 : Move the basis method from CombinatorialFreeModule to ModulesWithBasis.ParentMethods
+Trac #13208: trac #13208 : Move the basis method from CombinatorialFreeModule to ModulesWithBasis.ParentMethods

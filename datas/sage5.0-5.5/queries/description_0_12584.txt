@@ -1,0 +1,2 @@
+Trac #12584: Allows creation of elements of GF(2^e) from Integers that don't fit in a long.
+Trac #12584: Allows creation of elements of GF(2^e) from Integers that don't fit in a long.

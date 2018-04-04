@@ -1,0 +1,2 @@
+Trac #12869: The warn-links option shouldn't allways triggers full doc compilation.
+Trac #12869: The warn-links option shouldn't allways triggers full doc compilation.

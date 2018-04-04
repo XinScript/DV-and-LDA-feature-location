@@ -1,0 +1,16 @@
+sage.functions.log.Function_lambert_w.__init__
+sage.functions.log.Function_lambert_w.__call__
+sage.functions.log.Function_lambert_w._eval_
+sage.functions.log.Function_lambert_w._evalf_
+sage.functions.log.Function_lambert_w._derivative_
+sage.functions.log.Function_lambert_w._maxima_init_evaled_
+sage.functions.log.Function_lambert_w._print_
+sage.functions.log.Function_lambert_w._print_latex_
+sage.functions.log.Function_lambert_w.__init__
+sage.functions.log.Function_lambert_w.__call__
+sage.functions.log.Function_lambert_w._eval_
+sage.functions.log.Function_lambert_w._evalf_
+sage.functions.log.Function_lambert_w._derivative_
+sage.functions.log.Function_lambert_w._maxima_init_evaled_
+sage.functions.log.Function_lambert_w._print_
+sage.functions.log.Function_lambert_w._print_latex_

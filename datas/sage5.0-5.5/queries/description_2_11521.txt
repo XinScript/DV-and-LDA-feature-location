@@ -1,0 +1,3 @@
+Trac #11521: Use the weak TripleDict from #715 for the cache of homsets.
+Trac #11521: Use the weak TripleDict from #715 for the cache of homsets.
+Includes reviewer patch

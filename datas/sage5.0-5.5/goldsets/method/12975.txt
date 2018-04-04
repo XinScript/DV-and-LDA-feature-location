@@ -1,0 +1,4 @@
+sage.misc.cython.subtract_from_line_numbers
+sage.misc.cython.pyx_preparse
+sage.misc.cython.subtract_from_line_numbers
+sage.misc.cython.pyx_preparse

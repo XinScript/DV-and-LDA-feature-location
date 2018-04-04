@@ -1,0 +1,2 @@
+Trac #9265: Remove 'CombinatorialClass' from tableau.py
+Trac #9265: Remove 'CombinatorialClass' from tableau.py

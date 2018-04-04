@@ -1,0 +1,2 @@
+Trac #13172: #13172: fixes a bug in integer_mod's nth_root function.
+Trac #13172: #13172: fixes a bug in integer_mod's nth_root function.

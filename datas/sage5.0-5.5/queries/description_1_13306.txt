@@ -1,0 +1,2 @@
+Trac #13306: Generators for chessboard graphs: King, Queen, Knight, Bishop, Rooks
+Trac #13306: Generators for chessboard graphs: King, Queen, Knight, Bishop, Rooks

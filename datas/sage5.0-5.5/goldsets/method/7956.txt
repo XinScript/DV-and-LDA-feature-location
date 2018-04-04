@@ -1,0 +1,2 @@
+sage.schemes.generic.scheme.AffineScheme.hom
+sage.schemes.generic.scheme.AffineScheme.hom

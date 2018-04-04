@@ -1,0 +1,9 @@
+Trac #12605: Trac 12605 - change default color of circles and ellipses back to blue
+Trac #12605: Trac 12605 - change default color of circles and ellipses back to blue
+
+When graph plotting was improved, the default color for circles was changed
+to black. This reverts that change and improves documentation.  It also corrects
+ellipses.
+Additionally, we improve the graph plot doc a little and add it to the plot part
+of the reference manual in addition to the graphs part (Sphinx only creates one
+page, so it is not a problem).

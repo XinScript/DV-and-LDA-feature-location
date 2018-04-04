@@ -1,0 +1,12 @@
+Trac #13404: Improved printing for symmetric function bases and misc refactoring
+Trac #13404: Improved printing for symmetric function bases and misc refactoring
+
+- Refactored the printing to have more consistent output in less code
+- Reduced code duplication in dual_basis by introducing dual_basis_default
+- Moved a couple methods from SymmetricFunctions_classical and friends
+  to the category SymmetricFunctionsBases
+- Changed the prefix for the LLT spin basis from HSp to HSp3 (or in
+  general HSp<level> to be consistent with the cospin basis
+- Updated to doctests in jack.py: the new outputs are equal but
+  not identical to the previous ones. Why did it change?
+- Changed repr functions in new_kschur.py to reflect consistent naming convention

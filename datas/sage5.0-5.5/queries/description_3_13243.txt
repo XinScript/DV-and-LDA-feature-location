@@ -1,0 +1,2 @@
+Trac #13243: new methods for compositions (rebased upon the new deprecation functions at #13109
+Trac #13243: new methods for compositions (rebased upon the new deprecation functions at #13109

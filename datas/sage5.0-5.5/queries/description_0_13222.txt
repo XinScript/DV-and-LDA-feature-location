@@ -1,0 +1,10 @@
+Trac #13222: #trac_13222
+Trac #13222: #trac_13222
+
+Fix is_graded to use the following definition a poset is graded if all maximal chains have the same lengths. See Stanley, EC1.
+
+As per this definition, the following poset is not graded:
+
+    sage: P = Poset([[1,2,3,4], [[1,2],[2,4],[3,4]]])
+    sage: P.is_graded()
+    True

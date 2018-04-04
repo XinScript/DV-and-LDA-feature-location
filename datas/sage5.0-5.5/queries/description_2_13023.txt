@@ -1,0 +1,2 @@
+Trac #13023: Move toric varieties code to schemes/toric/
+Trac #13023: Move toric varieties code to schemes/toric/

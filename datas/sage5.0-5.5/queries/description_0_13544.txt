@@ -1,0 +1,2 @@
+Trac #13544: builder.py: only include directories when constructing list of all docs
+Trac #13544: builder.py: only include directories when constructing list of all docs

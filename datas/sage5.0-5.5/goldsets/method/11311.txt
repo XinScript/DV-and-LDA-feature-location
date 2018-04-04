@@ -1,0 +1,4 @@
+sage.misc.latex._run_latex_
+sage.misc.latex.view
+sage.misc.latex._run_latex_
+sage.misc.latex.view

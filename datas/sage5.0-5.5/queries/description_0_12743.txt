@@ -1,0 +1,2 @@
+Trac #12743: Addition of simple reduction rules as pre-processing in Graph.vertex_cover
+Trac #12743: Addition of simple reduction rules as pre-processing in Graph.vertex_cover

@@ -1,0 +1,2 @@
+sage.combinat.words.morphism.WordMorphism
+sage.combinat.words.morphism.WordMorphism

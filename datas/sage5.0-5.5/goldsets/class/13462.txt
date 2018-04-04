@@ -1,0 +1,4 @@
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab
+sage.rings.number_field.number_field.NumberField_cyclotomic
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab
+sage.rings.number_field.number_field.NumberField_cyclotomic

@@ -1,0 +1,2 @@
+Trac #12586: Changed a doctest to work when ECL's float printing is patched to fix #12586
+Trac #12586: Changed a doctest to work when ECL's float printing is patched to fix #12586

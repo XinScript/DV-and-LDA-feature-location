@@ -1,0 +1,2 @@
+sage.graphs.generic_graph.GenericGraph.disjoint_routed_paths
+sage.graphs.generic_graph.GenericGraph.disjoint_routed_paths

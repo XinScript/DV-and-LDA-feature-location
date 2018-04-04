@@ -1,0 +1,2 @@
+Trac #12770: Trac #12770 -- Fix bug in cartesian product
+Trac #12770: Trac #12770 -- Fix bug in cartesian product

@@ -1,0 +1,2 @@
+Trac #12806: Trac 12806: doctest failures with new NetworkX 1.6 spkg
+Trac #12806: Trac 12806: doctest failures with new NetworkX 1.6 spkg

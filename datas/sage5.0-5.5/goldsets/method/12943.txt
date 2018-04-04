@@ -1,0 +1,4 @@
+sage.combinat.partition.Partition_class.__div__
+sage.combinat.tableau.Tableau.__call__
+sage.combinat.partition.Partition_class.__div__
+sage.combinat.tableau.Tableau.__call__

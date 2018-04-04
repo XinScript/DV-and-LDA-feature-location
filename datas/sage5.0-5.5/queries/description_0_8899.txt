@@ -1,0 +1,4 @@
+Trac #8899: and #11929: Implement noncommutative symmetric functions and quasi-symmetric functions
+Trac #8899: and #11929: Implement noncommutative symmetric functions and quasi-symmetric functions
+
+Modify _repr_ to conform to standards set out in #13404.

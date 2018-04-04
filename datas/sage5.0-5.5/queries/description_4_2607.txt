@@ -1,0 +1,2 @@
+Trac #2607: improve find_minimum_on_interval docs (trac 2607)
+Trac #2607: improve find_minimum_on_interval docs (trac 2607)

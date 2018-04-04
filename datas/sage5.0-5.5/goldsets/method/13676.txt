@@ -1,0 +1,4 @@
+sage.combinat.words.morphism.WordMorphism.latex_layout
+sage.combinat.words.morphism.WordMorphism._latex_
+sage.combinat.words.morphism.WordMorphism.latex_layout
+sage.combinat.words.morphism.WordMorphism._latex_

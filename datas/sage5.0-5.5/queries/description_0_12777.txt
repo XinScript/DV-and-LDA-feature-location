@@ -1,0 +1,2 @@
+Trac #12777: Add signal handling and documentation to libecm.pyx
+Trac #12777: Add signal handling and documentation to libecm.pyx

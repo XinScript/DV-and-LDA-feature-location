@@ -1,0 +1,2 @@
+Trac #12380: remove trailing white spaces
+Trac #12380: remove trailing white spaces

@@ -1,0 +1,2 @@
+Trac #12960: set a basic set of legend options so that matplotlib() works
+Trac #12960: set a basic set of legend options so that matplotlib() works

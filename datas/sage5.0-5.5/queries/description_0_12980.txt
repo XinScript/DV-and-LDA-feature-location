@@ -1,0 +1,2 @@
+Trac #12980: Naming, formatting, faster casting, unreferenced var
+Trac #12980: Naming, formatting, faster casting, unreferenced var

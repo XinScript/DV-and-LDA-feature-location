@@ -1,0 +1,2 @@
+sage.misc.cython.pyx_preparse
+sage.misc.cython.pyx_preparse

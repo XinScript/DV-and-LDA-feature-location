@@ -1,0 +1,2 @@
+sage.rings.arith.quadratic_residues
+sage.rings.arith.quadratic_residues

@@ -1,0 +1,6 @@
+sage.graphs.generic_graph.GenericGraph.multiway_cut
+sage.graphs.generic_graph.GenericGraph.hamiltonian_cycle
+sage.graphs.graph.compare_edges
+sage.graphs.generic_graph.GenericGraph.multiway_cut
+sage.graphs.generic_graph.GenericGraph.hamiltonian_cycle
+sage.graphs.graph.compare_edges

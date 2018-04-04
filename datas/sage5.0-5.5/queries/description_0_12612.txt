@@ -1,0 +1,2 @@
+Trac #12612: Changes the definition of is_unit so 5 is a unit in QQ_5.
+Trac #12612: Changes the definition of is_unit so 5 is a unit in QQ_5.

@@ -1,0 +1,4 @@
+sage.groups.perm_gps.permgroup_named.GeneralDihedralGroup
+sage.groups.perm_gps.permgroup_named.MathieuGroup
+sage.groups.perm_gps.permgroup_named.GeneralDihedralGroup
+sage.groups.perm_gps.permgroup_named.MathieuGroup

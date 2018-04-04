@@ -1,0 +1,2 @@
+Trac #13359: Expression::__nonzero__ shouldn't call variables() unless necessary
+Trac #13359: Expression::__nonzero__ shouldn't call variables() unless necessary

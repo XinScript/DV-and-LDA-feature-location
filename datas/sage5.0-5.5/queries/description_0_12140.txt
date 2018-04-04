@@ -1,0 +1,36 @@
+Trac #12140: Symmetric functions uses lrcalc in symmetrica and bug fix in skew Schur function indexed by [[], []]
+Trac #12140: Symmetric functions uses lrcalc in symmetrica and bug fix in skew Schur function indexed by [[], []]
+
+The following code causes a segmentation fault:
+
+sage: s = SFASchur(QQ)
+sage: s([[], []])
+or
+sage: s([]).skew_by(s([]))
+
+which should be s[] but instead causes a segmentation fault.
+
+The calculation of an expansion of a skew Schur function in the Schur
+basis done with the symmetrica package.
+
+The bug comes from the calculation of a skew Schur function indexed
+by two empty partitions.  To fix this bug we change the computation from the
+symmetrica package to lrcalc which should be faster and more robust.
+lrcalc is a package that was integrated into sage in version 5.2.beta1.
+
+timing tests for computing expansions of skew Schur functions indicate
+that for large partitions there are significant speed improvements
+by using lrcalc instead of symmetrica.
+example:
+Without this patch applied:
+sage: timeit('s([[9,9,8,8,7,7,6,6,5,5,4,3,2,1],[6,5,4,3,2]])')
+5 loops, best of 3: 5.06 s per loop
+
+With this patch applied:
+sage: timeit('s([[9,9,8,8,7,7,6,6,5,5,4,3,2,1],[6,5,4,3,2]])')
+5 loops, best of 3: 978 ms per loop
+
+- In classical.py the construction of a skew Schur function now calls
+lrcalc.skew instead of symmetrica.part_part_skewschur
+
+- doc tests were added to check base cases in sfa.py and classical.py

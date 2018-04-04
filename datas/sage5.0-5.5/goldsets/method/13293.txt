@@ -1,0 +1,2 @@
+sage.rings.polynomial.padics.polynomial_padic_flat.Polynomial_padic_flat.factor
+sage.rings.polynomial.padics.polynomial_padic_flat.Polynomial_padic_flat.factor

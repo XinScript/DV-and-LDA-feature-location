@@ -1,0 +1,2 @@
+sage.misc.lazy_attribute.lazy_class_attribute
+sage.misc.lazy_attribute.lazy_class_attribute

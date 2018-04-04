@@ -1,0 +1,2 @@
+Trac #13592: disable iterators for padics
+Trac #13592: disable iterators for padics

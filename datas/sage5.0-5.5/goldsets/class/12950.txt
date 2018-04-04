@@ -1,0 +1,4 @@
+sage.functions.other.Function_psi1
+sage.functions.other.Function_beta
+sage.functions.other.Function_psi1
+sage.functions.other.Function_beta

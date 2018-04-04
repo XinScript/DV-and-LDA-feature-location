@@ -1,0 +1,9 @@
+Trac #8659: Trac 8659: remove sage.symbolic.power_helper in favor of hold=True
+Trac #8659: Trac 8659: remove sage.symbolic.power_helper in favor of hold=True
+
+sage.symbolic.power_helper module uses a hack to prevent running into infinite
+loops when evaluating powers like 2^(1/2). In these cases, the symbolics
+library would call the rational __pow__() method again when trying to simplify
+this expression further. Using the hold functionality merged in #9878, we can
+prevent automatic evalution of power expressions. Thus
+sage.symbolic.power_helper module is not needed any more.

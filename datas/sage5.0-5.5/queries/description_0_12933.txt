@@ -1,0 +1,2 @@
+Trac #12933: Speedup in DiGraph.stronly_connected_components_digraph
+Trac #12933: Speedup in DiGraph.stronly_connected_components_digraph

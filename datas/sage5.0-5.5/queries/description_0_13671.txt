@@ -1,0 +1,2 @@
+Trac #13671: fixing the lift() method of multivariate polynomials
+Trac #13671: fixing the lift() method of multivariate polynomials

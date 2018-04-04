@@ -1,0 +1,16 @@
+sage.crypto.mq.sr.test_consistency
+sage.geometry.triangulation.point_configuration.PointConfiguration.set_engine
+sage.graphs.isgci.GraphClasses.show_all
+sage.modular.arithgroup.arithgroup_perm.ArithmeticSubgroup_Permutation_class.congruence_closure
+sage.modular.arithgroup.arithgroup_perm.EvenArithmeticSubgroup_Permutation.odd_subgroups
+sage.plot.line.Line._repr_
+sage.schemes.elliptic_curves.ell_curve_isogeny.compute_isogeny_starks
+sage.schemes.elliptic_curves.ell_rational_field.cremona_curves
+sage.crypto.mq.sr.test_consistency
+sage.geometry.triangulation.point_configuration.PointConfiguration.set_engine
+sage.graphs.isgci.GraphClasses.show_all
+sage.modular.arithgroup.arithgroup_perm.ArithmeticSubgroup_Permutation_class.congruence_closure
+sage.modular.arithgroup.arithgroup_perm.EvenArithmeticSubgroup_Permutation.odd_subgroups
+sage.plot.line.Line._repr_
+sage.schemes.elliptic_curves.ell_curve_isogeny.compute_isogeny_starks
+sage.schemes.elliptic_curves.ell_rational_field.cremona_curves

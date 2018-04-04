@@ -1,0 +1,4 @@
+sage.plot.animate.Animation.gif
+sage.plot.animate.Animation.save
+sage.plot.animate.Animation.gif
+sage.plot.animate.Animation.save

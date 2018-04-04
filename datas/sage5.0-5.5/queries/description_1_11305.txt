@@ -1,0 +1,4 @@
+Trac #11305: Rigged configutions and Kirillov-Reshetikhin tableaux.
+Trac #11305: Rigged configutions and Kirillov-Reshetikhin tableaux.
+
+Contains the implementation of rigged configurations and Kirillov-Reshetikhin tableaux and the bijection between the two. Also increases speed of Cartan matrix by saving the result.

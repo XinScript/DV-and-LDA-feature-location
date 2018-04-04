@@ -1,0 +1,10 @@
+sage.functions.other.Function_psi1.__init__
+sage.functions.other.Function_beta.__init__
+sage.stats.basic_stats.std
+sage.stats.basic_stats.median
+sage.plot.plot3d.revolution_plot3d.revolution_plot3d
+sage.functions.other.Function_psi1.__init__
+sage.functions.other.Function_beta.__init__
+sage.stats.basic_stats.std
+sage.stats.basic_stats.median
+sage.plot.plot3d.revolution_plot3d.revolution_plot3d

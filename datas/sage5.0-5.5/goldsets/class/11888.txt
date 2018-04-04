@@ -1,0 +1,2 @@
+sage.functions.log.Function_lambert_w
+sage.functions.log.Function_lambert_w

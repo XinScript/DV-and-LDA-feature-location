@@ -1,0 +1,2 @@
+sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic
+sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic

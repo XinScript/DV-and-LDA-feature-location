@@ -1,0 +1,2 @@
+Trac #12756: imported patch 12756_interrupt_flush.patch
+Trac #12756: imported patch 12756_interrupt_flush.patch

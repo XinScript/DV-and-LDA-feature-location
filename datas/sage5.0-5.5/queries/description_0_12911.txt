@@ -1,0 +1,2 @@
+Trac #12911: Use Sage's IPYTHONDIR when running IPython test in tests/cmdline.py.
+Trac #12911: Use Sage's IPYTHONDIR when running IPython test in tests/cmdline.py.

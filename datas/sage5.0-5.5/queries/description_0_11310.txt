@@ -1,0 +1,2 @@
+Trac #11310: Check for ExceptionPexpect instead of StandardError
+Trac #11310: Check for ExceptionPexpect instead of StandardError

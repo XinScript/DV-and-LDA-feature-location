@@ -1,0 +1,5 @@
+Trac #11913: Fix sage_getargspec on objects from the R library, e.g. r.lm.
+Trac #11913: Fix sage_getargspec on objects from the R library, e.g. r.lm.
+Before this patch, calling sage_getargspec on r.lm would lead
+to a syntax error; now it returns None. (The syntax error could
+then break introspection on r.lm in the notebook.)

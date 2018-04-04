@@ -1,0 +1,6 @@
+sage.categories.examples.with_realizations.SubsetAlgebra
+sage.categories.magmas.Magmas
+sage.categories.sets_cat.Sets
+sage.categories.examples.with_realizations.SubsetAlgebra
+sage.categories.magmas.Magmas
+sage.categories.sets_cat.Sets

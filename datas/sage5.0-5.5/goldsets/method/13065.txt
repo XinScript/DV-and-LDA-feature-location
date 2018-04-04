@@ -1,0 +1,4 @@
+sage.schemes.elliptic_curves.ell_number_field.EllipticCurve_number_field.height_pairing_matrix
+sage.schemes.elliptic_curves.gp_simon.simon_two_descent
+sage.schemes.elliptic_curves.ell_number_field.EllipticCurve_number_field.height_pairing_matrix
+sage.schemes.elliptic_curves.gp_simon.simon_two_descent

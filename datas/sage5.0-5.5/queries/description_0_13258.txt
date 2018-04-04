@@ -1,0 +1,2 @@
+Trac #13258: replace some deprecated functions in devel/sage/doc/
+Trac #13258: replace some deprecated functions in devel/sage/doc/

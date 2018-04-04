@@ -1,0 +1,6 @@
+sage.rings.polynomial.polynomial_ring_constructor.PolynomialRing
+sage.rings.polynomial.polynomial_ring_constructor._get_from_cache
+sage.rings.polynomial.polynomial_ring_constructor._single_variate
+sage.rings.polynomial.polynomial_ring_constructor.PolynomialRing
+sage.rings.polynomial.polynomial_ring_constructor._get_from_cache
+sage.rings.polynomial.polynomial_ring_constructor._single_variate

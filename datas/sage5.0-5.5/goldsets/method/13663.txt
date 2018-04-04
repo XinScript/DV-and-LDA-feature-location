@@ -1,0 +1,2 @@
+sage.coding.linear_code.LinearCodeFromVectorSpace
+sage.coding.linear_code.LinearCodeFromVectorSpace

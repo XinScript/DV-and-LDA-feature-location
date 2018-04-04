@@ -1,0 +1,2 @@
+Trac #13189: Add isomorphism check for cones based on the code for fans.
+Trac #13189: Add isomorphism check for cones based on the code for fans.

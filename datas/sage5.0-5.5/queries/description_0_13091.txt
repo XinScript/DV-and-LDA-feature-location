@@ -1,0 +1,4 @@
+Trac #13091: Fix bug introduced in graph tensor_product rewrite from #12791---only half the edges were being added in the undirected case.
+Trac #13091: Fix bug introduced in graph tensor_product rewrite from #12791---only half the edges were being added in the undirected case.
+
+Thanks to Leslie Hogben and the REUF4 minimum rank group for finding and reporting this.

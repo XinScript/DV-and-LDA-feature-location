@@ -1,0 +1,2 @@
+Trac #7797: letterplace referee patch: remove a remnant of an incomplete doctest.
+Trac #7797: letterplace referee patch: remove a remnant of an incomplete doctest.

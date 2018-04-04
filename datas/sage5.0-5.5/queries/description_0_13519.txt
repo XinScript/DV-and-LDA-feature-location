@@ -1,0 +1,2 @@
+Trac #13519: recompute spline when points are changed
+Trac #13519: recompute spline when points are changed

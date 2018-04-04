@@ -1,0 +1,4 @@
+sage.graphs.generic_graph.GenericGraph.traveling_salesman_problem
+sage.graphs.generic_graph.GenericGraph.hamiltonian_cycle
+sage.graphs.generic_graph.GenericGraph.traveling_salesman_problem
+sage.graphs.generic_graph.GenericGraph.hamiltonian_cycle

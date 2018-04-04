@@ -1,0 +1,19 @@
+Trac #12959: Improvements to Sets.WithRealizations
+Trac #12959: Improvements to Sets.WithRealizations
+Implement default methods for (With)Realizations that use the realization
+provided by the method a_realization for computations:
+
+- AlgebrasWithBasis.ParentMethods.product is modified to use
+  product_by_coercion if product_on_basis is not available
+- Magmas.Realizations added and
+  Magmas.Realizations.ParentMethods.product_by_coercion uses
+  self.a_realization()
+- CommutativeAdditiveMonoids.WithRealizations added and
+  CommutativeAdditiveMonoids.WithRealizations.ParentMethods.zero
+  returns self.a_realization().zero()
+- Monoids.WithRealizations added and Monoids.WithRealizations.ParentMethods.one
+  returns self.a_realization().one()
+- Sets.WithRealizations.ParentMethods.inject_shorthands : injects any
+  shorthands names for realizations provided in the _shorthands attribute
+- added _shorthand attribute to the example in
+  sage.categories.example.with_realizations

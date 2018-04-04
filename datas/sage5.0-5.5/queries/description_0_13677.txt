@@ -1,0 +1,2 @@
+Trac #13677: Fix doctest after improvement of __repr__ and __str__ methods of WordMorphism
+Trac #13677: Fix doctest after improvement of __repr__ and __str__ methods of WordMorphism

@@ -1,0 +1,5 @@
+Trac #4529: fix typos, add warnings, and fix aspect_ratio
+Trac #4529: fix typos, add warnings, and fix aspect_ratio
+  - fix `linear` to ``"linear"``, etc
+  - add warnings to list_plot* and for noninteger base
+  - change aspect_ratio to "automatic" for many plots in sage.plot.*

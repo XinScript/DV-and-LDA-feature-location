@@ -1,0 +1,2 @@
+Trac #12923: Comparison of vectors is O(n) even in the simple cases
+Trac #12923: Comparison of vectors is O(n) even in the simple cases

@@ -1,0 +1,3 @@
+Trac #13029: Cython 0.17
+Trac #13029: Cython 0.17
+Most notably fix Sage to allow functions to be declared at module execution time.

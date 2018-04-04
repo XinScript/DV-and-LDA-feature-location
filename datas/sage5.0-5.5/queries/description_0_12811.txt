@@ -1,0 +1,2 @@
+Trac #12811: fix norm of quaternion ideals
+Trac #12811: fix norm of quaternion ideals

@@ -1,0 +1,2 @@
+sage.homology.chain_complex_morphism.ChainComplexMorphism.__neg__
+sage.homology.chain_complex_morphism.ChainComplexMorphism.__neg__

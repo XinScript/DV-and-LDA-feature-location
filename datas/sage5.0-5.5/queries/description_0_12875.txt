@@ -1,0 +1,22 @@
+Trac #12875: #12875: Fix the homset category initialization for ModularAbelianVariety's homspaces
+Trac #12875: #12875: Fix the homset category initialization for ModularAbelianVariety's homspaces
+
+Before the patch, the following was wrong (probably introduced by #9138):
+{{{
+    sage: End(J0(37)).homset_category()
+    Join of Category of hom sets in Category of sets and Category of rings
+}}}
+
+After the patch:
+{{{
+    sage: End(J0(37)).homset_category()
+    Category of modular abelian varieties over Rational Field
+}}}
+
+In both cases, we have, as desired:
+{{{
+    sage: End(J0(37)).category()
+    Join of Category of hom sets in Category of sets and Category of rings
+}}}
+
+By the way, this removes a direct call to _Hom_, using Hom instead.

@@ -1,0 +1,2 @@
+sage.schemes.generic.projective_space.ProjectiveSpace_ring
+sage.schemes.generic.projective_space.ProjectiveSpace_ring

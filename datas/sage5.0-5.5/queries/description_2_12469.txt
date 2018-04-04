@@ -1,0 +1,2 @@
+Trac #12469: #12469: RuntimeError raised by standard_factorization of a finite word
+Trac #12469: #12469: RuntimeError raised by standard_factorization of a finite word

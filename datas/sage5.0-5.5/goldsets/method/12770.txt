@@ -1,0 +1,2 @@
+sage.graphs.generic_graph.GenericGraph.tensor_product
+sage.graphs.generic_graph.GenericGraph.tensor_product

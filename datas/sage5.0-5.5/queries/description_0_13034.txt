@@ -1,0 +1,2 @@
+Trac #13034: Make index_in_saturation of zero matrices return 1 instead of exception.
+Trac #13034: Make index_in_saturation of zero matrices return 1 instead of exception.

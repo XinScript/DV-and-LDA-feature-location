@@ -1,0 +1,6 @@
+sage.schemes.plane_conics.con_field.ProjectiveConic_field
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field
+sage.schemes.plane_conics.con_rational_field.ProjectiveConic_rational_field
+sage.schemes.plane_conics.con_field.ProjectiveConic_field
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field
+sage.schemes.plane_conics.con_rational_field.ProjectiveConic_rational_field

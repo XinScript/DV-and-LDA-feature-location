@@ -1,0 +1,4 @@
+sage.graphs.isgci.GraphClass
+sage.graphs.isgci.GraphClasses
+sage.graphs.isgci.GraphClass
+sage.graphs.isgci.GraphClasses

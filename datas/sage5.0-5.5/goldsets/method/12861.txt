@@ -1,0 +1,8 @@
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab.maximal_order
+sage.algebras.quatalg.quaternion_algebra.basis_for_quaternion_lattice
+sage.algebras.quatalg.quaternion_algebra.normalize_basis_at_p
+sage.algebras.quatalg.quaternion_algebra.maxord_solve_aux_eq
+sage.algebras.quatalg.quaternion_algebra.QuaternionAlgebra_ab.maximal_order
+sage.algebras.quatalg.quaternion_algebra.basis_for_quaternion_lattice
+sage.algebras.quatalg.quaternion_algebra.normalize_basis_at_p
+sage.algebras.quatalg.quaternion_algebra.maxord_solve_aux_eq

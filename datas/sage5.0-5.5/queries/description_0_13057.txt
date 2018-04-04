@@ -1,0 +1,2 @@
+Trac #13057: Speed up introspection: don't invoke intersphinx when formatting docstrings.
+Trac #13057: Speed up introspection: don't invoke intersphinx when formatting docstrings.

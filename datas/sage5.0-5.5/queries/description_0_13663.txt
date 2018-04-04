@@ -1,0 +1,2 @@
+Trac #13663: implement __len__ in LinearCode
+Trac #13663: implement __len__ in LinearCode

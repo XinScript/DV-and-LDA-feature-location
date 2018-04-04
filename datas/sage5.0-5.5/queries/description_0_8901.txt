@@ -1,0 +1,2 @@
+Trac #8901: trac #8901: Updated doc-strings of IntegerVector to tell the user that it is a misnomer: its entries are non-negative integers.
+Trac #8901: trac #8901: Updated doc-strings of IntegerVector to tell the user that it is a misnomer: its entries are non-negative integers.

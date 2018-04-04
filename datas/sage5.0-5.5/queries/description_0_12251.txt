@@ -1,0 +1,6 @@
+Trac #12251: Implementation of crystal of LS paths
+Trac #12251: Implementation of crystal of LS paths
+
+This patch implements the crystal graph using the Littelmann path model.
+The elements are LS paths generated from the straight-line path to a given weight.
+Also, the iterator function and lists in crystals is cleaned up.

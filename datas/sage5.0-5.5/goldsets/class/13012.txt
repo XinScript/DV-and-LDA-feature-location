@@ -1,0 +1,4 @@
+sage.matrix.matrix_space.MatrixSpace
+sage.modules.matrix_morphism.MatrixMorphism
+sage.matrix.matrix_space.MatrixSpace
+sage.modules.matrix_morphism.MatrixMorphism

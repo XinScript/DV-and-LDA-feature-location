@@ -1,0 +1,2 @@
+Trac #12872: A show method for permutations
+Trac #12872: A show method for permutations

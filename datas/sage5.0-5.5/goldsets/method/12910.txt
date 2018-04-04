@@ -1,0 +1,4 @@
+sage.graphs.digraph.DiGraph.dig6_string
+sage.graphs.graph.compare_edges
+sage.graphs.digraph.DiGraph.dig6_string
+sage.graphs.graph.compare_edges

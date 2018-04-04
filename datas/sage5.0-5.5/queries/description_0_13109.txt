@@ -1,0 +1,2 @@
+Trac #13109: Add a section about deprecation to the developer guide
+Trac #13109: Add a section about deprecation to the developer guide

@@ -1,0 +1,8 @@
+sage.modular.abvar.abvar.ModularAbelianVariety.__init__
+sage.modular.abvar.homspace.EndomorphismSubring.__init__
+sage.modular.abvar.morphism.DegeneracyMap.__init__
+sage.modular.abvar.morphism.HeckeOperator._repr_
+sage.modular.abvar.abvar.ModularAbelianVariety.__init__
+sage.modular.abvar.homspace.EndomorphismSubring.__init__
+sage.modular.abvar.morphism.DegeneracyMap.__init__
+sage.modular.abvar.morphism.HeckeOperator._repr_

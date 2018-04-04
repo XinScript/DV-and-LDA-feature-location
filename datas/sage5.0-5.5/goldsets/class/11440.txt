@@ -1,0 +1,4 @@
+sage.combinat.partition.Partition_class
+sage.combinat.partition.RestrictedPartitions_nsk
+sage.combinat.partition.Partition_class
+sage.combinat.partition.RestrictedPartitions_nsk

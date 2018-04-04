@@ -1,0 +1,2 @@
+sage.matrix.matrix_integer_dense_hnf.det_given_divisor
+sage.matrix.matrix_integer_dense_hnf.det_given_divisor

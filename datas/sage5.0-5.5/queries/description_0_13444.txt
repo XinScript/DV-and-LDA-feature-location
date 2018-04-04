@@ -1,0 +1,2 @@
+Trac #13444: Doc tests for chapter "k-Schur primer" for the book "k-Schur functions and affine Schubert calculus"
+Trac #13444: Doc tests for chapter "k-Schur primer" for the book "k-Schur functions and affine Schubert calculus"

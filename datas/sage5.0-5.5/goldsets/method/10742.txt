@@ -1,0 +1,4 @@
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field.is_locally_solvable
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field.local_obstructions
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field.is_locally_solvable
+sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field.local_obstructions

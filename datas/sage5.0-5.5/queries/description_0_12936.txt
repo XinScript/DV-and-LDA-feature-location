@@ -1,0 +1,2 @@
+Trac #12936: Trac #12936: Preserve legend options when adding plots.
+Trac #12936: Trac #12936: Preserve legend options when adding plots.

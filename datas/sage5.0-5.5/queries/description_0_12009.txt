@@ -1,0 +1,2 @@
+Trac #12009: #12009: optional package gnuplotpy-1.8.spkg causes test failure on sage-4.7.2
+Trac #12009: #12009: optional package gnuplotpy-1.8.spkg causes test failure on sage-4.7.2

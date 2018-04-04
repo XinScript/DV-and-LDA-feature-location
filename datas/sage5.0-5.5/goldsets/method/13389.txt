@@ -1,0 +1,4 @@
+sage.interfaces.lie.LiEElement.trait_names
+sage.interfaces.lie.lie_version
+sage.interfaces.lie.LiEElement.trait_names
+sage.interfaces.lie.lie_version

@@ -1,0 +1,2 @@
+sage.graphs.generic_graph.GenericGraph.all_paths
+sage.graphs.generic_graph.GenericGraph.all_paths

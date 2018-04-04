@@ -1,0 +1,2 @@
+Trac #13643: Deprecate the current default norm of RDF/CDF matrices, for a future to change of the default from p='frob' to p=2.
+Trac #13643: Deprecate the current default norm of RDF/CDF matrices, for a future to change of the default from p='frob' to p=2.

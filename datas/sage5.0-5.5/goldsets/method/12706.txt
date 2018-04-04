@@ -1,0 +1,6 @@
+sage.combinat.free_module.CombinatorialFreeModuleElement.monomials
+sage.crypto.mq.mpolynomialsystem.MPolynomialRoundSystem_generic.monomials
+sage.rings.quotient_ring_element.QuotientRingElement._singular_
+sage.combinat.free_module.CombinatorialFreeModuleElement.monomials
+sage.crypto.mq.mpolynomialsystem.MPolynomialRoundSystem_generic.monomials
+sage.rings.quotient_ring_element.QuotientRingElement._singular_

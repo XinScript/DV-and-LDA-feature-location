@@ -1,0 +1,2 @@
+Trac #12761: Fix dependencies on Givaro
+Trac #12761: Fix dependencies on Givaro

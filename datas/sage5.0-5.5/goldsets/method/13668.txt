@@ -1,0 +1,10 @@
+sage.combinat.words.morphism.get_cycles
+sage.combinat.words.morphism.WordMorphism._fixed_point_iterator
+sage.combinat.words.morphism.WordMorphism.periodic_point
+sage.combinat.words.morphism.WordMorphism.periodic_points
+sage.combinat.words.morphism.WordMorphism.has_right_conjugate
+sage.combinat.words.morphism.get_cycles
+sage.combinat.words.morphism.WordMorphism._fixed_point_iterator
+sage.combinat.words.morphism.WordMorphism.periodic_point
+sage.combinat.words.morphism.WordMorphism.periodic_points
+sage.combinat.words.morphism.WordMorphism.has_right_conjugate

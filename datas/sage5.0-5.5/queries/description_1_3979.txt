@@ -1,0 +1,2 @@
+Trac #3979: substitution in power series
+Trac #3979: substitution in power series

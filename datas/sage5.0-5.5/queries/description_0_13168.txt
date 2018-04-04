@@ -1,0 +1,2 @@
+Trac #13168: #13168: Fixing typos in documentation of graph latex
+Trac #13168: #13168: Fixing typos in documentation of graph latex

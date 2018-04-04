@@ -1,0 +1,2 @@
+Trac #9260: Trac 9260 - add full module path in a real_mpfi doc reference
+Trac #9260: Trac 9260 - add full module path in a real_mpfi doc reference

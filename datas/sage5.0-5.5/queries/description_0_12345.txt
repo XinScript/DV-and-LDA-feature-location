@@ -1,0 +1,2 @@
+Trac #12345: Trac #12345: allow MinusInfinity to work with sympy
+Trac #12345: Trac #12345: allow MinusInfinity to work with sympy

@@ -1,0 +1,2 @@
+Trac #12999: Let <= and >= return True when lhs == rhs
+Trac #12999: Let <= and >= return True when lhs == rhs

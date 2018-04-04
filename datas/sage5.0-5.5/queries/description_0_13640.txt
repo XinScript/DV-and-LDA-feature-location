@@ -1,0 +1,2 @@
+Trac #13640: a new method 'q_jordan' for partitions
+Trac #13640: a new method 'q_jordan' for partitions

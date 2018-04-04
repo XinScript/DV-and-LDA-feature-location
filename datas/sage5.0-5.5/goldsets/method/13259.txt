@@ -1,0 +1,6 @@
+sage.combinat.q_analogues.q_factorial
+sage.combinat.q_analogues.q_catalan_number
+sage.combinat.q_analogues.qt_catalan_number
+sage.combinat.q_analogues.q_factorial
+sage.combinat.q_analogues.q_catalan_number
+sage.combinat.q_analogues.qt_catalan_number

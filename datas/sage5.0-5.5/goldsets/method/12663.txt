@@ -1,0 +1,2 @@
+sage.combinat.partition.Partitions_n._fast_iterator
+sage.combinat.partition.Partitions_n._fast_iterator

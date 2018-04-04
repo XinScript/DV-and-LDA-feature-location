@@ -1,0 +1,2 @@
+Trac #13143: Use mathjax by default
+Trac #13143: Use mathjax by default

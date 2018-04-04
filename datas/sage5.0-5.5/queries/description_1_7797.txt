@@ -1,0 +1,7 @@
+Trac #7797: A full wrapper for Singular's letterplace, rel #12988
+Trac #7797: A full wrapper for Singular's letterplace, rel #12988
+An alternative implementation of free algebras (faster arithmetic),
+introducing a UniqueFactory for free algebras.
+Degree-wise Groebner bases for twosided weighted homogeneous ideals in free algebras.
+Complete Groebner bases for weighted homogeneous twosided ideals of
+free algebras, provided they exist.

@@ -1,0 +1,2 @@
+Trac #4453: elliptic curves -- heegner_index command gives nonsense when rank > 1
+Trac #4453: elliptic curves -- heegner_index command gives nonsense when rank > 1

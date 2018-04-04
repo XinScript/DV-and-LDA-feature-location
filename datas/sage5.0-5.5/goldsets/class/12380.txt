@@ -1,0 +1,4 @@
+sage.combinat.words.finite_word.CallableFromListOfWords
+sage.combinat.words.finite_word.FiniteWord_class
+sage.combinat.words.finite_word.CallableFromListOfWords
+sage.combinat.words.finite_word.FiniteWord_class

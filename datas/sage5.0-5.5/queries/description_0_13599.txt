@@ -1,0 +1,2 @@
+Trac #13599: Bug in Graph.is_cartesian_product
+Trac #13599: Bug in Graph.is_cartesian_product

@@ -1,0 +1,2 @@
+Trac #12334: Trac #12334: Fix #optional syntax in sage/interfaces/lie.py.
+Trac #12334: Trac #12334: Fix #optional syntax in sage/interfaces/lie.py.

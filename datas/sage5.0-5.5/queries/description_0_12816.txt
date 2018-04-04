@@ -1,0 +1,2 @@
+Trac #12816: Massive amount of documentation in the Graph files. The main addition is a list of methods at the top of our three main graph files
+Trac #12816: Massive amount of documentation in the Graph files. The main addition is a list of methods at the top of our three main graph files

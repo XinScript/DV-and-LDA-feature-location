@@ -1,0 +1,2 @@
+Trac #13029: Ignore generated .h file.
+Trac #13029: Ignore generated .h file.

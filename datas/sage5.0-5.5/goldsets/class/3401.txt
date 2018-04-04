@@ -1,0 +1,4 @@
+sage.functions.exp_integral.Function_log_integral_offset
+sage.functions.exp_integral.Function_sin_integral
+sage.functions.exp_integral.Function_log_integral_offset
+sage.functions.exp_integral.Function_sin_integral

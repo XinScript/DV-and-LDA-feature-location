@@ -1,0 +1,2 @@
+Trac #13310: Fix :trac:`...` links when more than one is present in a docstring.
+Trac #13310: Fix :trac:`...` links when more than one is present in a docstring.

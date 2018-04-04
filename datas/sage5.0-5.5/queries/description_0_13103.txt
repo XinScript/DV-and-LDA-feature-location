@@ -1,0 +1,2 @@
+Trac #13103: Trac #13103: overloaded variety function for BooleanPolynomialIdeal
+Trac #13103: Trac #13103: overloaded variety function for BooleanPolynomialIdeal

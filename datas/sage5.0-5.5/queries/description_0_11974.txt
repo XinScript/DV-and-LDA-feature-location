@@ -1,0 +1,4 @@
+Trac #11974: Convert transformed functions to float before trying to substitute into symbolic expressions.
+Trac #11974: Convert transformed functions to float before trying to substitute into symbolic expressions.
+
+This takes care of cases where the function might return an object that is not a float, but can be cast into a float.  For example, see http://ask.sagemath.org/question/858/2d-interpolating-function-from-numpy-arrays-to and the new doctest.

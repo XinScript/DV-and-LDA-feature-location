@@ -1,0 +1,6 @@
+sage.graphs.generic_graph.GenericGraph.has_edge
+sage.graphs.generic_graph.GenericGraph.is_subgraph
+sage.graphs.generic_graph.GenericGraph.cluster_triangles
+sage.graphs.generic_graph.GenericGraph.has_edge
+sage.graphs.generic_graph.GenericGraph.is_subgraph
+sage.graphs.generic_graph.GenericGraph.cluster_triangles

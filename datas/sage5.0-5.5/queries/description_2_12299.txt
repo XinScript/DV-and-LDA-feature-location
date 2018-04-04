@@ -1,0 +1,4 @@
+Trac #12299: Advance Jmol Interactive Features in Flask Notebook:
+Trac #12299: Advance Jmol Interactive Features in Flask Notebook:
+new file sage/interfaces/jmoldata.py, for extracting data and
+generating static images from Jmol.

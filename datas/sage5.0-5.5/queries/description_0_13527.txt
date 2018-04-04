@@ -1,0 +1,2 @@
+Trac #13527: modify repr of SubsetAlgebra conform to standards set in #13404
+Trac #13527: modify repr of SubsetAlgebra conform to standards set in #13404

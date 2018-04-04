@@ -1,0 +1,6 @@
+sage.databases.cremona.LargeCremonaDatabase.allbsd
+sage.schemes.elliptic_curves.ell_rational_field.cremona_curves
+sage.databases.cremona.is_optimal_id
+sage.databases.cremona.LargeCremonaDatabase.allbsd
+sage.schemes.elliptic_curves.ell_rational_field.cremona_curves
+sage.databases.cremona.is_optimal_id

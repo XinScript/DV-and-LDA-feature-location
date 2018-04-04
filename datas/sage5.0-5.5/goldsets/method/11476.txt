@@ -1,0 +1,2 @@
+sage.combinat.partition_tuple.PartitionTuples_level_size.__setstate__
+sage.combinat.partition_tuple.PartitionTuples_level_size.__setstate__

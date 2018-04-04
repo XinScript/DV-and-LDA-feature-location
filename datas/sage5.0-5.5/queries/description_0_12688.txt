@@ -1,0 +1,2 @@
+Trac #12688: 12688: documentation for span constructor, update
+Trac #12688: 12688: documentation for span constructor, update

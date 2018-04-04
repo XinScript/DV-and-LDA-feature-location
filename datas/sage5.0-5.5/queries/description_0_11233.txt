@@ -1,0 +1,2 @@
+Trac #11233: Trac #11233: Add a doctest for an integral calculation fixed upstream in Maxima.
+Trac #11233: Trac #11233: Add a doctest for an integral calculation fixed upstream in Maxima.

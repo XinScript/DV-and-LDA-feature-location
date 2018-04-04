@@ -1,0 +1,2 @@
+sage.graphs.generic_graph.GenericGraph.delete_vertices
+sage.graphs.generic_graph.GenericGraph.delete_vertices

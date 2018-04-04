@@ -1,0 +1,14 @@
+sage.coding.code_constructions.CyclicCodeFromGeneratingPolynomial
+sage.coding.code_constructions.ExtendedQuadraticResidueCode
+sage.coding.code_constructions.ExtendedTernaryGolayCode
+sage.coding.code_constructions.LinearCodeFromCheckMatrix
+sage.coding.code_constructions.TernaryGolayCode
+sage.coding.code_constructions.WalshCode
+sage.coding.linear_code.LinearCodeFromVectorSpace
+sage.coding.code_constructions.CyclicCodeFromGeneratingPolynomial
+sage.coding.code_constructions.ExtendedQuadraticResidueCode
+sage.coding.code_constructions.ExtendedTernaryGolayCode
+sage.coding.code_constructions.LinearCodeFromCheckMatrix
+sage.coding.code_constructions.TernaryGolayCode
+sage.coding.code_constructions.WalshCode
+sage.coding.linear_code.LinearCodeFromVectorSpace

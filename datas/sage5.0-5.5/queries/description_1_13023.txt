@@ -1,0 +1,6 @@
+Trac #13023: Adjust toric import to reflect moved files.
+Trac #13023: Adjust toric import to reflect moved files.
+
+This patch was generated via
+sed -i s/generic.toric_/toric./ `find sage -type f`
+sed -i s/generic.fano_toric_/toric.fano_/ `find sage -type f`

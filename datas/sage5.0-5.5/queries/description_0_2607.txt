@@ -1,0 +1,2 @@
+Trac #2607: Switch the deprecation to the new syntax (see #13109)
+Trac #2607: Switch the deprecation to the new syntax (see #13109)

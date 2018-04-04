@@ -1,0 +1,2 @@
+Trac #13088: Adding a doctest to graphs.PaleyGraph
+Trac #13088: Adding a doctest to graphs.PaleyGraph

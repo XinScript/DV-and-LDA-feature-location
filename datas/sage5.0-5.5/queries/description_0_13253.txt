@@ -1,0 +1,2 @@
+Trac #13253: Fix a bug in Cusp.galois_action and also fix the documentation
+Trac #13253: Fix a bug in Cusp.galois_action and also fix the documentation

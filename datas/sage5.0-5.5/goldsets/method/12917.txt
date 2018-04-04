@@ -1,0 +1,4 @@
+sage.graphs.generic_graph.GenericGraph.tensor_product
+sage.graphs.graph.compare_edges
+sage.graphs.generic_graph.GenericGraph.tensor_product
+sage.graphs.graph.compare_edges

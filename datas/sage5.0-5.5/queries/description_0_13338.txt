@@ -1,0 +1,2 @@
+Trac #13338: fix stl_vector dependencies in module_list.py
+Trac #13338: fix stl_vector dependencies in module_list.py

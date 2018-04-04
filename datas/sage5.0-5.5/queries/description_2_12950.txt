@@ -1,0 +1,2 @@
+Trac #12950: Trac #12950: Fix doctests after infinities rewrite in Pynac.
+Trac #12950: Trac #12950: Fix doctests after infinities rewrite in Pynac.

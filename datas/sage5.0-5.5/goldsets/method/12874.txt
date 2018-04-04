@@ -1,0 +1,10 @@
+sage.graphs.digraph.DiGraph.is_transitive
+sage.graphs.graph.compare_edges
+sage.graphs.graph_generators.GraphGenerators.OddGraph
+sage.graphs.graph_generators.GraphGenerators.PermutationGraph
+sage.graphs.graph_generators.GraphGenerators.DorogovtsevGoltsevMendesGraph
+sage.graphs.digraph.DiGraph.is_transitive
+sage.graphs.graph.compare_edges
+sage.graphs.graph_generators.GraphGenerators.OddGraph
+sage.graphs.graph_generators.GraphGenerators.PermutationGraph
+sage.graphs.graph_generators.GraphGenerators.DorogovtsevGoltsevMendesGraph

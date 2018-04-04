@@ -1,0 +1,4 @@
+sage.groups.perm_gps.permgroup.PermutationGroup_subgroup
+sage.categories.groups.Groups
+sage.groups.perm_gps.permgroup.PermutationGroup_subgroup
+sage.categories.groups.Groups

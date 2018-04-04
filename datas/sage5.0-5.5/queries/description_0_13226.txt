@@ -1,0 +1,4 @@
+Trac #13226: Implement test for whether a simplicial complex is a pseudomanifold.
+Trac #13226: Implement test for whether a simplicial complex is a pseudomanifold.
+For pseudomanifolds, construct their suspension using Datta's one-point
+suspension.

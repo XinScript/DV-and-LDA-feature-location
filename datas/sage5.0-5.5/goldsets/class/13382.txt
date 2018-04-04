@@ -1,0 +1,2 @@
+sage.combinat.symmetric_group_representations.SymmetricGroupRepresentation_generic_class
+sage.combinat.symmetric_group_representations.SymmetricGroupRepresentation_generic_class

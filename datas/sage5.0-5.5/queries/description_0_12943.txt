@@ -1,0 +1,2 @@
+Trac #12943: fix detail in input checking for skew shapes
+Trac #12943: fix detail in input checking for skew shapes

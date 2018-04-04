@@ -1,0 +1,16 @@
+sage.combinat.sf.jack.Jack
+sage.combinat.sf.jack.JackPolynomials_generic
+sage.combinat.sf.jack.JackPolynomials_p
+sage.combinat.sf.jack.JackPolynomials_j
+sage.combinat.sf.jack.JackPolynomials_qp
+sage.combinat.sf.jack.SymmetricFunctionAlgebra_zonal
+sage.combinat.sf.new_kschur.KBoundedSubspaceBases
+sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic
+sage.combinat.sf.jack.Jack
+sage.combinat.sf.jack.JackPolynomials_generic
+sage.combinat.sf.jack.JackPolynomials_p
+sage.combinat.sf.jack.JackPolynomials_j
+sage.combinat.sf.jack.JackPolynomials_qp
+sage.combinat.sf.jack.SymmetricFunctionAlgebra_zonal
+sage.combinat.sf.new_kschur.KBoundedSubspaceBases
+sage.combinat.sf.sfa.SymmetricFunctionAlgebra_generic

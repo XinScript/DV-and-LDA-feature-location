@@ -1,0 +1,2 @@
+Trac #10655: mark a doctest in animate.py as 'optional -- ImageMagick'
+Trac #10655: mark a doctest in animate.py as 'optional -- ImageMagick'

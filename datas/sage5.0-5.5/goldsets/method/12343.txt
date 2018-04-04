@@ -1,0 +1,2 @@
+sage.databases.cunningham_tables.cunningham_prime_factors
+sage.databases.cunningham_tables.cunningham_prime_factors

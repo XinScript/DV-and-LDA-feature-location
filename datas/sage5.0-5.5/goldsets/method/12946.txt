@@ -1,0 +1,2 @@
+sage.combinat.composition.Compositions_constraints.__setstate__
+sage.combinat.composition.Compositions_constraints.__setstate__

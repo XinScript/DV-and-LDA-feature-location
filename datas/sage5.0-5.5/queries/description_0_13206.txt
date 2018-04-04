@@ -1,0 +1,2 @@
+Trac #13206: trac 13206: remove from __future__ import with_statement, it's not needed anymore since Python 2.6
+Trac #13206: trac 13206: remove from __future__ import with_statement, it's not needed anymore since Python 2.6

@@ -1,0 +1,2 @@
+Trac #10113: #10113: Properly initialise randstate c-data, even when the given arguments are wrong.
+Trac #10113: #10113: Properly initialise randstate c-data, even when the given arguments are wrong.

@@ -1,0 +1,6 @@
+sage.misc.bindable_class.BindableClass.__classget__
+sage.misc.bindable_class.BoundClass.__init__
+sage.misc.bindable_class.BoundClass.__repr__
+sage.misc.bindable_class.BindableClass.__classget__
+sage.misc.bindable_class.BoundClass.__init__
+sage.misc.bindable_class.BoundClass.__repr__

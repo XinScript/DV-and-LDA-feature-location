@@ -1,0 +1,2 @@
+Trac #12120: improve documentation of numerical_approx()
+Trac #12120: improve documentation of numerical_approx()

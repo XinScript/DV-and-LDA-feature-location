@@ -1,0 +1,2 @@
+Trac #12802: better checks for containment and equality of ideals, using Groebner bases
+Trac #12802: better checks for containment and equality of ideals, using Groebner bases

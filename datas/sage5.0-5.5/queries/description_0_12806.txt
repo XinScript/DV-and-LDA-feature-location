@@ -1,0 +1,2 @@
+Trac #12806: Trac 12806: fix error building documentation
+Trac #12806: Trac 12806: fix error building documentation

@@ -1,0 +1,4 @@
+sage.groups.perm_gps.permgroup_named.SymmetricGroup.young_subgroup
+sage.groups.perm_gps.permgroup_named.SymmetricGroup.major_index
+sage.groups.perm_gps.permgroup_named.SymmetricGroup.young_subgroup
+sage.groups.perm_gps.permgroup_named.SymmetricGroup.major_index

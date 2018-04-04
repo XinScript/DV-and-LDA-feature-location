@@ -1,0 +1,2 @@
+sage.calculus.calculus.symbolic_sum
+sage.calculus.calculus.symbolic_sum

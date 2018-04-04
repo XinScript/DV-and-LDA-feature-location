@@ -1,0 +1,2 @@
+Trac #12724: #12724: allow different normalizations for Eisenstein series
+Trac #12724: #12724: allow different normalizations for Eisenstein series

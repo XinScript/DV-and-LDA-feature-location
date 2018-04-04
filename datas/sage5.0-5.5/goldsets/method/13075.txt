@@ -1,0 +1,6 @@
+sage.graphs.graph_generators.GraphGenerators.ToroidalGrid2dGraph
+sage.graphs.graph_generators.GraphGenerators.Toroidal6RegularGrid2dGraph
+sage.graphs.graph_generators.GraphGenerators.Grid2dGraph
+sage.graphs.graph_generators.GraphGenerators.ToroidalGrid2dGraph
+sage.graphs.graph_generators.GraphGenerators.Toroidal6RegularGrid2dGraph
+sage.graphs.graph_generators.GraphGenerators.Grid2dGraph

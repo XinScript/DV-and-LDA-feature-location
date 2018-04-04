@@ -1,0 +1,10 @@
+sage.misc.cython.subtract_from_line_numbers
+sage.misc.cython.cython_create_local_so
+sage.misc.cython.sanitize
+sage.misc.preparser.load_attach_mode
+sage.tests.cmdline.test_executable
+sage.misc.cython.subtract_from_line_numbers
+sage.misc.cython.cython_create_local_so
+sage.misc.cython.sanitize
+sage.misc.preparser.load_attach_mode
+sage.tests.cmdline.test_executable

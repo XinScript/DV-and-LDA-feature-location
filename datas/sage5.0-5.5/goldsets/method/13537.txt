@@ -1,0 +1,2 @@
+sage.rings.polynomial.padics.polynomial_padic_capped_relative_dense._extend_by_infinity
+sage.rings.polynomial.padics.polynomial_padic_capped_relative_dense._extend_by_infinity

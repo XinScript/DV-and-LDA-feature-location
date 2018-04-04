@@ -1,0 +1,10 @@
+sage.categories.algebras_with_basis.AlgebrasWithBasis
+sage.categories.fields.Fields
+sage.categories.hopf_algebras_with_basis.HopfAlgebrasWithBasis
+sage.categories.rings.Rings
+sage.rings.number_field.number_field.NumberField_generic
+sage.categories.algebras_with_basis.AlgebrasWithBasis
+sage.categories.fields.Fields
+sage.categories.hopf_algebras_with_basis.HopfAlgebrasWithBasis
+sage.categories.rings.Rings
+sage.rings.number_field.number_field.NumberField_generic

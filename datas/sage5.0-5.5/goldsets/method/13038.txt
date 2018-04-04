@@ -1,0 +1,12 @@
+sage.graphs.graph_generators.GraphGenerators.ClebschGraph
+sage.graphs.graph_generators.GraphGenerators.DesarguesGraph
+sage.graphs.graph_generators.GraphGenerators.HoffmanGraph
+sage.graphs.graph_generators.GraphGenerators.CoxeterGraph
+sage.graphs.graph_generators.GraphGenerators.HoltGraph
+sage.graphs.graph_generators.GraphGenerators.LjubljanaGraph
+sage.graphs.graph_generators.GraphGenerators.ClebschGraph
+sage.graphs.graph_generators.GraphGenerators.DesarguesGraph
+sage.graphs.graph_generators.GraphGenerators.HoffmanGraph
+sage.graphs.graph_generators.GraphGenerators.CoxeterGraph
+sage.graphs.graph_generators.GraphGenerators.HoltGraph
+sage.graphs.graph_generators.GraphGenerators.LjubljanaGraph

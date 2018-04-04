@@ -1,0 +1,2 @@
+Trac #12513: fast_callable CDF powers are extreemly slow
+Trac #12513: fast_callable CDF powers are extreemly slow

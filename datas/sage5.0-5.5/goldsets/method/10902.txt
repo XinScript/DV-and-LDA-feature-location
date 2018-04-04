@@ -1,0 +1,6 @@
+sage.rings.function_field.function_field.RationalFunctionField.polynomial_ring
+sage.rings.polynomial.toy_variety.triangular_factorization
+sage.rings.polynomial.toy_variety.elim_pol
+sage.rings.function_field.function_field.RationalFunctionField.polynomial_ring
+sage.rings.polynomial.toy_variety.triangular_factorization
+sage.rings.polynomial.toy_variety.elim_pol

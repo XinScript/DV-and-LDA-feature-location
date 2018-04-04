@@ -1,0 +1,4 @@
+sage.rings.ideal.Ideal_principal
+sage.rings.polynomial.multi_polynomial_ideal.MPolynomialIdeal
+sage.rings.ideal.Ideal_principal
+sage.rings.polynomial.multi_polynomial_ideal.MPolynomialIdeal

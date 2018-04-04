@@ -1,0 +1,2 @@
+sage.rings.polynomial.multi_polynomial_ring.MPolynomialRing_polydict_domain.__init__
+sage.rings.polynomial.multi_polynomial_ring.MPolynomialRing_polydict_domain.__init__

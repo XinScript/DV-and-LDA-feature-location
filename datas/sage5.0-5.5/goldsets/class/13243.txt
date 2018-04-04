@@ -1,0 +1,6 @@
+sage.combinat.composition.Compositions_n
+sage.combinat.composition.Composition_class
+sage.combinat.permutation.StandardPermutations_descents
+sage.combinat.composition.Compositions_n
+sage.combinat.composition.Composition_class
+sage.combinat.permutation.StandardPermutations_descents

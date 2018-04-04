@@ -1,0 +1,4 @@
+sage.combinat.root_system.weyl_characters.WeylCharacterRing
+sage.combinat.root_system.weyl_characters.WeightRing
+sage.combinat.root_system.weyl_characters.WeylCharacterRing
+sage.combinat.root_system.weyl_characters.WeightRing

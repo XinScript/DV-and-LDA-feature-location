@@ -1,0 +1,2 @@
+Trac #13382: list functions from symmetric_group_representations in docs
+Trac #13382: list functions from symmetric_group_representations in docs

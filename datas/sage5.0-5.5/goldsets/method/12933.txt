@@ -1,0 +1,4 @@
+sage.graphs.digraph.DiGraph.is_strongly_connected
+sage.graphs.graph.compare_edges
+sage.graphs.digraph.DiGraph.is_strongly_connected
+sage.graphs.graph.compare_edges
