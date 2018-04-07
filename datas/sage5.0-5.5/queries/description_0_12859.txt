@@ -1,2 +1,0 @@
-Trac #12859: Corrected documentation in brandt.py
-Trac #12859: Corrected documentation in brandt.py

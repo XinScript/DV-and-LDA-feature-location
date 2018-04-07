@@ -1,2 +1,0 @@
-sage.rings.polynomial.term_order.termorder_from_singular
-sage.rings.polynomial.term_order.termorder_from_singular

@@ -1,2 +1,0 @@
-Trac #12557: Trac #12557: Fix RDF logarithms of small numbers
-Trac #12557: Trac #12557: Fix RDF logarithms of small numbers

@@ -1,2 +1,0 @@
-Trac #11309: Equate flipped comparisons: (x>y)==(y<x)
-Trac #11309: Equate flipped comparisons: (x>y)==(y<x)

@@ -1,2 +1,0 @@
-Trac #4529: Trac 4529 log plots - add a few more examples, doc formatting
-Trac #4529: Trac 4529 log plots - add a few more examples, doc formatting

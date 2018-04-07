@@ -1,2 +1,0 @@
-Trac #13508: Deprecate jsmath_avoid_list, add_to_jsmath_avoid_list
-Trac #13508: Deprecate jsmath_avoid_list, add_to_jsmath_avoid_list

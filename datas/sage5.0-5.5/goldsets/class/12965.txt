@@ -1,2 +1,0 @@
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice

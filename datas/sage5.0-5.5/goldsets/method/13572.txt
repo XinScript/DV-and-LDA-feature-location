@@ -1,2 +1,0 @@
-sage.combinat.ncsf_qsym.combinatorics.number_of_fCT
-sage.combinat.ncsf_qsym.combinatorics.number_of_fCT

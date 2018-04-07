@@ -1,2 +1,0 @@
-Trac #12836: arrows are shortened too much by default.
-Trac #12836: arrows are shortened too much by default.

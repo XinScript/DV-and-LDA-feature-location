@@ -1,2 +1,0 @@
-Trac #12503: add convenient readline extra commands
-Trac #12503: add convenient readline extra commands

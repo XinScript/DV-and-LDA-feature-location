@@ -1,2 +1,0 @@
-Trac #10742: Local solubility of conics over number fields
-Trac #10742: Local solubility of conics over number fields

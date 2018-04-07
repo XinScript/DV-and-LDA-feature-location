@@ -1,2 +1,0 @@
-Trac #12768: rebase 12768 to 13109: fix a deprecation
-Trac #12768: rebase 12768 to 13109: fix a deprecation

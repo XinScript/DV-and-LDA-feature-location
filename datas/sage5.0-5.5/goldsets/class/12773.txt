@@ -1,8 +1,0 @@
-sage.interfaces.r.RElement
-sage.interfaces.r.R
-sage.interfaces.r.RFunctionElement
-sage.interfaces.r.HelpExpression
-sage.interfaces.r.RElement
-sage.interfaces.r.R
-sage.interfaces.r.RFunctionElement
-sage.interfaces.r.HelpExpression

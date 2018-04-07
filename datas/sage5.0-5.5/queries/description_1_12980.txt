@@ -1,2 +1,0 @@
-Trac #12980: Harries-Wong graph generator and embedding
-Trac #12980: Harries-Wong graph generator and embedding

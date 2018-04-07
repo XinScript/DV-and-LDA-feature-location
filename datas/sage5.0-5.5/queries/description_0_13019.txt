@@ -1,2 +1,0 @@
-Trac #13019: Bugfix in GenericGraph.longest_path
-Trac #13019: Bugfix in GenericGraph.longest_path

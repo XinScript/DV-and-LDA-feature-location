@@ -1,2 +1,0 @@
-Trac #13045: deprecate matrix cholesky_decomposition method
-Trac #13045: deprecate matrix cholesky_decomposition method

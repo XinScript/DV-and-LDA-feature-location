@@ -1,6 +1,0 @@
-Trac #12831: #12831: implement the cartesian product of posets
-Trac #12831: #12831: implement the cartesian product of posets
-
-namely, the procedure "product"
-
-depends heavily on ticket #12770 !!!

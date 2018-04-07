@@ -1,6 +1,0 @@
-sage.plot.plot3d.texture.parse_color
-sage.plot.plot3d.texture.Texture_class._repr_
-sage.plot.plot3d.texture.Texture_class.jmol_str
-sage.plot.plot3d.texture.parse_color
-sage.plot.plot3d.texture.Texture_class._repr_
-sage.plot.plot3d.texture.Texture_class.jmol_str

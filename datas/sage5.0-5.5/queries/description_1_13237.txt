@@ -1,2 +1,0 @@
-Trac #13237: Fix doctests for Singular-3-1-5
-Trac #13237: Fix doctests for Singular-3-1-5

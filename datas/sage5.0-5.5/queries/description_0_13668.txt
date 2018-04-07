@@ -1,2 +1,0 @@
-Trac #13668: Fix the MemoryError in WordMorphism._fixed_point_iterator method
-Trac #13668: Fix the MemoryError in WordMorphism._fixed_point_iterator method

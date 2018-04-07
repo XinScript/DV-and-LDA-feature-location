@@ -1,2 +1,0 @@
-Trac #12299: make java dependent doctests in jmoldata.py optional
-Trac #12299: make java dependent doctests in jmoldata.py optional

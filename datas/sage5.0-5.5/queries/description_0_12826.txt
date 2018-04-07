@@ -1,2 +1,0 @@
-Trac #12826: Trac 12826: fix minpoly variable name for quadratic number fields
-Trac #12826: Trac 12826: fix minpoly variable name for quadratic number fields

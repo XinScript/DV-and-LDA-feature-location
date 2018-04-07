@@ -1,2 +1,0 @@
-sage.misc.functional.norm
-sage.misc.functional.norm

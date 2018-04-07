@@ -1,2 +1,0 @@
-Trac #10512: Add doc about the title which is moved up. Added x squares.
-Trac #10512: Add doc about the title which is moved up. Added x squares.

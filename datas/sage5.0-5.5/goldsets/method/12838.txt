@@ -1,2 +1,0 @@
-sage.combinat.root_system.root_system.WeylDim
-sage.combinat.root_system.root_system.WeylDim

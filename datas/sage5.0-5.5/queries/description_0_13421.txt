@@ -1,2 +1,0 @@
-Trac #13421: Remove signal handling around list(x)
-Trac #13421: Remove signal handling around list(x)

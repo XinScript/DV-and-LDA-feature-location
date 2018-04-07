@@ -1,2 +1,0 @@
-Trac #11455: add algorithm magma to conics
-Trac #11455: add algorithm magma to conics

@@ -1,2 +1,0 @@
-Trac #10444: Add documentation for optional keywords to top-level solve
-Trac #10444: Add documentation for optional keywords to top-level solve

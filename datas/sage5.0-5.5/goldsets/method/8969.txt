@@ -1,2 +1,0 @@
-sage.calculus.calculus.mapped_opts
-sage.calculus.calculus.mapped_opts

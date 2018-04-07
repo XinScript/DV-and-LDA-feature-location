@@ -1,2 +1,0 @@
-Trac #12838: #12838: root poset now treats type A1 properly
-Trac #12838: #12838: root poset now treats type A1 properly

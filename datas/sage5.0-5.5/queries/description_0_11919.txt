@@ -1,2 +1,0 @@
-Trac #11919: Trac #11919: fix deepcopy of symbolic functions.
-Trac #11919: Trac #11919: fix deepcopy of symbolic functions.

@@ -1,2 +1,0 @@
-sage.graphs.graph_coloring.grundy_coloring
-sage.graphs.graph_coloring.grundy_coloring

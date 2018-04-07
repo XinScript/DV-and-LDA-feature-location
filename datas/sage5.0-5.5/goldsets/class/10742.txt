@@ -1,2 +1,0 @@
-sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field
-sage.schemes.plane_conics.con_number_field.ProjectiveConic_number_field

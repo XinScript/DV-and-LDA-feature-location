@@ -1,2 +1,0 @@
-sage.rings.polynomial.multi_polynomial_element.MPolynomial_element.__rpow__
-sage.rings.polynomial.multi_polynomial_element.MPolynomial_element.__rpow__

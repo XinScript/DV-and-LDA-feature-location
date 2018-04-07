@@ -1,2 +1,0 @@
-Trac #13335: reorder matrix_*.pyx library dependencies
-Trac #13335: reorder matrix_*.pyx library dependencies

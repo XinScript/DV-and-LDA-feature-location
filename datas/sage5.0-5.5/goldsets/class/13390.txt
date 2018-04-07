@@ -1,2 +1,0 @@
-sage.sets.non_negative_integers.NonNegativeIntegers
-sage.sets.non_negative_integers.NonNegativeIntegers

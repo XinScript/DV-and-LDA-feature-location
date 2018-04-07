@@ -1,4 +1,0 @@
-sage.graphs.generic_graph.GenericGraph.canonical_label
-sage.graphs.generic_graph.graph_isom_equivalent_non_edge_labeled_graph
-sage.graphs.generic_graph.GenericGraph.canonical_label
-sage.graphs.generic_graph.graph_isom_equivalent_non_edge_labeled_graph

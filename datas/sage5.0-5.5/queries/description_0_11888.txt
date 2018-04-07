@@ -1,2 +1,0 @@
-Trac #11888: Trac 11888: add the lambert_w symbolic function
-Trac #11888: Trac 11888: add the lambert_w symbolic function

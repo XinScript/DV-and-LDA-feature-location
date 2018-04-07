@@ -1,2 +1,0 @@
-Trac #12808: #12808: Make the ClasscallMetaclass an extension type of type.
-Trac #12808: #12808: Make the ClasscallMetaclass an extension type of type.

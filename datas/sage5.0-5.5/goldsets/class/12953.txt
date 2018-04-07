@@ -1,8 +1,0 @@
-sage.misc.bindable_class.BindableClass
-sage.misc.bindable_class.BoundClass
-sage.misc.bindable_class.Inner2
-sage.misc.bindable_class.Outer
-sage.misc.bindable_class.BindableClass
-sage.misc.bindable_class.BoundClass
-sage.misc.bindable_class.Inner2
-sage.misc.bindable_class.Outer

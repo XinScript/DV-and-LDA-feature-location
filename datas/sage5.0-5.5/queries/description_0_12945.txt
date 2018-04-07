@@ -1,2 +1,0 @@
-Trac #12945: Add some doctests, minor fixes
-Trac #12945: Add some doctests, minor fixes

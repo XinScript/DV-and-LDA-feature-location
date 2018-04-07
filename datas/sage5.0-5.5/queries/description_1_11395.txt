@@ -1,2 +1,0 @@
-Trac #11395: upgrade to gfan 0.5. Fix tutorials.
-Trac #11395: upgrade to gfan 0.5. Fix tutorials.

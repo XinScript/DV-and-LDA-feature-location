@@ -1,8 +1,0 @@
-sage.sandpiles.sandpile.aztec_sandpile
-sage.sandpiles.sandpile.random_digraph
-sage.sandpiles.sandpile.random_DAG
-sage.sandpiles.sandpile.random_tree
-sage.sandpiles.sandpile.aztec_sandpile
-sage.sandpiles.sandpile.random_digraph
-sage.sandpiles.sandpile.random_DAG
-sage.sandpiles.sandpile.random_tree

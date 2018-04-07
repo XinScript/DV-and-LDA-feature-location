@@ -1,2 +1,0 @@
-Trac #13075: Graph constructor for Hexagonal Toroidal grids.
-Trac #13075: Graph constructor for Hexagonal Toroidal grids.

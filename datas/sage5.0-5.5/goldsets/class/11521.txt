@@ -1,2 +1,0 @@
-sage.modular.modsym.ambient.ModularSymbolsAmbient
-sage.modular.modsym.ambient.ModularSymbolsAmbient

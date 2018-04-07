@@ -1,2 +1,0 @@
-Trac #11996: Trac 11996: fix LaTeX representation of subgroups of permutation groups
-Trac #11996: Trac 11996: fix LaTeX representation of subgroups of permutation groups

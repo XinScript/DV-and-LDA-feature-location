@@ -1,2 +1,0 @@
-Trac #13520: integration and differentiation of cubic splines
-Trac #13520: integration and differentiation of cubic splines

@@ -1,2 +1,0 @@
-sage.combinat.partition_tuple.PartitionTuples_level_size
-sage.combinat.partition_tuple.PartitionTuples_level_size

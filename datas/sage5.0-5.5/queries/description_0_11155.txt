@@ -1,2 +1,0 @@
-Trac #11155: added doctest for bugfix #11155
-Trac #11155: added doctest for bugfix #11155

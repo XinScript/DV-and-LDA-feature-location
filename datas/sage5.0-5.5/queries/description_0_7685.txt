@@ -1,2 +1,0 @@
-Trac #7685: Trac #7685: improve Integer.factor docstring
-Trac #7685: Trac #7685: improve Integer.factor docstring

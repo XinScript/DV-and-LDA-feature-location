@@ -1,2 +1,0 @@
-Trac #13308: fix a bug in eigenspaces_left when format='all'
-Trac #13308: fix a bug in eigenspaces_left when format='all'

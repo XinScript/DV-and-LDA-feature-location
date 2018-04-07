@@ -1,2 +1,0 @@
-Trac #11310: Replace "raise Exception" by "raise RuntimeError", replace "except:" by "except StandardError:"
-Trac #11310: Replace "raise Exception" by "raise RuntimeError", replace "except:" by "except StandardError:"

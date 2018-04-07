@@ -1,2 +1,0 @@
-Trac #13159: Cache the number of arguments of a cached method, to avoid repeated source inspection.
-Trac #13159: Cache the number of arguments of a cached method, to avoid repeated source inspection.

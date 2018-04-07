@@ -1,4 +1,0 @@
-sage.combinat.posets.hasse_diagram.HasseDiagram
-sage.combinat.posets.posets.FinitePoset
-sage.combinat.posets.hasse_diagram.HasseDiagram
-sage.combinat.posets.posets.FinitePoset

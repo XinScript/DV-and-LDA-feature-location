@@ -1,2 +1,0 @@
-Trac #12861: implement maximal_order for all QQ-quaternion algebras
-Trac #12861: implement maximal_order for all QQ-quaternion algebras

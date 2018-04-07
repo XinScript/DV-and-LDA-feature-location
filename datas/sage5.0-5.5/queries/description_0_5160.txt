@@ -1,2 +1,0 @@
-Trac #5160: Rename sagex_ds.pyx to binary_tree.pyx
-Trac #5160: Rename sagex_ds.pyx to binary_tree.pyx

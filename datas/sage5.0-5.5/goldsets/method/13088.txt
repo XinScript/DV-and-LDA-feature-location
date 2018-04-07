@@ -1,4 +1,0 @@
-sage.graphs.graph_generators.GraphGenerators.PermutationGraph
-sage.graphs.graph_generators.GraphGenerators.PaleyGraph
-sage.graphs.graph_generators.GraphGenerators.PermutationGraph
-sage.graphs.graph_generators.GraphGenerators.PaleyGraph

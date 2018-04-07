@@ -1,4 +1,0 @@
-sage.graphs.graph_generators.GraphGenerators.HoltGraph
-sage.graphs.graph_generators.GraphGenerators.PermutationGraph
-sage.graphs.graph_generators.GraphGenerators.HoltGraph
-sage.graphs.graph_generators.GraphGenerators.PermutationGraph

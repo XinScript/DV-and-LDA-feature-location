@@ -1,2 +1,0 @@
-Trac #13082: Allow R^(n,m) to create a matrix space.
-Trac #13082: Allow R^(n,m) to create a matrix space.

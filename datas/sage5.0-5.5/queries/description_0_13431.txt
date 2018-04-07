@@ -1,2 +1,0 @@
-Trac #13431: for permutations, adds sign as an alias for signature
-Trac #13431: for permutations, adds sign as an alias for signature

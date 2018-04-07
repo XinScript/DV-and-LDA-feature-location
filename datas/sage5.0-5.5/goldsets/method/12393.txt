@@ -1,2 +1,0 @@
-sage.rings.number_field.number_field_ideal.basis_to_module
-sage.rings.number_field.number_field_ideal.basis_to_module

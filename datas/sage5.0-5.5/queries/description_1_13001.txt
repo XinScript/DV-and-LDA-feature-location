@@ -1,2 +1,0 @@
-Trac #13001: Trac 13001: rebase documentation improvements from #1173 to sage-5.0
-Trac #13001: Trac 13001: rebase documentation improvements from #1173 to sage-5.0

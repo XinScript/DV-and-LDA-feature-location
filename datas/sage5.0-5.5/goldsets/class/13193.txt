@@ -1,2 +1,0 @@
-sage.functions.other.Function_gamma_inc
-sage.functions.other.Function_gamma_inc

@@ -1,2 +1,0 @@
-Trac #13134: Fix ulp() in RealDoubleField
-Trac #13134: Fix ulp() in RealDoubleField

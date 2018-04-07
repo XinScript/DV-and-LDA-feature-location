@@ -1,2 +1,0 @@
-Trac #12975: trac #12975: cython() now accepts C++ in the clang pragma, not only c++
-Trac #12975: trac #12975: cython() now accepts C++ in the clang pragma, not only c++

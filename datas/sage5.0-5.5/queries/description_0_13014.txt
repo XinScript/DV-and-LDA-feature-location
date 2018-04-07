@@ -1,2 +1,0 @@
-Trac #13014: Trac #13014: try QQ coercion for lcm of symbolic expressions.
-Trac #13014: Trac #13014: try QQ coercion for lcm of symbolic expressions.

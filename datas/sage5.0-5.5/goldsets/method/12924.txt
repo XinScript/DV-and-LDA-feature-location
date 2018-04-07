@@ -1,2 +1,0 @@
-sage.combinat.schubert_polynomial.SchubertPolynomialRing_xbasis._multiply_basis
-sage.combinat.schubert_polynomial.SchubertPolynomialRing_xbasis._multiply_basis

@@ -1,2 +1,0 @@
-Trac #11930: 11930 disallow non-smooth hyperelliptic curves
-Trac #11930: 11930 disallow non-smooth hyperelliptic curves

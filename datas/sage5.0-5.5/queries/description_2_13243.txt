@@ -1,2 +1,0 @@
-Trac #13243: new methods for compositions (changes based on first review)
-Trac #13243: new methods for compositions (changes based on first review)

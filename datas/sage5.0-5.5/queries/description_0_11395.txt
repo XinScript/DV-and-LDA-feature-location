@@ -1,2 +1,0 @@
-Trac #11395: Trivial doctest fix
-Trac #11395: Trivial doctest fix

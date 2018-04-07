@@ -1,8 +1,0 @@
-Trac #12544: Switch cones to using PointCollection for ray generators instead of tuples.
-Trac #12544: Switch cones to using PointCollection for ray generators instead of tuples.
-* * *
-Adjust doctests to new cone.rays() output.
-* * *
-Add deprecation warnings to old-style ray handling methods, stop using them.
-* * *
-Transpose the matrix of PointCollection to make matrix(pc)==pc.matrix().

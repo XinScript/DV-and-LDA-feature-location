@@ -1,2 +1,0 @@
-Trac #13506: This patch adds the Monomial non-commutative symmetric functions to sage.
-Trac #13506: This patch adds the Monomial non-commutative symmetric functions to sage.

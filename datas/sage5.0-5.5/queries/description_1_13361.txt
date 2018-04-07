@@ -1,2 +1,0 @@
-Trac #13361: Fix commandline doctest for sage -startuptime
-Trac #13361: Fix commandline doctest for sage -startuptime

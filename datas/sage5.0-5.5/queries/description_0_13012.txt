@@ -1,2 +1,0 @@
-Trac #13012: Prevent MatrixSpace from constructing zero matrices from unsuitable data.
-Trac #13012: Prevent MatrixSpace from constructing zero matrices from unsuitable data.

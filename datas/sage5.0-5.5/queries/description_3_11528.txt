@@ -1,2 +1,0 @@
-Trac #11528: Trac 11528: Added methods "delete_rows" and "delete_columns" to matrix.
-Trac #11528: Trac 11528: Added methods "delete_rows" and "delete_columns" to matrix.

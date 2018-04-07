@@ -1,2 +1,0 @@
-Trac #12939: Allow univariate polynomials to be evaluated at lists, i.e. f([3]) := f(3)
-Trac #12939: Allow univariate polynomials to be evaluated at lists, i.e. f([3]) := f(3)

@@ -1,2 +1,0 @@
-Trac #13582: Developer's guide: info about environment variables and doctesting
-Trac #13582: Developer's guide: info about environment variables and doctesting

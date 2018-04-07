@@ -1,2 +1,0 @@
-Trac #10795: QR decomposition documentation formatting
-Trac #10795: QR decomposition documentation formatting

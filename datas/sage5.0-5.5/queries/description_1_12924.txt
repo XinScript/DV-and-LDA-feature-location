@@ -1,2 +1,0 @@
-Trac #12924: #N: Fixing non checking bug on Schubert polynomias via symmetrica
-Trac #12924: #N: Fixing non checking bug on Schubert polynomias via symmetrica

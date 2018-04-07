@@ -1,2 +1,0 @@
-sage.graphs.isgci.GraphClasses._parse_db
-sage.graphs.isgci.GraphClasses._parse_db

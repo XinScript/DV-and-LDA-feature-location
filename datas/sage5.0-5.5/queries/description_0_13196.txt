@@ -1,2 +1,0 @@
-Trac #13196: Trac 13196: Slight improvement, avoid copying matrix
-Trac #13196: Trac 13196: Slight improvement, avoid copying matrix

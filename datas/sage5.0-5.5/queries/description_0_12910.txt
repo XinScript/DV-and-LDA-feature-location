@@ -1,2 +1,0 @@
-Trac #12910: Trac 12910: Graph and DiGraph now take an empty list as input
-Trac #12910: Trac 12910: Graph and DiGraph now take an empty list as input

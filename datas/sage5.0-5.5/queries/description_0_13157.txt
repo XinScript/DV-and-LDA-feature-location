@@ -1,2 +1,0 @@
-Trac #13157: Fix inline_fortran
-Trac #13157: Fix inline_fortran

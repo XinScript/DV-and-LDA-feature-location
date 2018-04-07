@@ -1,4 +1,0 @@
-Trac #6812: #6812: integer vectors modulo a permgroup includind further speed-up by
-Trac #6812: #6812: integer vectors modulo a permgroup includind further speed-up by
-using Cython sets for orbits; small fixes in the docs and an additional doc
-test, fixing a corner case.

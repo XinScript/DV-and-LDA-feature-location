@@ -1,2 +1,0 @@
-sage.misc.sageinspect.sage_getargspec
-sage.misc.sageinspect.sage_getargspec

@@ -1,2 +1,0 @@
-Trac #13419: clean-up of quartic curves + doc
-Trac #13419: clean-up of quartic curves + doc

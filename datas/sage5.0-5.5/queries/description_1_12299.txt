@@ -1,2 +1,0 @@
-Trac #12299: reinsert java headless option
-Trac #12299: reinsert java headless option

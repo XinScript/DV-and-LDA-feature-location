@@ -1,2 +1,0 @@
-Trac #13013: Trac #13013: Minor fixes for Python 2.7.3
-Trac #13013: Trac #13013: Minor fixes for Python 2.7.3

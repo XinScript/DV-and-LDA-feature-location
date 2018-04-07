@@ -1,2 +1,0 @@
-Trac #13704: fix _div_ in multivariate rings
-Trac #13704: fix _div_ in multivariate rings

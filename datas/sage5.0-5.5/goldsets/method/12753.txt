@@ -1,2 +1,0 @@
-sage.rings.field.is_PrimeField
-sage.rings.field.is_PrimeField

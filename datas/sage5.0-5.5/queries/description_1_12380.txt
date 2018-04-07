@@ -1,2 +1,0 @@
-Trac #12380: move methods of nfactor_enumerable_words to finite_words
-Trac #12380: move methods of nfactor_enumerable_words to finite_words

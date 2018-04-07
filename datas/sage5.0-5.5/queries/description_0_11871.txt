@@ -1,2 +1,0 @@
-Trac #11871: Fix cellular automaton interact: add a doctest, fix a few small errors.
-Trac #11871: Fix cellular automaton interact: add a doctest, fix a few small errors.

@@ -1,2 +1,0 @@
-Trac #13406: Optimize CombinatorialFreeModule.Element._vector_
-Trac #13406: Optimize CombinatorialFreeModule.Element._vector_

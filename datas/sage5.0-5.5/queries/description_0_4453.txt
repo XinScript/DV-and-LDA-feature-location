@@ -1,2 +1,0 @@
-Trac #4453: Fix doctest broken by #4453.
-Trac #4453: Fix doctest broken by #4453.

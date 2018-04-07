@@ -1,2 +1,0 @@
-sage.plot.plot3d.texture.Texture_class
-sage.plot.plot3d.texture.Texture_class

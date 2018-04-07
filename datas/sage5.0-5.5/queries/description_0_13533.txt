@@ -1,2 +1,0 @@
-Trac #13533: No longer mark Cython tests as "optional - gcc"
-Trac #13533: No longer mark Cython tests as "optional - gcc"

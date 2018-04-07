@@ -1,2 +1,0 @@
-Trac #11775: trac 11775: make pretty_print accept multiple arguments (rebased to #12156)
-Trac #11775: trac 11775: make pretty_print accept multiple arguments (rebased to #12156)

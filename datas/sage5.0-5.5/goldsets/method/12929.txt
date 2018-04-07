@@ -1,2 +1,0 @@
-sage.graphs.graph_plot.GraphPlot.set_vertices
-sage.graphs.graph_plot.GraphPlot.set_vertices

@@ -1,2 +1,0 @@
-Trac #13336: fix linking problem for farey_symbol.pyx on Cygwin
-Trac #13336: fix linking problem for farey_symbol.pyx on Cygwin

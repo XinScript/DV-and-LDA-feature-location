@@ -1,2 +1,0 @@
-sage.plot.plot3d.list_plot3d.list_plot3d_tuples
-sage.plot.plot3d.list_plot3d.list_plot3d_tuples

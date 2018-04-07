@@ -1,2 +1,0 @@
-Trac #12393: #12393: reset state of sage after a few doctests that change it.
-Trac #12393: #12393: reset state of sage after a few doctests that change it.

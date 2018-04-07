@@ -1,6 +1,0 @@
-Trac #3401: add symbolic Li
-Trac #3401: add symbolic Li
-* * *
-Trac 3401: reviewer patch, cleans up whitespace and docstring formatting
-* * *
-trac 3401: adding symbolic Li

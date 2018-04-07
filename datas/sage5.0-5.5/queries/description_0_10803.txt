@@ -1,2 +1,0 @@
-Trac #10803: fixed #10803: critical bug in real_roots
-Trac #10803: fixed #10803: critical bug in real_roots

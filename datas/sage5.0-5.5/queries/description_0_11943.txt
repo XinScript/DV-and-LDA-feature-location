@@ -1,5 +1,0 @@
-Trac #11943: #11943: Order the super categories of a category according to Python's method resolution order
-Trac #11943: #11943: Order the super categories of a category according to Python's method resolution order
-Introduce lazy-attribute versions of super_categories and all_super_categories, for
-getting a speed-up. Allow to use a shortpath in is_subcategory, by using _subcategory_hook_.
-Use subclass check on parent classes to determine subcategories.

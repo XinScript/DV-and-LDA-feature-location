@@ -1,2 +1,0 @@
-Trac #12964: multiply matrix of matrices by a scalar: boom
-Trac #12964: multiply matrix of matrices by a scalar: boom

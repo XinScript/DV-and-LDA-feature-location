@@ -1,4 +1,0 @@
-sage.interfaces.lie.LiEElement
-sage.interfaces.lie.LiEFunction
-sage.interfaces.lie.LiEElement
-sage.interfaces.lie.LiEFunction

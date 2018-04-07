@@ -1,2 +1,0 @@
-Trac #13385: Document when installation of openssl, pyopenssl are needed.
-Trac #13385: Document when installation of openssl, pyopenssl are needed.

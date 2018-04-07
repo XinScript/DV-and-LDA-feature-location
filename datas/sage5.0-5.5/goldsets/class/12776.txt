@@ -1,2 +1,0 @@
-sage.interfaces.maxima_lib.MaximaLibElement
-sage.interfaces.maxima_lib.MaximaLibElement

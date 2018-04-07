@@ -1,2 +1,0 @@
-Trac #12956: #12956: Let categories override the default implementation of __getitem__ in Parent
-Trac #12956: #12956: Let categories override the default implementation of __getitem__ in Parent

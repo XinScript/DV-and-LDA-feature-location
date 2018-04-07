@@ -1,2 +1,0 @@
-Trac #8969: Trac #8969: allow conversion of != from maxima strings
-Trac #8969: Trac #8969: allow conversion of != from maxima strings

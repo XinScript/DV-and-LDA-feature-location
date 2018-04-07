@@ -1,2 +1,0 @@
-Trac #13676: Adding a method _latex_ to WordMorphism class
-Trac #13676: Adding a method _latex_ to WordMorphism class

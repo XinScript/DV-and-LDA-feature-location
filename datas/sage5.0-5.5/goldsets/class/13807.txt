@@ -1,2 +1,0 @@
-sage.plot.animate.Animation
-sage.plot.animate.Animation

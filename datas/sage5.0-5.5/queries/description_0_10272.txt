@@ -1,2 +1,0 @@
-Trac #10272: Trac 10272: fix LaurentSeries.truncate()
-Trac #10272: Trac 10272: fix LaurentSeries.truncate()

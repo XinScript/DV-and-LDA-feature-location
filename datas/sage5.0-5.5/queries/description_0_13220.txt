@@ -1,2 +1,0 @@
-Trac #13220: Fix a bug in morphisms of chain complexes.
-Trac #13220: Fix a bug in morphisms of chain complexes.

@@ -1,2 +1,0 @@
-Trac #13373: Fix documentation of $SAGE_SERVER
-Trac #13373: Fix documentation of $SAGE_SERVER

@@ -1,2 +1,0 @@
-Trac #12773: referee patch: in r.py, don't import iskeyword and LatexExpr at the top level.
-Trac #12773: referee patch: in r.py, don't import iskeyword and LatexExpr at the top level.

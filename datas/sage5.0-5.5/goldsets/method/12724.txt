@@ -1,2 +1,0 @@
-sage.modular.modform.eis_series.eisenstein_series_qexp
-sage.modular.modform.eis_series.eisenstein_series_qexp

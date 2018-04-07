@@ -1,2 +1,0 @@
-Trac #11930: 11930 is_singular for hyperelliptic curves
-Trac #11930: 11930 is_singular for hyperelliptic curves

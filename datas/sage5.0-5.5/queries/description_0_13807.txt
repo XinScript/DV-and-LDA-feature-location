@@ -1,2 +1,0 @@
-Trac #13807: import graphics_filename from the right place
-Trac #13807: import graphics_filename from the right place

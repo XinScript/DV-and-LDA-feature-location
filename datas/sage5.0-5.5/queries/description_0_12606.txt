@@ -1,2 +1,0 @@
-Trac #12606: Test and document sage --info [packages]
-Trac #12606: Test and document sage --info [packages]

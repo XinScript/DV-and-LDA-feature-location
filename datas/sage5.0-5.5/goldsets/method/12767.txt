@@ -1,8 +1,0 @@
-sage.rings.number_field.number_field_rel.NumberField_relative_v1
-sage.rings.number_field.number_field.NumberField_generic.reduced_gram_matrix
-sage.rings.number_field.number_field.NumberField_generic._positive_integral_elements_with_trace
-sage.rings.number_field.number_field_ideal.basis_to_module
-sage.rings.number_field.number_field_rel.NumberField_relative_v1
-sage.rings.number_field.number_field.NumberField_generic.reduced_gram_matrix
-sage.rings.number_field.number_field.NumberField_generic._positive_integral_elements_with_trace
-sage.rings.number_field.number_field_ideal.basis_to_module

@@ -1,2 +1,0 @@
-sage.rings.infinity.PlusInfinity
-sage.rings.infinity.PlusInfinity

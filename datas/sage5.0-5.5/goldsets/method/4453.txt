@@ -1,4 +1,0 @@
-sage.schemes.elliptic_curves.heegner.heegner_index
-sage.schemes.elliptic_curves.heegner.heegner_point_height
-sage.schemes.elliptic_curves.heegner.heegner_index
-sage.schemes.elliptic_curves.heegner.heegner_point_height

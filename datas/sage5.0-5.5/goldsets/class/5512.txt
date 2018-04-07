@@ -1,2 +1,0 @@
-sage.combinat.species.structure.SpeciesStructureWrapper
-sage.combinat.species.structure.SpeciesStructureWrapper

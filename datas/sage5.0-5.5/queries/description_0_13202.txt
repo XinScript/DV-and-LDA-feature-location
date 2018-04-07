@@ -1,2 +1,0 @@
-Trac #13202: Indices in pbori.pyx obey variable order (degrevlex), added degneglex (Trac #13202)
-Trac #13202: Indices in pbori.pyx obey variable order (degrevlex), added degneglex (Trac #13202)

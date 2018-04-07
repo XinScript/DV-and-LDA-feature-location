@@ -1,2 +1,0 @@
-Trac #13104: Trac #13104: fix incorrect behavior of BooleanPolynomial.variables() on the constant 1
-Trac #13104: Trac #13104: fix incorrect behavior of BooleanPolynomial.variables() on the constant 1

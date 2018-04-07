@@ -1,2 +1,0 @@
-Trac #12999: Invalidate order comparisons of Color objects
-Trac #12999: Invalidate order comparisons of Color objects

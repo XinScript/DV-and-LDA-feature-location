@@ -1,2 +1,0 @@
-Trac #11383: trac 11383: added Color.__eq__, Color.__ne__ and Color.__hash__
-Trac #11383: trac 11383: added Color.__eq__, Color.__ne__ and Color.__hash__

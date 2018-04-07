@@ -1,6 +1,0 @@
-sage.schemes.plane_quartics.quartic_constructor.QuarticCurve
-sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic._repr_type
-sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic.genus
-sage.schemes.plane_quartics.quartic_constructor.QuarticCurve
-sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic._repr_type
-sage.schemes.plane_quartics.quartic_generic.QuarticCurve_generic.genus

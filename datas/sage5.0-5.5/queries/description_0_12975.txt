@@ -1,2 +1,0 @@
-Trac #12975: #12975: Adding a doctest for C++ cython pragma
-Trac #12975: #12975: Adding a doctest for C++ cython pragma

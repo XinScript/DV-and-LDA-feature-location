@@ -1,7 +1,0 @@
-Trac #13563: Implementation of spinor KR crystals B^{r,s} of type D_n^{(1)} for r=n-1,n and bug fixes in crystal code
-Trac #13563: Implementation of spinor KR crystals B^{r,s} of type D_n^{(1)} for r=n-1,n and bug fixes in crystal code
-
-This patch implements
-- the spinor Kirillov-Reshetikhin crystals `B^{r,s}` of type `D_n^{(1)}` for `r=n-1,n`.
-- fixes a bug in the module_generator method in CrystalOfTableaux for type `D_n`, when the last entry is negative (i.e. in the odd spinor case).
-- fixes the documentation of Demazure operators in crystals and makes them use free modules instead of lists.

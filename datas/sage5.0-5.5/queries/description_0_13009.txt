@@ -1,2 +1,0 @@
-Trac #13009: trac 13009: fix up some doctests in graphics.py
-Trac #13009: trac 13009: fix up some doctests in graphics.py

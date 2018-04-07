@@ -1,6 +1,0 @@
-sage.graphs.graph_generators.GraphGenerators.EllinghamHorton54Graph
-sage.graphs.graph_generators.GraphGenerators.ErreraGraph
-sage.graphs.graph_generators.GraphGenerators.EllinghamHorton78Graph
-sage.graphs.graph_generators.GraphGenerators.EllinghamHorton54Graph
-sage.graphs.graph_generators.GraphGenerators.ErreraGraph
-sage.graphs.graph_generators.GraphGenerators.EllinghamHorton78Graph

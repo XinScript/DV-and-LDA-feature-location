@@ -1,2 +1,0 @@
-Trac #6367: fix docs for polygon2d so they are actually correct
-Trac #6367: fix docs for polygon2d so they are actually correct

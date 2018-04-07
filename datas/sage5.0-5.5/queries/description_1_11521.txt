@@ -1,2 +1,0 @@
-Trac #11521: Use a callback function, so that an item in the homset cache is removed if the homset dies.
-Trac #11521: Use a callback function, so that an item in the homset cache is removed if the homset dies.

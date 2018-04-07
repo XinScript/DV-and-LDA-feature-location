@@ -1,4 +1,0 @@
-sage.sat.boolean_polynomials.solve
-sage.sat.boolean_polynomials.learn
-sage.sat.boolean_polynomials.solve
-sage.sat.boolean_polynomials.learn

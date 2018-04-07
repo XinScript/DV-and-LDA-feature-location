@@ -1,2 +1,0 @@
-sage.combinat.partition.Partitions_n
-sage.combinat.partition.Partitions_n

@@ -1,8 +1,0 @@
-sage.rings.padics.factory.pAdicExtension_class
-sage.rings.padics.local_generic.LocalGeneric
-sage.schemes.generic.algebraic_scheme.AlgebraicScheme
-sage.schemes.generic.projective_space.ProjectiveSpace_field
-sage.rings.padics.factory.pAdicExtension_class
-sage.rings.padics.local_generic.LocalGeneric
-sage.schemes.generic.algebraic_scheme.AlgebraicScheme
-sage.schemes.generic.projective_space.ProjectiveSpace_field

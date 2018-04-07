@@ -1,2 +1,0 @@
-Trac #13575: Add flexibility when creating exclusion-clauses using 'solve' from boolean_polynomials.py
-Trac #13575: Add flexibility when creating exclusion-clauses using 'solve' from boolean_polynomials.py

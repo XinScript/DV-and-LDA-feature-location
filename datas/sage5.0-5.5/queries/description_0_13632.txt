@@ -1,2 +1,0 @@
-Trac #13632: fix latex display of symbolic function arguments
-Trac #13632: fix latex display of symbolic function arguments

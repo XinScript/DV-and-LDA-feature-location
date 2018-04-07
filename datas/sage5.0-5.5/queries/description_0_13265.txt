@@ -1,2 +1,0 @@
-Trac #13265: Fix missing attributes of BooleConstant (Trac #13265)
-Trac #13265: Fix missing attributes of BooleConstant (Trac #13265)

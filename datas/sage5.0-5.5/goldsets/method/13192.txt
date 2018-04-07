@@ -1,2 +1,0 @@
-sage.graphs.graph.compare_edges
-sage.graphs.graph.compare_edges

@@ -1,2 +1,0 @@
-sage.graphs.generic_graph.GenericGraph.longest_path
-sage.graphs.generic_graph.GenericGraph.longest_path

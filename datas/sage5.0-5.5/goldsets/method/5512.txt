@@ -1,2 +1,0 @@
-sage.combinat.species.structure.SpeciesStructureWrapper.__init__
-sage.combinat.species.structure.SpeciesStructureWrapper.__init__

@@ -1,4 +1,0 @@
-sage.combinat.iet.template.PermutationLI.is_irreducible
-sage.combinat.iet.template.PermutationLI.has_right_rauzy_move
-sage.combinat.iet.template.PermutationLI.is_irreducible
-sage.combinat.iet.template.PermutationLI.has_right_rauzy_move

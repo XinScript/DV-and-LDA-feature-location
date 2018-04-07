@@ -1,2 +1,0 @@
-sage.combinat.ncsf_qsym.ncsf.NonCommutativeSymmetricFunctions
-sage.combinat.ncsf_qsym.ncsf.NonCommutativeSymmetricFunctions

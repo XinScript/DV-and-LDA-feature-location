@@ -1,2 +1,0 @@
-sage.symbolic.integration.integral._normalize_integral_input
-sage.symbolic.integration.integral._normalize_integral_input

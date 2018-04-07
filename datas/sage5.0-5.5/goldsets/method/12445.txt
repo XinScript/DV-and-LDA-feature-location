@@ -1,6 +1,0 @@
-sage.misc.abstract_method.abstract_methods_of_class
-sage.misc.banner.banner
-sage.misc.sagedoc.help
-sage.misc.abstract_method.abstract_methods_of_class
-sage.misc.banner.banner
-sage.misc.sagedoc.help

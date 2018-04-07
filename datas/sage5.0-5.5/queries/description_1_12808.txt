@@ -1,2 +1,0 @@
-Trac #12808: #12808: Make NestedClassMetaclass an extension type of type, and speed-up its initialisation.
-Trac #12808: #12808: Make NestedClassMetaclass an extension type of type, and speed-up its initialisation.

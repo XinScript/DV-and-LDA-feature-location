@@ -1,2 +1,0 @@
-Trac #13349: Document FC variable, remove deprecated SAGE_FORTRAN and SAGE_FORTRAN_LIB variables
-Trac #13349: Document FC variable, remove deprecated SAGE_FORTRAN and SAGE_FORTRAN_LIB variables

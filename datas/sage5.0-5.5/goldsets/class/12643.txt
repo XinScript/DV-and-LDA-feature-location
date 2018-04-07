@@ -1,2 +1,0 @@
-sage.combinat.iet.template.PermutationLI
-sage.combinat.iet.template.PermutationLI

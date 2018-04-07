@@ -1,2 +1,0 @@
-Trac #12748: #12748 enforce consistency of number of variables in TermOrder constructor
-Trac #12748: #12748 enforce consistency of number of variables in TermOrder constructor

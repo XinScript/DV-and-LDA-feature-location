@@ -1,2 +1,0 @@
-Trac #13339: generate headers file for interp_*.c
-Trac #13339: generate headers file for interp_*.c

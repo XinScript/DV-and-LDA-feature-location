@@ -1,8 +1,0 @@
-sage.plot.colors.Color.__eq__
-sage.plot.colors.Color.__ne__
-sage.plot.colors.Color.__hash__
-sage.plot.colors.Color.blend
-sage.plot.colors.Color.__eq__
-sage.plot.colors.Color.__ne__
-sage.plot.colors.Color.__hash__
-sage.plot.colors.Color.blend

@@ -1,2 +1,0 @@
-Trac #13419: #trac 13419: change raise syntax to be Python 3 compatible
-Trac #13419: #trac 13419: change raise syntax to be Python 3 compatible

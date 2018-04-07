@@ -1,2 +1,0 @@
-Trac #11693: Trac 11693: Prevent edges from being counted twice with multiedges
-Trac #11693: Trac 11693: Prevent edges from being counted twice with multiedges

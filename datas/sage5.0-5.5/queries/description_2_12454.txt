@@ -1,2 +1,0 @@
-Trac #12454: Second review patch: splitting method into two
-Trac #12454: Second review patch: splitting method into two

@@ -1,2 +1,0 @@
-sage.plot.plot.plot
-sage.plot.plot.plot

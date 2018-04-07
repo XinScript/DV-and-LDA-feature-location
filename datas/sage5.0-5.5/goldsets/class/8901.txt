@@ -1,2 +1,0 @@
-sage.combinat.integer_vector.IntegerVectors_all
-sage.combinat.integer_vector.IntegerVectors_all

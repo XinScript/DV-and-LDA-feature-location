@@ -1,2 +1,0 @@
-sage.misc.sagedoc.process_mathtt
-sage.misc.sagedoc.process_mathtt

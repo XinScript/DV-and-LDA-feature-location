@@ -1,2 +1,0 @@
-sage.combinat.words.finite_word.FiniteWord_class.__str__
-sage.combinat.words.finite_word.FiniteWord_class.__str__

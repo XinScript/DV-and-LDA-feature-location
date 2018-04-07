@@ -1,2 +1,0 @@
-Trac #2607: Rename functions for local extrema to reflect locality.
-Trac #2607: Rename functions for local extrema to reflect locality.

@@ -1,6 +1,0 @@
-sage.graphs.digraph.DiGraph
-sage.graphs.generic_graph.GenericGraph
-sage.graphs.graph_generators.GraphGenerators
-sage.graphs.digraph.DiGraph
-sage.graphs.generic_graph.GenericGraph
-sage.graphs.graph_generators.GraphGenerators

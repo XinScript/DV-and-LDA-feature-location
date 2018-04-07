@@ -1,2 +1,0 @@
-Trac #13033: Increase exponent range of real numbers to the maximal possible range
-Trac #13033: Increase exponent range of real numbers to the maximal possible range

@@ -1,2 +1,0 @@
-Trac #13298: change elliptic curve example to one not in any database
-Trac #13298: change elliptic curve example to one not in any database

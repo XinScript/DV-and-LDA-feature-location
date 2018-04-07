@@ -1,4 +1,0 @@
-Trac #12974: change all .__ attributes to ._
-Trac #12974: change all .__ attributes to ._
-refactor the tick formatter in Graphics.matplotlib
-reorder some arguments to make it easier to find and edit them later

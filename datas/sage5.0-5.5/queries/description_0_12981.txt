@@ -1,2 +1,0 @@
-Trac #12981: Formatting, typos, faster casting, dead code
-Trac #12981: Formatting, typos, faster casting, dead code

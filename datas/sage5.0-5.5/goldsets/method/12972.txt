@@ -1,2 +1,0 @@
-sage.schemes.elliptic_curves.ell_rational_field.cremona_curves
-sage.schemes.elliptic_curves.ell_rational_field.cremona_curves

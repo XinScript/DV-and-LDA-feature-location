@@ -1,2 +1,0 @@
-Trac #12724: #12724: bug initializing mod 2 polynomials from large integers
-Trac #12724: #12724: bug initializing mod 2 polynomials from large integers

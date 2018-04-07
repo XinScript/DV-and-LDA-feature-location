@@ -1,2 +1,0 @@
-Trac #13169: #13169: Little doctest improvements in permutation groups
-Trac #13169: #13169: Little doctest improvements in permutation groups

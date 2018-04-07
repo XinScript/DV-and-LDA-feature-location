@@ -1,2 +1,0 @@
-Trac #13290: Upgrade to mpc-1.0.
-Trac #13290: Upgrade to mpc-1.0.

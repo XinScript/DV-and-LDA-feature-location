@@ -1,2 +1,0 @@
-Trac #12988: Trac 12988: move characteristic() to the category of rings and check that it is in ZZ
-Trac #12988: Trac 12988: move characteristic() to the category of rings and check that it is in ZZ

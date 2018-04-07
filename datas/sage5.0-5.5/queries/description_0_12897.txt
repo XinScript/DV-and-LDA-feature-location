@@ -1,2 +1,0 @@
-Trac #12897: Trac 12897: increase doctest coverage in coding/sd_codes.py to 100%
-Trac #12897: Trac 12897: increase doctest coverage in coding/sd_codes.py to 100%

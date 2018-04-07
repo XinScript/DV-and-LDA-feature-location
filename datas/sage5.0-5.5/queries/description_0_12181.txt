@@ -1,2 +1,0 @@
-Trac #12181: Fix bugs with the input parameters of the random_DAG function
-Trac #12181: Fix bugs with the input parameters of the random_DAG function

@@ -1,2 +1,0 @@
-Trac #12950: Trac #12950: Handle axis=(0,0) separately in revolution_plot3d
-Trac #12950: Trac #12950: Handle axis=(0,0) separately in revolution_plot3d

@@ -1,2 +1,0 @@
-Trac #12995: expresses linear spaces of hypersurfaces as kernel of a matrix
-Trac #12995: expresses linear spaces of hypersurfaces as kernel of a matrix

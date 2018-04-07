@@ -1,2 +1,0 @@
-Trac #12874: Recognition of Comparability graphs and Permutation graphs
-Trac #12874: Recognition of Comparability graphs and Permutation graphs

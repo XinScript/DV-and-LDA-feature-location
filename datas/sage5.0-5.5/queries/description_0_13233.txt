@@ -1,2 +1,0 @@
-Trac #13233: add a poset example on SST using a niave ordering
-Trac #13233: add a poset example on SST using a niave ordering

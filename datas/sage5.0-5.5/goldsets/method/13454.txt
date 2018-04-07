@@ -1,2 +1,0 @@
-sage.databases.odlyzko.zeta_zeros
-sage.databases.odlyzko.zeta_zeros

@@ -1,2 +1,0 @@
-Trac #12043: minor fix to output type in trivial case
-Trac #12043: minor fix to output type in trivial case

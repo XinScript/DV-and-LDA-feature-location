@@ -1,2 +1,0 @@
-sage.combinat.integer_matrices.IntegerMatrices
-sage.combinat.integer_matrices.IntegerMatrices

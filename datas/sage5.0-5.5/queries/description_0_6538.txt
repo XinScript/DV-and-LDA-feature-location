@@ -1,4 +1,0 @@
-Trac #6538: trac_6538: Fixed bugs in IntegerListLex (hence Partition).
-Trac #6538: trac_6538: Fixed bugs in IntegerListLex (hence Partition).
-Fixes the bugs of unchecked returns of None and max_slope and length
-conditions defined.

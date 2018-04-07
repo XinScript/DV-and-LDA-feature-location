@@ -1,2 +1,0 @@
-Trac #13058: HallJanko graph constructor
-Trac #13058: HallJanko graph constructor

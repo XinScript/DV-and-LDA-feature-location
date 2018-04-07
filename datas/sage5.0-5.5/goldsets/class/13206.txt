@@ -1,2 +1,0 @@
-sage.interfaces.expect.gc_disabled
-sage.interfaces.expect.gc_disabled

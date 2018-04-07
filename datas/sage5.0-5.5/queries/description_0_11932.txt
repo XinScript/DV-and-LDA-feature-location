@@ -1,2 +1,0 @@
-Trac #11932: Create matplotlib config dir in Sage library, not in sage-env.
-Trac #11932: Create matplotlib config dir in Sage library, not in sage-env.

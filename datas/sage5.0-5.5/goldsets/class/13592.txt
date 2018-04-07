@@ -1,2 +1,0 @@
-sage.matrix.matrix_space.MatrixSpace
-sage.matrix.matrix_space.MatrixSpace

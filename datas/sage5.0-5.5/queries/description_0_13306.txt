@@ -1,2 +1,0 @@
-Trac #13306: Generators for chessboard graphs: reviewer's patch
-Trac #13306: Generators for chessboard graphs: reviewer's patch

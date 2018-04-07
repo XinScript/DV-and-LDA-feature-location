@@ -1,2 +1,0 @@
-Trac #13361: Document 'sage --startuptime [module]', fix doctest in tests/startup.py.
-Trac #13361: Document 'sage --startuptime [module]', fix doctest in tests/startup.py.

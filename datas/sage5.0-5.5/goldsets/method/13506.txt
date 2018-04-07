@@ -1,2 +1,0 @@
-sage.combinat.ncsf_qsym.combinatorics.m_to_s_stat
-sage.combinat.ncsf_qsym.combinatorics.m_to_s_stat

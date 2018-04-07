@@ -1,2 +1,0 @@
-Trac #12989: Formatting, naming, eliminate intermediate vars
-Trac #12989: Formatting, naming, eliminate intermediate vars

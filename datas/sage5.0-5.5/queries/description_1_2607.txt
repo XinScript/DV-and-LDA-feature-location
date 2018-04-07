@@ -1,2 +1,0 @@
-Trac #2607: doctest and spacing fixes
-Trac #2607: doctest and spacing fixes

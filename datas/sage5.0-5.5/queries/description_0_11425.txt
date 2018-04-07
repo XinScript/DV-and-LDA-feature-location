@@ -1,2 +1,0 @@
-Trac #11425: permutations.to_standard() now does not change input list.
-Trac #11425: permutations.to_standard() now does not change input list.

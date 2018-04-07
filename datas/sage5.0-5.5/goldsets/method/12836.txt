@@ -1,2 +1,0 @@
-sage.plot.arrow.arrow
-sage.plot.arrow.arrow

@@ -1,2 +1,0 @@
-Trac #13315: Clean up MANIFEST.in, spkg-delauto and spkg-dist
-Trac #13315: Clean up MANIFEST.in, spkg-delauto and spkg-dist

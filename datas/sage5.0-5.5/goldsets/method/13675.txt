@@ -1,2 +1,0 @@
-sage.rings.quotient_ring_element.QuotientRingElement.__invert__
-sage.rings.quotient_ring_element.QuotientRingElement.__invert__

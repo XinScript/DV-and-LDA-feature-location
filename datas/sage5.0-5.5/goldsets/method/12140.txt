@@ -1,2 +1,0 @@
-sage.combinat.sf.classical.SymmetricFunctionAlgebra_classical.is_field
-sage.combinat.sf.classical.SymmetricFunctionAlgebra_classical.is_field

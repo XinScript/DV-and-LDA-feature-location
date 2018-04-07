@@ -1,6 +1,0 @@
-sage.misc.sagedoc.process_extlinks
-sage.misc.sagedoc.process_mathtt
-sage.misc.sagedoc.format_src
-sage.misc.sagedoc.process_extlinks
-sage.misc.sagedoc.process_mathtt
-sage.misc.sagedoc.format_src

@@ -1,2 +1,0 @@
-Trac #12496: improve documentation and doctesting of integer_ring.pyx
-Trac #12496: improve documentation and doctesting of integer_ring.pyx

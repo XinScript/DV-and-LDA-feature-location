@@ -1,2 +1,0 @@
-Trac #13314: Add regression test for PARI polroots()
-Trac #13314: Add regression test for PARI polroots()

@@ -1,2 +1,0 @@
-Trac #12404: Trac 12404: warning about inconsistency between is_squarefree() and squarefree_decomposition() of polynomials
-Trac #12404: Trac 12404: warning about inconsistency between is_squarefree() and squarefree_decomposition() of polynomials

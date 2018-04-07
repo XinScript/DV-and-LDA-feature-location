@@ -1,4 +1,0 @@
-sage.combinat.posets.posets.FinitePoset.product
-sage.combinat.posets.posets.FinitePoset.dual
-sage.combinat.posets.posets.FinitePoset.product
-sage.combinat.posets.posets.FinitePoset.dual

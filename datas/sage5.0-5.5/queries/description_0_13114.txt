@@ -1,2 +1,0 @@
-Trac #13114: Bug in is_isomorphic for multigraphs
-Trac #13114: Bug in is_isomorphic for multigraphs

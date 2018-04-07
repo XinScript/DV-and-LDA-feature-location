@@ -1,2 +1,0 @@
-Trac #12469: trac 12469: use Python 3 syntax
-Trac #12469: trac 12469: use Python 3 syntax

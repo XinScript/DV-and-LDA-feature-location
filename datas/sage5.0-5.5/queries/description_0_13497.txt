@@ -1,2 +1,0 @@
-Trac #13497: Skip sage --info test for binary distributions
-Trac #13497: Skip sage --info test for binary distributions

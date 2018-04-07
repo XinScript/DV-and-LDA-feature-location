@@ -1,2 +1,0 @@
-Trac #13217: Trac 13217: Expand the Dedekind eta function more efficiently
-Trac #13217: Trac 13217: Expand the Dedekind eta function more efficiently

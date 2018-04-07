@@ -1,2 +1,0 @@
-sage.structure.factorization_integer.IntegerFactorization.__sort__
-sage.structure.factorization_integer.IntegerFactorization.__sort__

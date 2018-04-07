@@ -1,2 +1,0 @@
-Trac #13180: make GF2E comparision follow convention in other fields
-Trac #13180: make GF2E comparision follow convention in other fields

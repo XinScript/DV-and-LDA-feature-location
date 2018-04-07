@@ -1,2 +1,0 @@
-Trac #13271: fix problem converting Ei to Maxima
-Trac #13271: fix problem converting Ei to Maxima

@@ -1,2 +1,0 @@
-sage.graphs.generators.families.RingedTree
-sage.graphs.generators.families.RingedTree

@@ -1,2 +1,0 @@
-sage.combinat.posets.posets.FinitePoset.is_graded
-sage.combinat.posets.posets.FinitePoset.is_graded

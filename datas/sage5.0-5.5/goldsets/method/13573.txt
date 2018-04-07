@@ -1,2 +1,0 @@
-sage.combinat.ncsf_qsym.qsym.QuasiSymmetricFunctions.__init__
-sage.combinat.ncsf_qsym.qsym.QuasiSymmetricFunctions.__init__

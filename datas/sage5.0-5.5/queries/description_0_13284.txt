@@ -1,2 +1,0 @@
-Trac #13284: Fixed converting polynomials over general fields (other than GF(2))
-Trac #13284: Fixed converting polynomials over general fields (other than GF(2))

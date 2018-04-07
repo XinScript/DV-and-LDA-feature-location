@@ -1,2 +1,0 @@
-Trac #7956: add a doctest constructing a scheme morphism to an affine curve.
-Trac #7956: add a doctest constructing a scheme morphism to an affine curve.

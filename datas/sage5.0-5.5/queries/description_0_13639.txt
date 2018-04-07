@@ -1,2 +1,0 @@
-Trac #13639: The inverse of 0 mod 1 is 0
-Trac #13639: The inverse of 0 mod 1 is 0

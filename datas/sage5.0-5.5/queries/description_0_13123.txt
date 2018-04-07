@@ -1,2 +1,0 @@
-Trac #13123: move SAGE_DATA to SAGE_LOCAL/share
-Trac #13123: move SAGE_DATA to SAGE_LOCAL/share

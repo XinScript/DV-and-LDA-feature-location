@@ -1,2 +1,0 @@
-Trac #11310: Make some bare "except:" statements catch specific exceptions instead
-Trac #11310: Make some bare "except:" statements catch specific exceptions instead

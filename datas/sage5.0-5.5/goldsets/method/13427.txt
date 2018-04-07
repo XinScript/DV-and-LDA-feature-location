@@ -1,2 +1,0 @@
-sage.numerical.optimize.find_local_maximum
-sage.numerical.optimize.find_local_maximum

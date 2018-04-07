@@ -1,4 +1,0 @@
-sage.rings.number_field.number_field.NumberField_generic
-sage.rings.number_field.number_field_rel.NumberField_relative
-sage.rings.number_field.number_field.NumberField_generic
-sage.rings.number_field.number_field_rel.NumberField_relative

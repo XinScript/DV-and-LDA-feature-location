@@ -1,2 +1,0 @@
-Trac #12549: Fix is_zero for padics
-Trac #12549: Fix is_zero for padics

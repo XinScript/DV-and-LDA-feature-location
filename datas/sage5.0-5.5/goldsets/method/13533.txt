@@ -1,4 +1,0 @@
-sage.misc.cython.cython_create_local_so
-sage.misc.cython.sanitize
-sage.misc.cython.cython_create_local_so
-sage.misc.cython.sanitize

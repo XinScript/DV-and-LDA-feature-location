@@ -1,2 +1,0 @@
-sage.groups.perm_gps.permgroup_named.DiCyclicGroup
-sage.groups.perm_gps.permgroup_named.DiCyclicGroup

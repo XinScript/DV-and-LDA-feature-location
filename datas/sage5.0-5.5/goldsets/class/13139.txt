@@ -1,2 +1,0 @@
-sage.structure.factorization_integer.IntegerFactorization
-sage.structure.factorization_integer.IntegerFactorization

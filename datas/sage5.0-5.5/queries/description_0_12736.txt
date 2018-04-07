@@ -1,2 +1,0 @@
-Trac #12736: More solver options for GLPK -- reviewer's patch
-Trac #12736: More solver options for GLPK -- reviewer's patch

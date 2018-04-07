@@ -1,5 +1,0 @@
-Trac #13090: allow LinearCode to take minimum distance as a parameter
-Trac #13090: allow LinearCode to take minimum distance as a parameter
-  - this allows us to store the minimum distance computations, once done
-  - also, we can provide the minimum distance in the initialization of known codes
-  - algorithm="gap" parameter is introduced to recompute the minimum distance if so desired.

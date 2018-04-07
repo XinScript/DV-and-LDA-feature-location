@@ -1,2 +1,0 @@
-Trac #13293: replace add_big_oh with add_bigoh in padic factorization
-Trac #13293: replace add_big_oh with add_bigoh in padic factorization

@@ -1,2 +1,0 @@
-Trac #12945: A new embedding for graphs.Balaban11Cage
-Trac #12945: A new embedding for graphs.Balaban11Cage

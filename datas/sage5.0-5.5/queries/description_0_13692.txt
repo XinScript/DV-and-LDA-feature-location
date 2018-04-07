@@ -1,2 +1,0 @@
-Trac #13692: avoid conversion to python long by avoiding "cdef unsigned long"
-Trac #13692: avoid conversion to python long by avoiding "cdef unsigned long"

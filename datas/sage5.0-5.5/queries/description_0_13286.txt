@@ -1,2 +1,0 @@
-Trac #13286: Take care of cases like solve([x-4], [x]) for consistency with multivariable input
-Trac #13286: Take care of cases like solve([x-4], [x]) for consistency with multivariable input

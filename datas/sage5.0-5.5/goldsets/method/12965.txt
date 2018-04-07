@@ -1,6 +1,0 @@
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice.__init__
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice._repr_
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice._latex_
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice.__init__
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice._repr_
-sage.schemes.toric.divisor.ToricRationalDivisorClassGroup_basis_lattice._latex_

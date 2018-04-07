@@ -1,4 +1,0 @@
-sage.interfaces.jmoldata.JmolData
-sage.interfaces.jmoldata.JmolDataError
-sage.interfaces.jmoldata.JmolData
-sage.interfaces.jmoldata.JmolDataError

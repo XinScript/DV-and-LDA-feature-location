@@ -1,2 +1,0 @@
-Trac #11442: Computes the Plancherel measure of individual partition
-Trac #11442: Computes the Plancherel measure of individual partition

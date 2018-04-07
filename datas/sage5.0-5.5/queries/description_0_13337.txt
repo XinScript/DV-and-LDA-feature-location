@@ -1,2 +1,0 @@
-Trac #13337: explicitely use GiNaC::infinity in ginac.pxd
-Trac #13337: explicitely use GiNaC::infinity in ginac.pxd

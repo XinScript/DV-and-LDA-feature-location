@@ -1,2 +1,0 @@
-sage.sets.non_negative_integers.NonNegativeIntegers._element_constructor_
-sage.sets.non_negative_integers.NonNegativeIntegers._element_constructor_

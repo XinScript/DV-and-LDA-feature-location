@@ -1,3 +1,0 @@
-Trac #11021: sage.misc.install_package(): use os.listdir() to get a list of installed packages.
-Trac #11021: sage.misc.install_package(): use os.listdir() to get a list of installed packages.
-Better documentation, add examples.

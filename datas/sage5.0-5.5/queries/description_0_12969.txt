@@ -1,2 +1,0 @@
-Trac #12969: imported patch trac_12969-avoid_coercion_from_none.patch
-Trac #12969: imported patch trac_12969-avoid_coercion_from_none.patch

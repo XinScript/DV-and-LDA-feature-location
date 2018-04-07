@@ -1,2 +1,0 @@
-Trac #13427: Numerical noise causing sage/numerical/optimize.py to fail on SPARC
-Trac #13427: Numerical noise causing sage/numerical/optimize.py to fail on SPARC

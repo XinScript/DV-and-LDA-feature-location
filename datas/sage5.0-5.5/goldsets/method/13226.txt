@@ -1,6 +1,0 @@
-sage.homology.simplicial_complex.SimplicialComplex.is_pseudomanifold
-sage.homology.simplicial_complex.SimplicialComplex.product
-sage.homology.simplicial_complex.SimplicialComplex.disjoint_union
-sage.homology.simplicial_complex.SimplicialComplex.is_pseudomanifold
-sage.homology.simplicial_complex.SimplicialComplex.product
-sage.homology.simplicial_complex.SimplicialComplex.disjoint_union

@@ -1,2 +1,0 @@
-Trac #12634: Make detach take as input lists of files and files with relative paths
-Trac #12634: Make detach take as input lists of files and files with relative paths

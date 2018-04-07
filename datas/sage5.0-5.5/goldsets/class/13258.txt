@@ -1,2 +1,0 @@
-sage_autodoc.ModuleDocumenter
-sage_autodoc.ModuleDocumenter

@@ -1,3 +1,0 @@
-Trac #715: Use weak references in the `TripleDict` coercion cache
-Trac #715: Use weak references in the `TripleDict` coercion cache
-The C % operator can return negative results, thus, we use an unsigned type for the hash

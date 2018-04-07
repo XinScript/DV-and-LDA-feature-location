@@ -1,2 +1,0 @@
-sage.interfaces.lie.LiEElement
-sage.interfaces.lie.LiEElement

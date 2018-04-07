@@ -1,2 +1,0 @@
-Trac #12513: Define _Imaginary_I for porting to (Open)Solaris
-Trac #12513: Define _Imaginary_I for porting to (Open)Solaris

@@ -1,2 +1,0 @@
-sage.categories.category.Category._repr_object_names
-sage.categories.category.Category._repr_object_names

@@ -1,2 +1,0 @@
-Trac #11880: Implements an interface between Sage and ISGCI (a graph class database)
-Trac #11880: Implements an interface between Sage and ISGCI (a graph class database)

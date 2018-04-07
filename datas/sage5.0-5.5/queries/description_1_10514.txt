@@ -1,2 +1,0 @@
-Trac #10514: Trac #10514: fix legends for multiple function plotting.
-Trac #10514: Trac #10514: fix legends for multiple function plotting.

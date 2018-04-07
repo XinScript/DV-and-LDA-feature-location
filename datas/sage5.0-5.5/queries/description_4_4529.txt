@@ -1,5 +1,0 @@
-Trac #4529: check for the presence of single tick
-Trac #4529: check for the presence of single tick
-  - this is not robust enough in all cases for the log scale
-  - including this patch will mean that most graphics such as arc, disk, etc
-    which "just work" with log scale, will stop working.

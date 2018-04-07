@@ -1,2 +1,0 @@
-Trac #12768: new class for isogeny classes of elliptic curves.  Better plotting for the graph.
-Trac #12768: new class for isogeny classes of elliptic curves.  Better plotting for the graph.

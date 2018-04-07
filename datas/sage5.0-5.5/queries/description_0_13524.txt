@@ -1,2 +1,0 @@
-Trac #13524: minor typo in linear_algebra.rst
-Trac #13524: minor typo in linear_algebra.rst

@@ -1,2 +1,0 @@
-Trac #12671: fix load of files with spaces in absolute path
-Trac #12671: fix load of files with spaces in absolute path

@@ -1,4 +1,0 @@
-sage.geometry.fan.Fan2d
-sage.geometry.fan.FaceFan
-sage.geometry.fan.Fan2d
-sage.geometry.fan.FaceFan

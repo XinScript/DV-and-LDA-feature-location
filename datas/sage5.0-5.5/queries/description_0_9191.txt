@@ -1,2 +1,0 @@
-Trac #9191: Doctest sage-run-cython, print "Compiling" message to stderr, use Python 3 syntax
-Trac #9191: Doctest sage-run-cython, print "Compiling" message to stderr, use Python 3 syntax

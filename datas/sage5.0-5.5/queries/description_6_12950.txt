@@ -1,3 +1,0 @@
-Trac #12950: Trac #12950: Fix doctests after comparison of numeric coefficients in Pynac
-Trac #12950: Trac #12950: Fix doctests after comparison of numeric coefficients in Pynac
-             changed.

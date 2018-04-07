@@ -1,2 +1,0 @@
-Trac #2607: remove trailing whitespace
-Trac #2607: remove trailing whitespace

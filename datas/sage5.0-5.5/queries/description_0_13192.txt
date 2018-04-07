@@ -1,2 +1,0 @@
-Trac #13192: code clean up in graph.py
-Trac #13192: code clean up in graph.py

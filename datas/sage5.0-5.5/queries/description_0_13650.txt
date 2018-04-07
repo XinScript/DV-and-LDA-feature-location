@@ -1,2 +1,0 @@
-Trac #13650: Always convert coefficients to the base ring
-Trac #13650: Always convert coefficients to the base ring

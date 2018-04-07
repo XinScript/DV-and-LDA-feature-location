@@ -1,4 +1,0 @@
-Trac #13746: Fix segfaults when quitting Sage.
-Trac #13746: Fix segfaults when quitting Sage.
-- Do an explicit garbage collection when sage shuts down, before quitting the interfaces.
-- Do not delete a borrowed reference to a reduction strategy in pbori.pyx

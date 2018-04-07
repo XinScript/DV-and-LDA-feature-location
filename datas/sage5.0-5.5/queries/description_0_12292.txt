@@ -1,2 +1,0 @@
-Trac #12292: Trac #12292: cache characteristic polynomials independent of their variable.
-Trac #12292: Trac #12292: cache characteristic polynomials independent of their variable.

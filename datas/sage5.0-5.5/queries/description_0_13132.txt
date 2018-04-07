@@ -1,2 +1,0 @@
-Trac #13132: Fix small string formatting bug in Graph.delete_vertex
-Trac #13132: Fix small string formatting bug in Graph.delete_vertex

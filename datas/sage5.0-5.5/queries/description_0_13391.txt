@@ -1,5 +1,0 @@
-Trac #13391: Speedup: reimplement multiplication in WeylCharacterRings using Brauer-Klimyk algorithm
-Trac #13391: Speedup: reimplement multiplication in WeylCharacterRings using Brauer-Klimyk algorithm
-100% doctest coverage in weyl_characters.py
-exterior_power, symmetric_power and adams_operation methods for WeylCharacterRing elements
-revision of the Lie thematic tutorial to reflect the new methods

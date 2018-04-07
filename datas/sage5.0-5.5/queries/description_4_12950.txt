@@ -1,3 +1,0 @@
-Trac #12950: Trac #12950: Add doctests to check that beta() remains symbolic if both inputs
-Trac #12950: Trac #12950: Add doctests to check that beta() remains symbolic if both inputs
-             are exact.

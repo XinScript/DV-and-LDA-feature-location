@@ -1,2 +1,0 @@
-sage.groups.matrix_gps.general_linear.GeneralLinearGroup_finite_field.random_element
-sage.groups.matrix_gps.general_linear.GeneralLinearGroup_finite_field.random_element

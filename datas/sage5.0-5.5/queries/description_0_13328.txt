@@ -1,4 +1,0 @@
-Trac #13328: Remove SELinux advice. Its bad (don't disable SELinux) and unnecessary
-Trac #13328: Remove SELinux advice. Its bad (don't disable SELinux) and unnecessary
-(the libraries have been fixed to not request an executable stack any
-more).

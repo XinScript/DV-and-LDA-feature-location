@@ -1,6 +1,0 @@
-sage.rings.multi_power_series_ring.is_MPowerSeriesRing
-sage.rings.multi_power_series_ring.unpickle_multi_power_series_ring_v0
-sage.rings.power_series_ring._multi_variate
-sage.rings.multi_power_series_ring.is_MPowerSeriesRing
-sage.rings.multi_power_series_ring.unpickle_multi_power_series_ring_v0
-sage.rings.power_series_ring._multi_variate

@@ -1,2 +1,0 @@
-Trac #12950: Trac #12950: Doctest changes after atan(0,0) started raising an error in Pynac.
-Trac #12950: Trac #12950: Doctest changes after atan(0,0) started raising an error in Pynac.

@@ -1,2 +1,0 @@
-sage.rings.polynomial.multi_polynomial_element.degree_lowest_rational_function
-sage.rings.polynomial.multi_polynomial_element.degree_lowest_rational_function

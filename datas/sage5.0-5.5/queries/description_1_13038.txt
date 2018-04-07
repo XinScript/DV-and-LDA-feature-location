@@ -1,2 +1,0 @@
-Trac #13038: ClebschGraph, CoxeterGraph, HoffmanGraph are added to the graph generators
-Trac #13038: ClebschGraph, CoxeterGraph, HoffmanGraph are added to the graph generators

@@ -1,2 +1,0 @@
-Trac #13501: Fix two bugs in sage.misc.c3's implementation of the algorithm C3
-Trac #13501: Fix two bugs in sage.misc.c3's implementation of the algorithm C3

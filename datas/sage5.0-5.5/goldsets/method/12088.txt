@@ -1,8 +1,0 @@
-sage.geometry.lattice_polytope.is_NefPartition
-sage.geometry.lattice_polytope.set_palp_dimension
-sage.geometry.lattice_polytope._read_nef_x_partitions
-sage.geometry.lattice_polytope.write_palp_matrix
-sage.geometry.lattice_polytope.is_NefPartition
-sage.geometry.lattice_polytope.set_palp_dimension
-sage.geometry.lattice_polytope._read_nef_x_partitions
-sage.geometry.lattice_polytope.write_palp_matrix

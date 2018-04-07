@@ -1,2 +1,0 @@
-Trac #11143: adds top-level access to exponential integral functions in sage/functions/exp_integral.py
-Trac #11143: adds top-level access to exponential integral functions in sage/functions/exp_integral.py

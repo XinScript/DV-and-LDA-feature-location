@@ -1,2 +1,0 @@
-Trac #12565: fixes stupid traceback EllipticCurve('10a1') with doctest
-Trac #12565: fixes stupid traceback EllipticCurve('10a1') with doctest

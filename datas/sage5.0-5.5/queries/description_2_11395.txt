@@ -1,2 +1,0 @@
-Trac #11395: Update GFan to version 0.5
-Trac #11395: Update GFan to version 0.5

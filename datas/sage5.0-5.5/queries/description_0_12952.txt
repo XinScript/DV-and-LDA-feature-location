@@ -1,7 +1,0 @@
-Trac #12952: Refactor HarriesGraph(); formatting
-Trac #12952: Refactor HarriesGraph(); formatting
-
-- Reorder the orbits to correspond to the docstring
-- Rename variables to be more informative
-- Use .iteritems() on dicts
-- Misc. formatting

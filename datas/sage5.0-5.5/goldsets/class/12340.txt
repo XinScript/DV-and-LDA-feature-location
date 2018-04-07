@@ -1,2 +1,0 @@
-sage.geometry.polytope.Polytope
-sage.geometry.polytope.Polytope

@@ -1,8 +1,0 @@
-sage.rings.multi_power_series_ring_element.MPowerSeries
-sage.rings.multi_power_series_ring_element.MO
-sage.rings.power_series_ring.PowerSeriesRing_generic
-sage.rings.power_series_ring.PowerSeriesRing_domain
-sage.rings.multi_power_series_ring_element.MPowerSeries
-sage.rings.multi_power_series_ring_element.MO
-sage.rings.power_series_ring.PowerSeriesRing_generic
-sage.rings.power_series_ring.PowerSeriesRing_domain

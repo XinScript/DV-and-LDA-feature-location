@@ -1,2 +1,0 @@
-Trac #13107: testing inverse, division, power ^(-1) for python longs :trac:`13107`::
-Trac #13107: testing inverse, division, power ^(-1) for python longs :trac:`13107`::

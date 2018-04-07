@@ -1,2 +1,0 @@
-Trac #13143: Fix pictures etc. in documents so ref manual builds with or without MathJax
-Trac #13143: Fix pictures etc. in documents so ref manual builds with or without MathJax

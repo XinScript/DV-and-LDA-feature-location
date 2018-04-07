@@ -1,2 +1,0 @@
-sage.functions.other.Function_gamma_inc._evalf_
-sage.functions.other.Function_gamma_inc._evalf_

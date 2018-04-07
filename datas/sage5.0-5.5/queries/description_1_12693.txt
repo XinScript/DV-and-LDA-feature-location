@@ -1,2 +1,0 @@
-Trac #12693: Trac #12693: push ring in jordan_form to the field
-Trac #12693: Trac #12693: push ring in jordan_form to the field

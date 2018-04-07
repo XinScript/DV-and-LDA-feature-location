@@ -1,2 +1,0 @@
-Trac #13167: Rephrase some comments concerning the Delaunay algorithm
-Trac #13167: Rephrase some comments concerning the Delaunay algorithm

@@ -1,2 +1,0 @@
-Trac #13148: adding  number_of_variables() method to MixedIntegerProgram class
-Trac #13148: adding  number_of_variables() method to MixedIntegerProgram class

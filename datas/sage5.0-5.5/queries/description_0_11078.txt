@@ -1,2 +1,0 @@
-Trac #11078: Make jmol work with the new flask notebook.
-Trac #11078: Make jmol work with the new flask notebook.

@@ -1,2 +1,0 @@
-sage.interfaces.mathematica.MathematicaElement.N
-sage.interfaces.mathematica.MathematicaElement.N

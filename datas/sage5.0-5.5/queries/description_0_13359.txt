@@ -1,2 +1,0 @@
-Trac #13359: minor improvement in the performance spirit
-Trac #13359: minor improvement in the performance spirit

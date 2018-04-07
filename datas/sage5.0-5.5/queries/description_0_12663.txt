@@ -1,4 +1,0 @@
-Trac #12663: trac #12663: Fixes iterations through Partitions_n when n < 0.
-Trac #12663: trac #12663: Fixes iterations through Partitions_n when n < 0.
-
-Bug caused Partitions to go into an infinite loop. Now it stops immediately, signified by returning the empty set.

@@ -1,2 +1,0 @@
-Trac #13572: Trac: 13572 Implements the immaculate basis of the non-commutative symmetric functions.
-Trac #13572: Trac: 13572 Implements the immaculate basis of the non-commutative symmetric functions.

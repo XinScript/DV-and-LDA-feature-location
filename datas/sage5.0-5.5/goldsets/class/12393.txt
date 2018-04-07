@@ -1,2 +1,0 @@
-sage.categories.modules_with_basis.ModulesWithBasis
-sage.categories.modules_with_basis.ModulesWithBasis

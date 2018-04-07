@@ -1,2 +1,0 @@
-sage.tests.cmdline.test_executable
-sage.tests.cmdline.test_executable

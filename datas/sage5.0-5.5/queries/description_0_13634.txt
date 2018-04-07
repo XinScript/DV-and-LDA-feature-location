@@ -1,2 +1,0 @@
-Trac #13634: Fix to scientific notation output to real interval field.
-Trac #13634: Fix to scientific notation output to real interval field.

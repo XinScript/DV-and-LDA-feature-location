@@ -1,2 +1,0 @@
-Trac #10566: Trac #10566: Updated mpi4py documentation, so that it works with current mpi4py versions in sage.
-Trac #10566: Trac #10566: Updated mpi4py documentation, so that it works with current mpi4py versions in sage.

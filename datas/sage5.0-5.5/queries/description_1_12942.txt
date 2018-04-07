@@ -1,2 +1,0 @@
-Trac #12942: Adds Balaban's 10-cage to Sage's graph generators
-Trac #12942: Adds Balaban's 10-cage to Sage's graph generators

@@ -1,4 +1,0 @@
-Trac #11080: Update the documentation references to the flask notebook
-Trac #11080: Update the documentation references to the flask notebook
-
-The simple server is not supported currently, and the first notebook help topic provides help for configuring the server.

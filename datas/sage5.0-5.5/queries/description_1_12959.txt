@@ -1,2 +1,0 @@
-Trac #12959: Improvements to Sets.WithRealizations (100% coverage for algebras_with_basis.py)
-Trac #12959: Improvements to Sets.WithRealizations (100% coverage for algebras_with_basis.py)

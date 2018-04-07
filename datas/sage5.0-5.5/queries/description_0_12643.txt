@@ -1,2 +1,0 @@
-Trac #12643: Correct the behavior of the method is_irreducible for generalized permutation.
-Trac #12643: Correct the behavior of the method is_irreducible for generalized permutation.

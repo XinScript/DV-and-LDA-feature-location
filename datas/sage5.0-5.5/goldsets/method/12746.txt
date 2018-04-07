@@ -1,2 +1,0 @@
-sage.symbolic.expression_conversions.AlgebraicConverter.composition
-sage.symbolic.expression_conversions.AlgebraicConverter.composition

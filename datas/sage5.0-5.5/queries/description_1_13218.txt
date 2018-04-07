@@ -1,2 +1,0 @@
-Trac #13218: Fix laurent series ring to accept a default precision
-Trac #13218: Fix laurent series ring to accept a default precision

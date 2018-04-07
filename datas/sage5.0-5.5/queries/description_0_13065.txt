@@ -1,2 +1,0 @@
-Trac #13065: enhance simon_two_descent
-Trac #13065: enhance simon_two_descent

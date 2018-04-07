@@ -1,2 +1,0 @@
-Trac #11455: use Magma to solve conics
-Trac #11455: use Magma to solve conics

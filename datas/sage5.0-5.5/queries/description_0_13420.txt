@@ -1,2 +1,0 @@
-Trac #13420: imported patch 13420_long_time.patch
-Trac #13420: imported patch 13420_long_time.patch

@@ -1,5 +1,0 @@
-Trac #9774: switch Sage library from jsMath to MathJax.
-Trac #9774: switch Sage library from jsMath to MathJax.
-
-Many people helped in this patch, including: Rob Beezer, Davide Cervone,
-John Palmieri, Rado Kirov, Nathan Carter, and Jason Grout

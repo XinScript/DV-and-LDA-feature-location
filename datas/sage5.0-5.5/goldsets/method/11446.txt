@@ -1,6 +1,0 @@
-sage.combinat.partition.Partition_class.outline
-sage.combinat.partition.RestrictedPartitions_nsk.__repr__
-sage.combinat.partition.RestrictedPartitions_nsk.cardinality
-sage.combinat.partition.Partition_class.outline
-sage.combinat.partition.RestrictedPartitions_nsk.__repr__
-sage.combinat.partition.RestrictedPartitions_nsk.cardinality

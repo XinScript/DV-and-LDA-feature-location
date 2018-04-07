@@ -1,2 +1,0 @@
-Trac #11563: #11563: lrcalc as a standard spkg
-Trac #11563: #11563: lrcalc as a standard spkg

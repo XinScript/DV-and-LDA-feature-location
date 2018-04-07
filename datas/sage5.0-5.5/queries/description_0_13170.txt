@@ -1,2 +1,0 @@
-Trac #13170: #13170: Speed-up for generic __nonzero__ method of matrices
-Trac #13170: #13170: Speed-up for generic __nonzero__ method of matrices

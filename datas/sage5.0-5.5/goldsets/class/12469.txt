@@ -1,2 +1,0 @@
-sage.combinat.words.finite_word.CallableFromListOfWords
-sage.combinat.words.finite_word.CallableFromListOfWords

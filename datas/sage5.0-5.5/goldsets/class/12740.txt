@@ -1,2 +1,0 @@
-sage.modular.modform.find_generators.ModularFormsRing
-sage.modular.modform.find_generators.ModularFormsRing

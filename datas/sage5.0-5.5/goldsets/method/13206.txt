@@ -1,2 +1,0 @@
-sage.rings.polynomial.multi_polynomial_ideal.singular_standard_options
-sage.rings.polynomial.multi_polynomial_ideal.singular_standard_options

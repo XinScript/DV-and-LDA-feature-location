@@ -1,2 +1,0 @@
-Trac #5612: add example for solving equations with symbolic matrices and fix bug
-Trac #5612: add example for solving equations with symbolic matrices and fix bug

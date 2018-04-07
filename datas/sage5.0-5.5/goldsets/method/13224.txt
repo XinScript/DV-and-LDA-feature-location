@@ -1,2 +1,0 @@
-sage.combinat.posets.posets.FinitePoset.is_slender
-sage.combinat.posets.posets.FinitePoset.is_slender

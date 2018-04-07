@@ -1,6 +1,0 @@
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_projection
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_plot
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_points
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_projection
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_plot
-sage.combinat.words.morphism.WordMorphism.rauzy_fractal_points

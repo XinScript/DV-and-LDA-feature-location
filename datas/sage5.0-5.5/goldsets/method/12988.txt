@@ -1,4 +1,0 @@
-sage.rings.padics.padic_generic.local_print_mode
-sage.rings.number_field.number_field.NumberField_generic.class_group
-sage.rings.padics.padic_generic.local_print_mode
-sage.rings.number_field.number_field.NumberField_generic.class_group

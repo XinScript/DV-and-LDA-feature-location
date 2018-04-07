@@ -1,2 +1,0 @@
-sage.plot.contour_plot.contour_plot
-sage.plot.contour_plot.contour_plot

@@ -1,2 +1,0 @@
-Trac #12776: Trac #12776: Add maxima_lib to the reference documentation.
-Trac #12776: Trac #12776: Add maxima_lib to the reference documentation.

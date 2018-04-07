@@ -1,2 +1,0 @@
-Trac #4529: add logarithmic scale to Graphics(). Also fix a problem with user specified xmin,xmax,ymin,ymax
-Trac #4529: add logarithmic scale to Graphics(). Also fix a problem with user specified xmin,xmax,ymin,ymax

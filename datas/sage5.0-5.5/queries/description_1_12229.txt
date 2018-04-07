@@ -1,2 +1,0 @@
-Trac #12229: Patch MANIFEST.in to copy the .inc and .png sagenb doc files
-Trac #12229: Patch MANIFEST.in to copy the .inc and .png sagenb doc files

@@ -1,6 +1,0 @@
-sage.combinat.root_system.cartan_type.CartanType_simply_laced
-sage.combinat.species.species.GenericCombinatorialSpecies
-sage.combinat.words.nfactor_enumerable_word.Word_nfactor_enumerable
-sage.combinat.root_system.cartan_type.CartanType_simply_laced
-sage.combinat.species.species.GenericCombinatorialSpecies
-sage.combinat.words.nfactor_enumerable_word.Word_nfactor_enumerable

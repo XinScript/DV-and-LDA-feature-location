@@ -1,2 +1,0 @@
-Trac #13670: fix the error message when division fails in polynomial quotient ring
-Trac #13670: fix the error message when division fails in polynomial quotient ring

@@ -1,8 +1,0 @@
-sage.categories.quotient_fields.QuotientFields
-sage.rings.function_field.function_field.RationalFunctionField
-sage.rings.function_field.maps.FunctionFieldMorphism_rational
-sage.rings.polynomial.multi_polynomial_ideal.MPolynomialIdeal_macaulay2_repr
-sage.categories.quotient_fields.QuotientFields
-sage.rings.function_field.function_field.RationalFunctionField
-sage.rings.function_field.maps.FunctionFieldMorphism_rational
-sage.rings.polynomial.multi_polynomial_ideal.MPolynomialIdeal_macaulay2_repr

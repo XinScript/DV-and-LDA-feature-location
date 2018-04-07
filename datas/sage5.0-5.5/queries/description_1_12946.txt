@@ -1,2 +1,0 @@
-Trac #12946: Bug in Compositions
-Trac #12946: Bug in Compositions

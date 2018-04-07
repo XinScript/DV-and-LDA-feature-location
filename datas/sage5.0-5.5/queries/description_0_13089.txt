@@ -1,2 +1,0 @@
-Trac #13089: Implement weighted projective spaces
-Trac #13089: Implement weighted projective spaces

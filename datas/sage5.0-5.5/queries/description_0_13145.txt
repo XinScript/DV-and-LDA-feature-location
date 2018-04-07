@@ -1,2 +1,0 @@
-Trac #13145: Add refcounting code in sage.rings.polynomial.plural.new_NRing and new_CRing.
-Trac #13145: Add refcounting code in sage.rings.polynomial.plural.new_NRing and new_CRing.

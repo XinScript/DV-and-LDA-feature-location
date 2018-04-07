@@ -1,8 +1,0 @@
-sage.schemes.elliptic_curves.constructor.EllipticCurve
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_c4c6
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_j
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_cubic
-sage.schemes.elliptic_curves.constructor.EllipticCurve
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_c4c6
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_j
-sage.schemes.elliptic_curves.constructor.EllipticCurve_from_cubic

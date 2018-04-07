@@ -1,2 +1,0 @@
-Trac #12840: rebased 12840 w.r.t. 13109: fix some deprecations
-Trac #12840: rebased 12840 w.r.t. 13109: fix some deprecations

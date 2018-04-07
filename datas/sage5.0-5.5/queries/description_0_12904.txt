@@ -1,2 +1,0 @@
-Trac #12904: trac 12904: HTML hex color is a valid color string
-Trac #12904: trac 12904: HTML hex color is a valid color string

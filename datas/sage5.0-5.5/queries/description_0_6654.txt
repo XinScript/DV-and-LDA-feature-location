@@ -1,6 +1,0 @@
-Trac #6654: symmetric group algebra, group algebras
-Trac #6654: symmetric group algebra, group algebras
-
-I added a function algebra_generators in the category group_algebras and a function is_central for the element of these algebras.
-
-The symmetric group algebra now belongs to this category, so these functions can be used on it.

@@ -1,2 +1,0 @@
-Trac #12736: parameters for glpk solver
-Trac #12736: parameters for glpk solver

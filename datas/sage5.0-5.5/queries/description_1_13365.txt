@@ -1,2 +1,0 @@
-Trac #13365: Add semidirect product method for permutation groups
-Trac #13365: Add semidirect product method for permutation groups

@@ -1,2 +1,0 @@
-Trac #12884: fixing problems related to removing constraints
-Trac #12884: fixing problems related to removing constraints

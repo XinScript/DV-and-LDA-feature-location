@@ -1,2 +1,0 @@
-Trac #13187: Trac 13187: accept a symbolic variable as name value in PolynomialRing
-Trac #13187: Trac 13187: accept a symbolic variable as name value in PolynomialRing
