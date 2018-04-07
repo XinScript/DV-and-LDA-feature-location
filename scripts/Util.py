@@ -16,7 +16,7 @@ def create_folders(project_name):
         goldset_method_path) else None
 
     d = {}
-    d['project'] = data_path
+    d['data'] = data_path
     d['query'] = query_path
     d['class'] = goldset_class_path
     d['method'] = goldset_method_path

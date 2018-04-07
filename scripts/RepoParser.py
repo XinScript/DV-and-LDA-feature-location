@@ -5,15 +5,25 @@ from typed_ast import ast3,ast27
 import Util
 import sys
 from collections import defaultdict
+import logging
+# import click
+
+logging.basicConfig(format='%(asctime)s : %(levelname)s : ' +
+                    '%(name)s : %(funcName)s : %(message)s')
+logger = logging.getLogger('pfl.main')
+
 
 class RepoParser():
-    def __init__(self, repo_path, prev, current, *issue_keyword):
+    def __init__(self, repo_path, prev,current,*issue_keyword):
         self.repo = Repo(repo_path, odbt=GitCmdObjectDB)
-        self.package = None
+        self._package = None
         self.issue_keyword = issue_keyword
-        self.folders = Util.create_folders([x for x in repo_path.split('/') if x][-1] + '-'.join([prev,current]))
         self.version = (prev,current)
-        self.id_dict = None
+        self.folders = Util.create_folders([x for x in repo_path.split('/') if x][-1] + '-'.join([prev,current]))
+        self._id_dict = None
+        fh = logging.FileHandler(filename=path.join(self.folders['data'],'logs.txt'))
+        fh.setLevel(logging.WARNING)
+        logger.addHandler(fh)
 
         if 'master' in self.repo.heads:
             if self.repo.active_branch != 'master':
@@ -27,13 +37,13 @@ class RepoParser():
             self.parent_module_dir = None
             # checkout to master.
 
-    def generate_issueID_commitID_map(self):
-        print('{types} #(\d+)'.format(types='|'.join(self.issue_keyword)))
+    def generate_issueID_commitID_map(self,prev = None,current=None):
+        version = (prev,current) if prev and current else self.version
         pattern = re.compile('{types} #(\d+)'.format(types='|'.join(self.issue_keyword)))
         d = defaultdict(list)
         commits = self.repo.iter_commits(
-            '{prev}...{current}'.format(prev=self.version[0], current=self.version[1]))
-        file = path.join(self.folders['project'], 'Issue_Commit_Map.txt')
+            '{prev}...{current}'.format(prev=version[0], current=version[1]))
+        file = path.join(self.folders['data'], 'Issue_Commit_Map.txt')
         remove(file) if path.exists(file) else None
         for commit in commits:
             m = pattern.search(commit.message.lower())
@@ -45,39 +55,37 @@ class RepoParser():
             for issueID, commitIDs in d.items():
                 content = ' '.join([issueID, ' '.join(commitIDs), '\r\n'])
                 f.write(content)
-        self.id_dict = d
-        print('issueID commitID map generated.')
+        logger.info('issueID commitID map generated.')
+        self._id_dict = d
 
     def generate_queries(self):
-        if not self.id_dict:
-            print("You need to run 'generate_issueID_commitID_map' at first.")
+        if not self._id_dict:
+            logger.info("You need to run 'generate_issueID_commitID_map' at first.")
             return
         pattern = re.compile(r'\n')
-        for issueID, commitIDs in self.id_dict.items():
+        for issueID, commitIDs in self._id_dict.items():
             for i, commitID in enumerate(commitIDs):
                 commit = self.repo.commit(commitID)
                 with open(path.join(self.folders['query'], '{issueID}_description_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
                     short = pattern.split(commit.message)[0]
                     long = commit.message
                     f.write('\r\n'.join([short, long]))
-        print('queries generated.')
+        logger.info('queries generated.')
 
-    def generate(self):
-        self.generate_issueID_commitID_map()
-        self.generate_queries()
-        self.generate_goldsets()
+
 
     def generate_goldsets(self):
-        if not self.id_dict:
-            print("You need to run 'generate_issueID_commitID_map' at first.")
+        if not self._id_dict:
+            logger.info("You need to run 'generate_issueID_commitID_map' at first.")
             return
-        for issueID, commitIDs in self.id_dict.items():
+        for issueID, commitIDs in self._id_dict.items():
             class_set,method_set = set(),set()
             for commitID in commitIDs:
                 commit = self.repo.commit(commitID)
                 try:
                     prev_commit = commit.parents[-1]
                 except IndexError:
+                    logger.warning('Commit {0} has not parent commit.'.format(commitID))
                     continue
                 diffs = self.repo.git.diff(prev_commit, commit, '--diff-filter=AM').strip().split('diff --git ')[1:]
                 # only care about new & modified files
@@ -88,13 +96,13 @@ class RepoParser():
                         try:
                             file_path = m[0].strip().split('\n')[0].split(' ')[1].split('b/')[1]
                         except IndexError:
-                            continue
-                        if not self.package:
-                            self.package = self._find_package(commit, file_path)
-                        if self.package and self.package in file_path and file_path.endswith('.py'):
+                            logger.warning('Diff extraction warning:{0}'.format(m[0]))
+                        if not self._package:
+                            self._package = self._find_package(commit, file_path)
+                        if self._package and self._package in file_path and file_path.endswith('.py'):
                             changes = [x.strip().split(' ')[1] for i, x in enumerate(m) if i % 2]
                             c_set,m_set = self.extract_class_and_method(commit,file_path, changes)
-                            package_path = '.'.join(file_path[file_path.find(self.package):][:-3].split('/'))
+                            package_path = '.'.join(file_path[file_path.find(self._package):][:-3].split('/'))
                             for c in c_set:
                                 c_name = '.'.join([package_path, c])
                                 class_set.add(c_name)
@@ -107,10 +115,11 @@ class RepoParser():
             if method_set:
                 with open(path.join(self.folders['method'],issueID+'.txt'),'a+') as f:
                     [f.write(m + '\n') for m in method_set]
-        print('goldset generated.')
+        logger.info('goldset generated.')
 
     def extract_class_and_method(self, commit,file_path, changes):
-        content = self.repo.git.show(':'.join([commit.hexsha, file_path]))
+        src_path = ':'.join([commit.hexsha, file_path])
+        content = self.repo.git.show(src_path)
         class_set = set()
         method_set = set()
         nodes = None
@@ -118,6 +127,7 @@ class RepoParser():
             nodes = ast27.parse(content).body
             ast = ast27
         except Exception:
+            logger.warning('Fail to parse {src} with Py2.7 AST.'.format(src=src_path))
             nodes = ast3.parse(content).body
             ast = ast3
         finally:
@@ -146,6 +156,8 @@ class RepoParser():
                                 for sub_node in sub_nodes[sub_start_i:sub_end_i+1]:
                                     if sub_node.__class__ == ast.FunctionDef:
                                         method_set.add('.'.join([node.name,sub_node.name]))
+            else:
+                logger.warning('Fail to parse {src} with Py3/Py2.7 AST hence pass.'.format(src=src_path))
             return class_set,method_set
 
     def _find_package(self, commit, file_path):
@@ -164,8 +176,11 @@ class RepoParser():
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) < 3:
-        print('Command Format:file_path prev current issue_keywords(optional)') 
+        logger.info('Command Format:file_path prev current issue_keywords(optional)') 
     else:
-        RepoParser(*args).generate()
+        parser = RepoParser(*args)
+        parser.generate_issueID_commitID_map()
+        parser.generate_queries()
+        parser.generate_goldsets()
 
 
