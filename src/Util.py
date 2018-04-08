@@ -1,25 +1,31 @@
-from os import makedirs,path
+from os import makedirs,path,walk
+import Config
 
-def create_folders(project_name):
-    data_path = path.join(path.dirname(path.abspath(__file__)),'../datas', project_name)
-    makedirs(data_path) if not path.exists(data_path) else None
+def make_dirs(target_path):
 
-    query_path = path.join(data_path, 'queries')
+    makedirs(target_path) if not path.exists(target_path) else None
+
+    map_path = path.join(target_path, 'Issue_Commit_Map.txt')
+
+    log_path = path.join(target_path,'debug.txt')
+
+    query_path = path.join(target_path, 'queries')
     makedirs(query_path) if not path.exists(query_path) else None
 
-    goldset_class_path = path.join(data_path, 'goldsets', 'class')
+    goldset_class_path = path.join(target_path, 'goldsets', 'class')
     makedirs(goldset_class_path) if not path.exists(
         goldset_class_path) else None
 
-    goldset_method_path = path.join(data_path, 'goldsets', 'method')
+    goldset_method_path = path.join(target_path, 'goldsets', 'method')
     makedirs(goldset_method_path) if not path.exists(
         goldset_method_path) else None
 
     d = {}
-    d['data'] = data_path
     d['query'] = query_path
     d['class'] = goldset_class_path
     d['method'] = goldset_method_path
+    d['map'] = map_path
+    d['log'] = log_path
     return d
 
 
@@ -37,3 +43,6 @@ def obj_binary_search(objs, field, target):
             else:
                 return mid
         return lo
+
+
+    
