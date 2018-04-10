@@ -22,7 +22,7 @@ def to_unicode(document, info=[]):
         try:
             return document.decode(codec)
         except UnicodeDecodeError as e:
-            logger.debug('%s %s %s' % (codec, str(e), ' '.join(info)))
+            logger.debug('{} {} {}'.format(codec, str(e), ' '.join(info)))
 
     return document
 
@@ -130,12 +130,6 @@ FOX_STOPS = set(
     with within without work worked working works would x y year years yet you
     young younger youngest your yours z """.split())
 
-JAVA_RESERVED = set(
-    """ abstract assert boolean break byte case catch char class const continue
-    default do double else enum extends false final finally float for goto if
-    implements import instanceof int interface long native new null package
-    private protected public return short static strictfp super switch
-    synchronized this throw throws transient true try void volatile while """.split())
 
 PYTHON_RESERVED = set(
     '''

@@ -1,3 +1,8 @@
-class GitNotFoundException(Exception):
-    def __init__(self,error_msg):
-        super().__init__(error_msg)
+class GitNotFoundError(FileNotFoundError):
+    def __init__(self,*args):
+        super().__init__(*args)
+
+class NotGitProjectError(Exception):
+    def __init__(self, *args):
+        super().__init__(*args)
+
