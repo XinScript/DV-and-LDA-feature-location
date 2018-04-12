@@ -24,6 +24,7 @@ def build_dirs(project):
         d['class'] = goldset_class_path
         d['method'] = goldset_method_path
         d['data'] = data_path
+        d['base'] = version_path
 
         d_dict[version] = d
 
