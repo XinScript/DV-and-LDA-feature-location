@@ -1,14 +1,16 @@
-from GoldsetGenerator import GoldsetGenerator,CommitGoldsetGenerator
+from Goldset.CommitGoldsetGenerator import GoldsetGenerator
+from Goldset.CommitGoldsetGenerator import CommitGoldsetGenerator
+
 from Project import LocalGitProject,Project
 from Corpora import GitCorpus,GeneralCorpus
+import Config
 import gensim
 import pickle
 import os
-import Config
 
 if __name__ == '__main__':
     src_path =  '../sources/sage'
-    project = LocalGitProject('sage',src_path, [('5.0', '5.1')], ['trac'])
+    project = LocalGitProject('sage','by_commit',src_path, [('5.0', '5.1')], ['trac'])
     parser = CommitGoldsetGenerator(project)
     parser.generate()
     project.save()
