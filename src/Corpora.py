@@ -177,16 +177,20 @@ class OrderedCorpus(gensim.corpora.IndexedCorpus):
         truncated = 0
         offsets = []
         with gensim.utils.smart_open(fname, 'w') as fout:
-            for doc_id, doc in enumerate(corpus):
+            enum_corpus = enumerate(corpus.gen()) if hasattr(corpus,'gen') else enumerate(corpus)
+            for idx, docs in enum_corpus:
                 if metadata:
-                    doc_id, doc_lang = doc[1]
-                    doc = doc[0]
+                    words = docs[0]
+                    doc_id, doc_lang = docs[1]
                 else:
                     doc_lang = '__unknown__'
 
                 offsets.append(fout.tell())
-                fout.write('{} {} {}\n'.format(
-                    doc_id, doc_lang, ' '.join(doc)))
+                try:
+                    fout.write('{} {} {}\n'.format(doc_id, doc_lang, ' '.join(words)))
+                except Exception:
+                    print(docs[0][0])
+                    exit()
 
         if truncated:
             logger.warning("Mallet format can only save vectors with "
@@ -236,7 +240,8 @@ class LabeledCorpus(gensim.corpora.IndexedCorpus):
         truncated = 0
         offsets = []
         with gensim.utils.smart_open(fname, 'w') as fout:
-            for doc_id, doc in enumerate(corpus):
+            enum_corpus = enumerate(corpus.gen()) if hasattr(corpus,gen) else enumerate(corpus)
+            for doc_id, doc in enum_corpus:
                 if metadata:
                     doc_id, doc_lang = doc[1]
                     doc = doc[0]

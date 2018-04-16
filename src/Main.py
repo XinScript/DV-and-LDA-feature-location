@@ -9,13 +9,14 @@ from Goldset.CommitGoldsetGenerator import CommitGoldsetGenerator
 from gensim.corpora import Dictionary, MalletCorpus
 from gensim.models import Doc2Vec
 from collections import defaultdict
+import multiprocessing
 
 logger = logging.getLogger('plt.main')
 
 logger.setLevel(Config.LOG_LEVEL)
 
 
-def create_query(project):
+def create_query(project, bow=False):
 
     base_path = project.path_dict['base']
 
@@ -39,27 +40,20 @@ def create_query(project):
         return Corpora.OrderedCorpus(corpus_fname)
 
 
-def create_corpus(project):
+def create_corpus(project, bow=False):
 
     base_path = project.path_dict['base']
-
-    id2word_fname = os.path.join(base_path, 'code' + Config.ID2WORD_EXT)
 
     corpus_fname = os.path.join(base_path, 'code' + Config.CORPUS_EXT)
 
     if os.path.exists(corpus_fname):
-        corpus = MalletCorpus(
-            corpus_fname, id2word=Dictionary.load(id2word_fname), metadata=True)
+        corpus = Corpora.OrderedCorpus(corpus_fname)
     else:
         corpus = Corpora.GitCorpus(project, project.release_interval[1])
 
-        MalletCorpus.serialize(corpus_fname, corpus,
-                               id2word=corpus.id2word, metadata=True)
+        Corpora.OrderedCorpus.serialize(corpus_fname, corpus, metadata=True)
 
-        corpus.id2word.save(id2word_fname)
-
-        corpus = MalletCorpus(
-            corpus_fname, id2word=corpus.id2word, metadata=True)
+        corpus = Corpora.OrderedCorpus(corpus_fname)
 
     return corpus
 
@@ -73,7 +67,8 @@ def create_doc2vec_model(project, corpus, num_topics=500, min_count=1):
     corpus = Corpora.LabeledCorpus(corpus.fname)
 
     if not os.path.exists(model_fname):
-        model = Doc2Vec(corpus, min_count=min_count, vector_size=num_topics)
+        model = Doc2Vec(corpus, min_count=min_count,
+                        vector_size=num_topics, workers=multiprocessing.cpu_count(),)
         model.save(model_fname)
     else:
         model = Doc2Vec.load(model_fname)
@@ -88,7 +83,7 @@ def get_topics(model, corpus):
             topics = model.docvecs['DOC__' + meta[0]]
         except KeyError:
             topics = model.infer_vector(doc)
-        topic_arr.append((meta, topics))
+        topic_arr.append((meta[0], topics))
     return topic_arr
 
 
@@ -97,14 +92,12 @@ def get_rank_basic(goldsets, query_topic, doc_topic, distance_measure=Util.cosin
                 len(query_topic), len(doc_topic))
 
     ranks = {}
-    for q_meta, query in query_topic:
-        qid, _ = q_meta
+    for qid, query in query_topic:
         q_dist = []
 
-        for d_meta, doc in doc_topic:
-            fname, _ = d_meta
+        for fpath, doc in doc_topic:
             distance = distance_measure(query, doc)
-            q_dist.append((distance, fname))
+            q_dist.append((distance, fpath))
 
         q_dist.sort()
         if qid in goldsets:
@@ -131,6 +124,7 @@ def get_rank_sum(model, queries, goldsets, corpus, by_ids=None):
         if by_ids is not None and qid not in by_ids:
             logger.info('skipping')
             continue
+        logger.info(qid)
 
         qwords = list(filter(lambda x: x in model.wv.vocab, query.words))
 
@@ -142,7 +136,6 @@ def get_rank_sum(model, queries, goldsets, corpus, by_ids=None):
                 # best thing to do without inference
                 sim = model.n_similarity(qwords, dwords)
                 q_dist.append((1.0 - sim, d_path))
-
         q_dist.sort()
         if qid in goldsets:
             goldset = goldsets[qid]
@@ -154,12 +147,12 @@ def get_rank_sum(model, queries, goldsets, corpus, by_ids=None):
 
 
 def get_rels(goldset, q_dist):
-    rels = []
 
+    rels = []
     for idx, rank in enumerate(q_dist):
-        distance, fname = rank
-        if fname in goldset:
-            rels.append((idx + 1, distance, fname))
+        distance, fpath = rank
+        if fpath in goldset:
+            rels.append((idx + 1, distance, fpath))
 
     return rels
 
@@ -171,8 +164,9 @@ def write_ranks(project, kind, ranks):
             writer = csv.writer(f)
             writer.writerow(['id', 'rank', 'distance', 'item'])
             for qid, rank in ranks.items():
-                for idx, distance, f_name in rank:
-                    writer.writerow([qid, idx, distance, f_name])
+                for idx, distance, fpath in rank:
+                    writer.writerow([qid, idx, distance, fpath])
+    logger.info('Have written ranks to disk:{}'.format(fname))
 
 
 def read_ranks(project, kind):
@@ -184,7 +178,7 @@ def read_ranks(project, kind):
             next(reader)
             for g_id, idx, dist, d_path in reader:
                 ranks[g_id].append((int(idx), float(dist), d_path))
-    logger.info('Successfully loaded previous ranks.')
+        logger.info('Successfully loaded previous ranks from:{}'.format(fname))
     return ranks
 
 
@@ -233,10 +227,11 @@ def run(project, kind, level):
             ranks = get_rank_sum(model, queries, goldsets, corpus)
         write_ranks(project, kind, ranks)
 
-    return get_frms(ranks)
+    # return get_frms(ranks)
 
 
 if __name__ == '__main__':
     # generate_data('sage', 'by_commit', '../sources/sage', ('5.0', '5.1'), ['trac'])
     project = Project.GitProject.load('sage', ('5.0', '5.1'))
-    run(project, 'basic', 'class')
+    # run(project, 'basic', 'class')
+    run(project, 'sum', 'class')
