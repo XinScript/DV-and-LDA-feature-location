@@ -1,17 +1,15 @@
-from os import path,remove
 import re
-from .GoldsetGenerator import GoldsetGenerator
+from os import path,remove
 from collections import defaultdict
+from .GoldsetGenerator import GoldsetGenerator
 
 class IssueGoldsetGenerator(GoldsetGenerator):
     def __init__(self, project):
         super().__init__(project)
 
-    def generate_ids(self, version):
+    def generate_ids(self):
 
-        path_dict = self.project.path_dict[version]
-
-        map_path = path.join(path_dict['data'], 'ids.txt')
+        map_path = path.join(self.project.path_dict['data'], 'ids.txt')
 
         remove(map_path) if path.exists(map_path) else None
 
@@ -19,7 +17,7 @@ class IssueGoldsetGenerator(GoldsetGenerator):
 
         d = defaultdict(list)
 
-        commits = self.project.repo.iter_commits('{0}...{1}'.format(*version))
+        commits = self.project.repo.iter_commits('{0}...{1}'.format(*self.project.release_interval))
 
         for commit in commits:
             m = pattern.search(commit.message.lower())
@@ -27,18 +25,16 @@ class IssueGoldsetGenerator(GoldsetGenerator):
             if m:
                 d[m.group(1)].append(commit.hexsha)
 
-        with open(map_path, 'a+') as f:
+        with open(map_path, 'w') as f:
             for issueID, commitIDs in d.items():
                 content = ' '.join([issueID, ' '.join(commitIDs), '\r\n'])
                 f.write(content)
 
         self.logger.info('issueID commitID map generated.')
 
-    def generate_queries(self, version):
+    def generate_queries(self):
 
-        path_dict = self.project.path_dict[version]
-
-        idd = self.project.load_ids(version)
+        idd = self.project.load_ids()
 
         if not idd:
             self.logger.info(
@@ -50,18 +46,16 @@ class IssueGoldsetGenerator(GoldsetGenerator):
         for issueID, commitIDs in idd.items():
             for i, commitID in enumerate(commitIDs):
                 commit = self.project.repo.commit(commitID)
-                with open(path.join(path_dict['query'], '{issueID}_description_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
+                with open(path.join(self.project.path_dict['query'], '{issueID}_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
                     short = pattern.split(commit.message)[0]
                     long = commit.message
                     f.write('\r\n'.join([short, long]))
 
         self.logger.info('queries generated.')
 
-    def generate_goldsets(self, version):
+    def generate_goldsets(self):
 
-        path_dict = self.project.path_dict[version]
-
-        idd = self.project.load_ids(version)
+        idd = self.project.load_ids()
 
         if not idd:
             self.logger.info(
@@ -80,11 +74,11 @@ class IssueGoldsetGenerator(GoldsetGenerator):
                     method_set.add(m)
 
             if class_set:
-                with open(path.join(path_dict['class'], issueID + '.txt'), 'a+') as f:
+                with open(path.join(self.project.path_dict['class'], issueID + '.txt'), 'a+') as f:
                     [f.write(c + '\n') for c in class_set]
 
             if method_set:
-                with open(path.join(path_dict['method'], issueID + '.txt'), 'a+') as f:
+                with open(path.join(self.project.path_dict['method'], issueID + '.txt'), 'a+') as f:
                     [f.write(m + '\n') for m in method_set]
 
         self.logger.info('goldset generated.')

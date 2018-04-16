@@ -20,11 +20,12 @@ import Preprocessing
 import logging
 logger = logging.getLogger('pfl.corpora')
 
+
 class GeneralCorpus(gensim.interfaces.CorpusABC):
     def __init__(self, project=None, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
         self.project = project
 
-        if id2word is None:
+        if not id2word:
             id2word = gensim.corpora.Dictionary()
             logger.debug('[gen] Creating new dictionary %s for %s %s',
                          id(id2word), self.__class__.__name__, id(self))
@@ -35,6 +36,7 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 
         self.id2word = id2word
 
+        self.split = split
         self.lower = split
         self.lower = lower
         self.remove_stops = remove_stops
@@ -53,7 +55,8 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
                 if k in self.__dict__:
                     setattr(self, k, v)
                 else:
-                    raise AttributeError('config options "{}"not exists.'.format(k))
+                    raise AttributeError(
+                        'config options "{}"not exists.'.format(k))
         else:
             return self.__dict__
 
@@ -79,7 +82,8 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 
         if self.remove_stops:
             words = Preprocessing.remove_stops(words, Preprocessing.FOX_STOPS)
-            words = Preprocessing.remove_stops(words, Preprocessing.PYTHON_RESERVED)
+            words = Preprocessing.remove_stops(
+                words, Preprocessing.PYTHON_RESERVED)
 
         words = (word for word in words if len(word) >=
                  self.min_len and len(word) <= self.max_len)
@@ -92,25 +96,31 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
         Iterating over the corpus must yield sparse vectors, one for each
         document.
         """
-        for text,meta in self.gen():
-            yield self.id2word.doc2bow(text, allow_update=self.allow_update),meta
+        for text, meta in self.gen():
+            yield self.id2word.doc2bow(text, allow_update=self.allow_update), meta
 
     def __len__(self):
         return self.length  # will throw if corpus not initialized
 
 
 class GitCorpus(GeneralCorpus):
-    
+
     def __init__(self, project, ref, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
         if not isinstance(project, Project.GitProject):
             raise NotGitProjectError
         else:
+            super().__init__(
+                project=project,
+                id2word=id2word,
+                split=split,
+                lower=lower,
+                remove_stops=remove_stops,
+                min_len=min_len,
+                max_len=max_len,
+                allow_update=allow_update)
             self.ref = ref
 
-            super().__init__(project=project, id2word=id2word)
-
-
-    def _make_meta(self,**kwargs):
+    def _make_meta(self, **kwargs):
         return kwargs
 
     def gen(self):
@@ -126,9 +136,9 @@ class GitCorpus(GeneralCorpus):
             for filename in filenames:
                 if Util.is_py_file(filename):
                     path = os.path.join(dirpath, filename)
-                    meta = self._make_meta(path=path[len(self.project.src_path):])
+                    meta = (path[len(self.project.src_path) + 1:], 'corpus')
 
-                    with open(filename) as f:
+                    with open(path) as f:
                         document = f.read()
                         words = self.preprocess(document)
                         length += 1
@@ -138,3 +148,126 @@ class GitCorpus(GeneralCorpus):
 
         self.project.repo.git.checkout(head)
         # switch back to head
+
+
+class OrderedCorpus(gensim.corpora.IndexedCorpus):
+    def __init__(self, filename):
+        self.fname = filename
+        self.length = None
+        logger.info('Creating %s corpus for file %s',
+                    self.__class__.__name__, filename)
+
+    def __iter__(self):
+        with gensim.utils.smart_open(self.fname) as f:
+            for line in f:
+                line = gensim.utils.to_unicode(line)
+                words = line.split()
+                yield words[2:], (words[0], words[1])
+
+    def __len__(self):
+        if self.length == None:
+            self.length = sum([1 for _ in self])
+
+        return self.length  # will throw if corpus not initialized
+
+    @staticmethod
+    def save_corpus(fname, corpus, id2word=None, metadata=False):
+        logger.info("storing corpus in Mallet format into %s" % fname)
+
+        truncated = 0
+        offsets = []
+        with gensim.utils.smart_open(fname, 'w') as fout:
+            for doc_id, doc in enumerate(corpus):
+                if metadata:
+                    doc_id, doc_lang = doc[1]
+                    doc = doc[0]
+                else:
+                    doc_lang = '__unknown__'
+
+                offsets.append(fout.tell())
+                fout.write('{} {} {}\n'.format(
+                    doc_id, doc_lang, ' '.join(doc)))
+
+        if truncated:
+            logger.warning("Mallet format can only save vectors with "
+                           "integer elements; %i float entries were truncated to integer value" %
+                           truncated)
+
+        return offsets
+
+    def docbyoffset(self, offset):
+        """
+        Return the document stored at file position `offset`.
+        """
+        with gensim.utils.smart_open(self.fname) as f:
+            f.seek(offset)
+            return self.line2doc(f.readline())
+
+
+class LabeledCorpus(gensim.corpora.IndexedCorpus):
+    def __init__(self, filename):
+        self.filename = filename
+        self.length = None
+        logger.info('Creating %s corpus for file %s',
+                    self.__class__.__name__, filename)
+
+    def __iter__(self):
+        with gensim.utils.smart_open(self.filename) as f:
+            for line in f:
+                line = gensim.utils.to_unicode(line)
+                words = line.split()
+                yield gensim.models.doc2vec.TaggedDocument(words=words[2:], tags=["DOC__%s" % words[0]])
+
+    def __len__(self):
+        if self.length == None:
+            self.length = sum([1 for _ in self])
+
+        return self.length  # will throw if corpus not initialized
+
+    @staticmethod
+    def save_corpus(fname, corpus, id2word=None, metadata=False):
+        if id2word is None:
+            logger.info(
+                "no word id mapping provided; initializing from corpus")
+            id2word = gensim.utils.dict_from_corpus(corpus)
+
+        logger.info("storing corpus in Mallet format into %s" % fname)
+
+        truncated = 0
+        offsets = []
+        with gensim.utils.smart_open(fname, 'w') as fout:
+            for doc_id, doc in enumerate(corpus):
+                if metadata:
+                    doc_id, doc_lang = doc[1]
+                    doc = doc[0]
+                else:
+                    doc_lang = '__unknown__'
+
+                if id2word:
+                    words = []
+                    for wordid, value in doc:
+                        if abs(int(value) - value) > 1e-6:
+                            truncated += 1
+                        words.extend([gensim.utils.to_unicode(
+                            id2word[wordid])] * int(value))
+                else:
+                    words = [str(x) for x, y in doc]
+
+                offsets.append(fout.tell())
+                fout.write('{} {} {}\n'.format(
+                    doc_id, doc_lang, ' '.join(words)))
+
+        if truncated:
+            logger.warning("Mallet format can only save vectors with "
+                           "integer elements; %i float entries were truncated to integer value" %
+                           truncated)
+
+        return offsets
+
+    def docbyoffset(self, offset):
+        """
+        Return the document stored at file position `offset`.
+        """
+        with gensim.utils.smart_open(self.fname) as f:
+            f.seek(offset)
+            return self.line2doc(f.readline())
