@@ -1,5 +1,5 @@
 from os import path,remove
-from .GoldsetGenerator import GoldsetGenerator
+from .generator import GoldsetGenerator
 
 
 class CommitGoldsetGenerator(GoldsetGenerator):

@@ -1,13 +1,13 @@
 import re
 import sys
 import logging
-import Util
+import util
 from git import GitCommandError
 from os import path, remove
 from typed_ast import ast3, ast27
 from collections import defaultdict
-from Project import GitProject
-from Error import NotGitProjectError
+from project import GitProject
+from error import NotGitProjectError
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : ' +
                     '%(name)s : %(funcName)s : %(message)s')
@@ -100,9 +100,9 @@ class GoldsetGenerator():
                                         actual_end_line = end_line - \
                                             3 if content.count(
                                                 '\n') != end_line else end_line
-                                        start_i = Util.obj_binary_search(
+                                        start_i = util.obj_binary_search(
                                             nodes, 'lineno', actual_start_line)
-                                        end_i = Util.obj_binary_search(
+                                        end_i = util.obj_binary_search(
                                             nodes, 'lineno', actual_end_line)
 
                                         for node in nodes[start_i:end_i + 1]:
@@ -115,9 +115,9 @@ class GoldsetGenerator():
                                                 class_set.add(
                                                     '.'.join([file_path[:-3], node.name]))
                                                 sub_nodes = node.body
-                                                sub_start_i = Util.obj_binary_search(
+                                                sub_start_i = util.obj_binary_search(
                                                     sub_nodes, 'lineno', actual_start_line)
-                                                sub_end_i = Util.obj_binary_search(
+                                                sub_end_i = util.obj_binary_search(
                                                     sub_nodes, 'lineno', actual_end_line)
 
                                                 for sub_node in sub_nodes[sub_start_i:sub_end_i + 1]:

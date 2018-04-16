@@ -1,24 +1,3 @@
-
-def obj_binary_search(objs, field, target):
-    if target < getattr(objs[0], field):
-        return -1
-
-    lo, hi = 0, len(objs) - 1
-    while lo < hi:
-        mid = (lo + hi) // 2
-        if target < getattr(objs[mid], field):
-            hi = mid - 1
-        elif target > getattr(objs[mid], field):
-            lo = mid + 1
-        else:
-            return mid
-    return lo
-
-
-def is_py_file(name):
-    return name.endswith('.py')
-
-
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -117,3 +96,22 @@ def download_file(url, destdir):
                     f.flush()
     return local_filename
 
+
+def obj_binary_search(objs, field, target):
+    if target < getattr(objs[0], field):
+        return -1
+
+    lo, hi = 0, len(objs) - 1
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if target < getattr(objs[mid], field):
+            hi = mid - 1
+        elif target > getattr(objs[mid], field):
+            lo = mid + 1
+        else:
+            return mid
+    return lo
+
+
+def is_py_file(name):
+    return name.endswith('.py')

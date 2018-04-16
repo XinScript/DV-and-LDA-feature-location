@@ -4,20 +4,17 @@
 Code for generating the corpora.
 """
 import os
-import Util
-from Error import *
-import Project
-import Config
-
-from collections import namedtuple
-
+import gensim
+import logging
 import re
 import os
+from collections import namedtuple
 
-import gensim
-import Preprocessing
+import project
+import error
+import preprocessing
+import util
 
-import logging
 logger = logging.getLogger('pfl.corpora')
 
 
@@ -71,19 +68,19 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
         self._id2word = val
 
     def preprocess(self, document):
-        document = Preprocessing.to_unicode(document)
-        words = Preprocessing.tokenize(document)
+        document = preprocessing.to_unicode(document)
+        words = preprocessing.tokenize(document)
 
         if self.split:
-            words = Preprocessing.split(words)
+            words = preprocessing.split(words)
 
         if self.lower:
             words = (word.lower() for word in words)
 
         if self.remove_stops:
-            words = Preprocessing.remove_stops(words, Preprocessing.FOX_STOPS)
-            words = Preprocessing.remove_stops(
-                words, Preprocessing.PYTHON_RESERVED)
+            words = preprocessing.remove_stops(words, preprocessing.FOX_STOPS)
+            words = preprocessing.remove_stops(
+                words, preprocessing.PYTHON_RESERVED)
 
         words = (word for word in words if len(word) >=
                  self.min_len and len(word) <= self.max_len)
@@ -106,8 +103,8 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 class GitCorpus(GeneralCorpus):
 
     def __init__(self, project, ref, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
-        if not isinstance(project, Project.GitProject):
-            raise NotGitProjectError
+        if not isinstance(project, project.GitProject):
+            raise error.NotGitProjectError
         else:
             super().__init__(
                 project=project,
@@ -134,7 +131,7 @@ class GitCorpus(GeneralCorpus):
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
             dirnames[:] = [d for d in dirnames if d is not '.git']
             for filename in filenames:
-                if Util.is_py_file(filename):
+                if util.is_py_file(filename):
                     path = os.path.join(dirpath, filename)
                     meta = (path[len(self.project.src_path) + 1:], 'corpus')
 

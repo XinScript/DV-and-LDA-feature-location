@@ -1,7 +1,7 @@
 import re
 from os import path,remove
 from collections import defaultdict
-from .GoldsetGenerator import GoldsetGenerator
+from .generator import GoldsetGenerator
 
 class IssueGoldsetGenerator(GoldsetGenerator):
     def __init__(self, project):

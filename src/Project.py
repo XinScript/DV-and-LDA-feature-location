@@ -1,30 +1,30 @@
-from os import path, makedirs
-import Util
-import Config
-import Error
-from git import Repo, GitCmdObjectDB
 import pickle
-from collections import defaultdict
 import logging
+from os import path, makedirs
+from git import Repo, GitCmdObjectDB
+from collections import defaultdict
+
+import config
+import error
 
 logger = logging.getLogger('plt.project')
 
-logger.setLevel(Config.LOG_LEVEL)
+logger.setLevel(config.LOG_LEVEL)
 
 
 class Project(object):
 
     def __init__(self, name):
         self.name = name
-        self.path = path.join(Config.BASE_PATH, self.name)
+        self.path = path.join(config.BASE_PATH, self.name)
 
     def save(self):
-        with open(path.join(self.path, Config.PROJECT_EXT), 'wb') as f:
+        with open(path.join(self.path, config.PROJECT_EXT), 'wb') as f:
             pickle.dump(self, f)
 
     @staticmethod
     def load(name):
-        with open(path.join(Config.BASE_PATH, name, Config.PROJECT_EXT), 'rb') as f:
+        with open(path.join(config.BASE_PATH, name, config.PROJECT_EXT), 'rb') as f:
             return pickle.load(f)
 
 
@@ -38,12 +38,12 @@ class GitProject(Project):
         self.gen_rule = gen_rule
 
     def save(self):
-        with open(path.join(self.path_dict['base'], Config.PROJECT_EXT), 'wb') as f:
+        with open(path.join(self.path_dict['base'], config.PROJECT_EXT), 'wb') as f:
             pickle.dump(self, f)
 
     @staticmethod
     def load(name, release_interval):
-        with open(path.join(Config.BASE_PATH, name, '-'.join([str(x) for x in release_interval]), Config.PROJECT_EXT), 'rb') as f:
+        with open(path.join(config.BASE_PATH, name, '-'.join([str(x) for x in release_interval]), config.PROJECT_EXT), 'rb') as f:
             return pickle.load(f)
 
     def load_dirs(self):
@@ -105,7 +105,7 @@ class LocalGitProject(GitProject):
             raise FileNotFoundError('Directory not exists.')
 
         elif not path.exists(path.join(src_path, '.git')):
-            raise Error.GitNotFoundError('It is not a git directory')
+            raise error.GitNotFoundError('It is not a git directory')
 
         else:
             super().__init__(name, kind, release_interval, issue_keywords)

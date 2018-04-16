@@ -6,8 +6,8 @@ Code for splitting the terms.
 """
 
 import string
-
 import logging
+
 logger = logging.getLogger('pfl.preprocessing')
 
 

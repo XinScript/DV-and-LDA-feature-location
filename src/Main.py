@@ -1,59 +1,108 @@
 import csv
 import os
 import logging
-import Project
-import Corpora
-import Util
-import Config
-from Goldset.CommitGoldsetGenerator import CommitGoldsetGenerator
+import multiprocessing
 from gensim.corpora import Dictionary, MalletCorpus
 from gensim.models import Doc2Vec
 from collections import defaultdict
-import multiprocessing
+
+from goldset.bycommit import CommitGoldsetGenerator
+from project import LocalGitProject,GitProject
+import corpora
+import util
+import config
 
 logger = logging.getLogger('plt.main')
 
-logger.setLevel(Config.LOG_LEVEL)
+logger.setLevel(config.LOG_LEVEL)
 
 
 def create_query(project, bow=False):
 
     base_path = project.path_dict['base']
 
-    corpus_fname = os.path.join(base_path, 'queries' + Config.CORPUS_EXT)
+    if not bow:
+        corpus_fname = os.path.join(base_path, 'queries' + config.CORPUS_EXT)
 
-    if os.path.exists(corpus_fname):
-        return Corpora.OrderedCorpus(corpus_fname)
+        if os.path.exists(corpus_fname):
+            return corpora.OrderedCorpus(corpus_fname)
+
+        else:
+            queries = []
+            pp = corpora.GeneralCorpus()
+            ids = project.load_ids()
+            for idx in ids:
+                with open(os.path.join(project.path_dict['query'], idx + '.txt')) as f:
+                    content = f.read()
+
+                doc_vec = list(pp.preprocess(content))
+                queries.append((doc_vec, (idx, 'query')))
+
+            corpora.OrderedCorpus.serialize(corpus_fname, queries, metadata=True)
+            return corpora.OrderedCorpus(corpus_fname)
     else:
-        queries = []
-        pp = Corpora.GeneralCorpus()
-        ids = project.load_ids()
-        for idx in ids:
-            with open(os.path.join(project.path_dict['query'], idx + '.txt')) as f:
-                content = f.read()
+        corpus_fname = os.path.join(base_path, 'bow.queries' + config.CORPUS_EXT)
+        id2word_fname = os.path.join(base_path, 'bow.queries' + config.ID2WORD_EXT)
 
-            doc_vec = list(pp.preprocess(content))
-            queries.append((doc_vec, (idx, 'query')))
+        if os.path.exists(corpus_fname):
+            return corpora.MalletCorpus(corpus_fname, id2word=Dictionary.load(id2word_fname))
+        else:
+            queries = []
+            pp = corpora.GeneralCorpus()
+            id2word = Dictionary()
+            ids = project.load_ids()
+            for idx in ids:
+                with open(os.path.join(project.path_dict['query'], idx + '.txt')) as f:
+                    content = f.read()
 
-        Corpora.OrderedCorpus.serialize(corpus_fname, queries, metadata=True)
+                doc_vec = id2word.doc2bow(pp.preprocess(content), allow_update=True)
 
-        return Corpora.OrderedCorpus(corpus_fname)
+                queries.append((doc_vec, (idx, 'query')))
+
+            MalletCorpus.serialize(corpus_fname, queries,id2word=id2word, metadata=True)
+
+            id2word.save(id2word_fname)
+
+            return MalletCorpus(corpus_fname,id2word=id2word)
+
 
 
 def create_corpus(project, bow=False):
 
     base_path = project.path_dict['base']
 
-    corpus_fname = os.path.join(base_path, 'code' + Config.CORPUS_EXT)
+    if not bow:
+        corpus_fname = os.path.join(base_path, 'code' + config.CORPUS_EXT)
 
-    if os.path.exists(corpus_fname):
-        corpus = Corpora.OrderedCorpus(corpus_fname)
+        if os.path.exists(corpus_fname):
+            corpus = corpora.OrderedCorpus(corpus_fname)
+
+        else:
+            corpus = corpora.GitCorpus(project, project.release_interval[1])
+
+            corpora.OrderedCorpus.serialize(
+                corpus_fname, corpus, metadata=True)
+
+            corpus = corpora.OrderedCorpus(corpus_fname)
+    
+    
     else:
-        corpus = Corpora.GitCorpus(project, project.release_interval[1])
+        corpus_fname = os.path.join(base_path, 'bow.code' + config.CORPUS_EXT)
+        id2word_fname = os.path.join(base_path, 'bow.code' + config.ID2WORD_EXT)
 
-        Corpora.OrderedCorpus.serialize(corpus_fname, corpus, metadata=True)
+        if os.path.exists(corpus_fname):
 
-        corpus = Corpora.OrderedCorpus(corpus_fname)
+            corpus = MalletCorpus(corpus_fname, id2word=Dictionary.load(id2word_fname))
+
+        else:
+
+            corpus = corpora.GitCorpus(project, project.release_interval[1])
+
+            MalletCorpus.serialize(corpus_fname, corpus,id2word=corpus.id2word, metadata=True)
+
+            corpus.id2word.save(id2word_fname)
+
+            corpus = corpora.OrderedCorpus(corpus_fname, id2word=corpus.id2word)
 
     return corpus
 
@@ -62,9 +111,9 @@ def create_doc2vec_model(project, corpus, num_topics=500, min_count=1):
 
     base_path = project.path_dict['base']
 
-    model_fname = os.path.join(base_path, 'code' + Config.MODEL_EXT)
+    model_fname = os.path.join(base_path, 'code' + config.MODEL_EXT)
 
-    corpus = Corpora.LabeledCorpus(corpus.fname)
+    corpus = corpora.LabeledCorpus(corpus.fname)
 
     if not os.path.exists(model_fname):
         model = Doc2Vec(corpus, min_count=min_count,
@@ -87,7 +136,7 @@ def get_topics(model, corpus):
     return topic_arr
 
 
-def get_rank_basic(goldsets, query_topic, doc_topic, distance_measure=Util.cosine_distance):
+def get_rank_basic(goldsets, query_topic, doc_topic, distance_measure=util.cosine_distance):
     logger.info('Getting ranks between %d query topics and %d doc topics',
                 len(query_topic), len(doc_topic))
 
@@ -112,8 +161,8 @@ def get_rank_basic(goldsets, query_topic, doc_topic, distance_measure=Util.cosin
 
 
 def get_rank_sum(model, queries, goldsets, corpus, by_ids=None):
-    queries = Corpora.LabeledCorpus(queries.fname)
-    corpus = Corpora.LabeledCorpus(corpus.fname)
+    queries = corpora.LabeledCorpus(queries.fname)
+    corpus = corpora.LabeledCorpus(corpus.fname)
     logger.info('Getting ranks for Doc2Vec model')
 
     ranks = dict()
@@ -158,7 +207,7 @@ def get_rels(goldset, q_dist):
 
 
 def write_ranks(project, kind, ranks):
-    fname = os.path.join(project.path_dict['base'], kind + Config.RANK_EXT)
+    fname = os.path.join(project.path_dict['base'], kind + config.RANK_EXT)
     if not os.path.exists(fname):
         with open(fname, 'w') as f:
             writer = csv.writer(f)
@@ -171,7 +220,7 @@ def write_ranks(project, kind, ranks):
 
 def read_ranks(project, kind):
     ranks = defaultdict(list)
-    fname = os.path.join(project.path_dict['base'], kind + Config.RANK_EXT)
+    fname = os.path.join(project.path_dict['base'], kind + config.RANK_EXT)
     if os.path.exists(fname):
         with open(fname, 'w') as f:
             reader = csv.reader(f)
@@ -197,7 +246,7 @@ def get_frms(ranks):
 
 def generate_data(name, gen_rule, src_path, version, issue_keywords):
 
-    project = Project.LocalGitProject(
+    project = LocalGitproject(
         name, gen_rule, src_path, version, issue_keywords)
 
     generator = CommitGoldsetGenerator(project)
@@ -212,7 +261,6 @@ def generate_data(name, gen_rule, src_path, version, issue_keywords):
 
 
 def run(project, kind, level):
-
     ranks = read_ranks(project, kind)
     if not ranks:
         queries = create_query(project)
@@ -232,6 +280,6 @@ def run(project, kind, level):
 
 if __name__ == '__main__':
     # generate_data('sage', 'by_commit', '../sources/sage', ('5.0', '5.1'), ['trac'])
-    project = Project.GitProject.load('sage', ('5.0', '5.1'))
+    project = Gitproject.load('sage', ('5.0', '5.1'))
     # run(project, 'basic', 'class')
-    run(project, 'sum', 'class')
+    # run(project, 'sum', 'class')
