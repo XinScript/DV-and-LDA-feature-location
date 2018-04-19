@@ -98,7 +98,7 @@ def download_file(url, destdir):
 
 
 def obj_binary_search(objs, field, target):
-    if target < getattr(objs[0], field):
+    if not objs or target < getattr(objs[0], field):
         return -1
 
     lo, hi = 0, len(objs) - 1
@@ -115,3 +115,4 @@ def obj_binary_search(objs, field, target):
 
 def is_py_file(name):
     return name.endswith('.py')
+

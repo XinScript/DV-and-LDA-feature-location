@@ -1,4 +1,4 @@
-from os import path,remove
+from os import path, remove
 from .generator import GoldsetGenerator
 
 
@@ -10,11 +10,9 @@ class CommitGoldsetGenerator(GoldsetGenerator):
 
         map_path = path.join(self.project.path_dict['data'], 'ids.txt')
 
-        remove(map_path) if path.exists(map_path) else None
-
         commits = [commit.hexsha for commit in self.project.repo.iter_commits('{0}...{1}'.format(*self.project.release_interval))]
 
-        with open(map_path, 'a+') as f:
+        with open(map_path, 'w') as f:
             for idx in commits:
                 content = ''.join([idx, '\n'])
                 f.write(content)
@@ -41,8 +39,7 @@ class CommitGoldsetGenerator(GoldsetGenerator):
         ids = self.project.load_ids()
 
         if not ids:
-            self.logger.info(
-                "You need to run 'generate_issueID_commitID_map' at first.")
+            self.logger.info("You need to run 'generate_issueID_commitID_map' at first.")
             return
 
         for idx in ids:

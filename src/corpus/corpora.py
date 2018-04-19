@@ -10,10 +10,10 @@ import re
 import os
 from collections import namedtuple
 
-import project
-import error
-import preprocessing
-import util
+from common.project import LocalGitProject, GitProject
+from common.error import NotGitProjectError
+from common import util
+from . import preprocessing
 
 logger = logging.getLogger('pfl.corpora')
 
@@ -103,7 +103,7 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 class GitCorpus(GeneralCorpus):
 
     def __init__(self, project, ref, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
-        if not isinstance(project, project.GitProject):
+        if not isinstance(project, GitProject):
             raise error.NotGitProjectError
         else:
             super().__init__(
@@ -124,8 +124,6 @@ class GitCorpus(GeneralCorpus):
 
         length = 0
 
-        head = self.project.repo.head.commit
-
         self.project.repo.git.checkout(self.ref)
 
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
@@ -143,7 +141,7 @@ class GitCorpus(GeneralCorpus):
 
         self.length = length
 
-        self.project.repo.git.checkout(head)
+        self.project.repo.git.checkout('master')
         # switch back to head
 
 
@@ -174,7 +172,8 @@ class OrderedCorpus(gensim.corpora.IndexedCorpus):
         truncated = 0
         offsets = []
         with gensim.utils.smart_open(fname, 'w') as fout:
-            enum_corpus = enumerate(corpus.gen()) if hasattr(corpus,'gen') else enumerate(corpus)
+            enum_corpus = enumerate(corpus.gen()) if hasattr(
+                corpus, 'gen') else enumerate(corpus)
             for idx, docs in enum_corpus:
                 if metadata:
                     words = docs[0]
@@ -184,7 +183,8 @@ class OrderedCorpus(gensim.corpora.IndexedCorpus):
 
                 offsets.append(fout.tell())
                 try:
-                    fout.write('{} {} {}\n'.format(doc_id, doc_lang, ' '.join(words)))
+                    fout.write('{} {} {}\n'.format(
+                        doc_id, doc_lang, ' '.join(words)))
                 except Exception:
                     print(docs[0][0])
                     exit()
@@ -237,7 +237,8 @@ class LabeledCorpus(gensim.corpora.IndexedCorpus):
         truncated = 0
         offsets = []
         with gensim.utils.smart_open(fname, 'w') as fout:
-            enum_corpus = enumerate(corpus.gen()) if hasattr(corpus,gen) else enumerate(corpus)
+            enum_corpus = enumerate(corpus.gen()) if hasattr(
+                corpus, gen) else enumerate(corpus)
             for doc_id, doc in enum_corpus:
                 if metadata:
                     doc_id, doc_lang = doc[1]

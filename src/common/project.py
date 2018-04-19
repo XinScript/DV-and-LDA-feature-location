@@ -1,32 +1,21 @@
-import pickle
 import logging
 from os import path, makedirs
 from git import Repo, GitCmdObjectDB
 from collections import defaultdict
 
-import config
-import error
+from . import CONFIG
+from . import error
 
 logger = logging.getLogger('plt.project')
 
-logger.setLevel(config.LOG_LEVEL)
+logger.setLevel(CONFIG.LOG_LEVEL)
 
 
 class Project(object):
 
     def __init__(self, name):
         self.name = name
-        self.path = path.join(config.BASE_PATH, self.name)
-
-    def save(self):
-        with open(path.join(self.path, config.PROJECT_EXT), 'wb') as f:
-            pickle.dump(self, f)
-
-    @staticmethod
-    def load(name):
-        with open(path.join(config.BASE_PATH, name, config.PROJECT_EXT), 'rb') as f:
-            return pickle.load(f)
-
+        self.path = path.join(CONFIG.BASE_PATH, self.name)
 
 class GitProject(Project):
 
@@ -36,15 +25,6 @@ class GitProject(Project):
         self.issue_keywords = issue_keywords
         self.path_dict = self.load_dirs()
         self.gen_rule = gen_rule
-
-    def save(self):
-        with open(path.join(self.path_dict['base'], config.PROJECT_EXT), 'wb') as f:
-            pickle.dump(self, f)
-
-    @staticmethod
-    def load(name, release_interval):
-        with open(path.join(config.BASE_PATH, name, '-'.join([str(x) for x in release_interval]), config.PROJECT_EXT), 'rb') as f:
-            return pickle.load(f)
 
     def load_dirs(self):
 

@@ -1,5 +1,5 @@
 import re
-from os import path,remove
+import os
 from collections import defaultdict
 from .generator import GoldsetGenerator
 
@@ -9,9 +9,7 @@ class IssueGoldsetGenerator(GoldsetGenerator):
 
     def generate_ids(self):
 
-        map_path = path.join(self.project.path_dict['data'], 'ids.txt')
-
-        remove(map_path) if path.exists(map_path) else None
+        map_path = os.path.join(self.project.path_dict['data'], 'ids.txt')
 
         pattern = re.compile('{types} #(\d+)'.format(types='|'.join(self.project.issue_keywords)))
 
@@ -46,7 +44,7 @@ class IssueGoldsetGenerator(GoldsetGenerator):
         for issueID, commitIDs in idd.items():
             for i, commitID in enumerate(commitIDs):
                 commit = self.project.repo.commit(commitID)
-                with open(path.join(self.project.path_dict['query'], '{issueID}_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
+                with open(os.path.join(self.project.path_dict['query'], '{issueID}_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
                     short = pattern.split(commit.message)[0]
                     long = commit.message
                     f.write('\r\n'.join([short, long]))
@@ -74,11 +72,11 @@ class IssueGoldsetGenerator(GoldsetGenerator):
                     method_set.add(m)
 
             if class_set:
-                with open(path.join(self.project.path_dict['class'], issueID + '.txt'), 'a+') as f:
+                with open(os.path.join(self.project.path_dict['class'], issueID + '.txt'), 'a+') as f:
                     [f.write(c + '\n') for c in class_set]
 
             if method_set:
-                with open(path.join(self.project.path_dict['method'], issueID + '.txt'), 'a+') as f:
+                with open(os.path.join(self.project.path_dict['method'], issueID + '.txt'), 'a+') as f:
                     [f.write(m + '\n') for m in method_set]
 
         self.logger.info('goldset generated.')
