@@ -116,3 +116,18 @@ def obj_binary_search(objs, field, target):
 def is_py_file(name):
     return name.endswith('.py')
 
+
+def measure(a, b):
+    s = {}
+    for qid, metas in a.items():
+        first_rank = metas[0][0]
+        s[qid] = [1 / first_rank, 0]
+    for qid, metas in b.items():
+        first_rank = metas[0][0]
+        if qid in s:
+            s[qid][1] = 1 / first_rank
+        else:
+            s[qid] = [0, 1 / first_rank]
+    x = [i[0] for i in s.values()]
+    y = [i[1] for i in s.values()]
+    return numpy.mean(x), numpy.mean(y)

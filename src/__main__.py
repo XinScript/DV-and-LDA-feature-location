@@ -2,9 +2,9 @@ import logging
 import scipy
 from goldset.bycommit import GoldsetGenerator,CommitGoldsetGenerator
 from common.project import LocalGitProject
-from common import util
 from common.project import LocalGitProject, GitProject
 from common import CONFIG
+from common import util
 from models.doc2vec import WordSumModel,Doc2VecModel
 
 logger = logging.getLogger('plt.main')
@@ -41,5 +41,3 @@ if __name__ == '__main__':
     wordsum_m = WordSumModel(project,'class')
     wordsum_rank = wordsum_m.get_ranks()
     do_science('doc2vec', doc2vec_rank, 'sum', wordsum_rank)
-
-    # run(project, 'sum', 'class')
