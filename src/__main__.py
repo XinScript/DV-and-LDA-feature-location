@@ -35,9 +35,9 @@ def do_science(prefixa, a_ranks, prefixb, b_ranks):
 
 
 if __name__ == '__main__':
-    project = LocalGitProject('sage', 'by_commit', '../sources/sage', ('5.0', '5.1'), ['trac'])
-    doc2vec_m = Doc2VecModel(project,'class')
-    doc2vec_rank = doc2vec_m.get_ranks()
+    project = LocalGitProject('sage', 'by_commit', './sources/sage', ('7.0', '8.0'), ['trac'])
+    # doc2vec_m = Doc2VecModel(project,'class')
+    # doc2vec_rank = doc2vec_m.get_ranks()
     wordsum_m = WordSumModel(project,'class')
     wordsum_rank = wordsum_m.get_ranks()
-    do_science('doc2vec', doc2vec_rank, 'sum', wordsum_rank)
+    # do_science('doc2vec', doc2vec_rank, 'sum', wordsum_rank)

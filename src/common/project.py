@@ -82,7 +82,7 @@ class GitProject(Project):
 class LocalGitProject(GitProject):
     def __init__(self, name, kind, src_path, release_interval, issue_keywords):
         if not path.exists(src_path):
-            raise FileNotFoundError('Directory not exists.')
+            raise FileNotFoundError(src_path)
 
         elif not path.exists(path.join(src_path, '.git')):
             raise error.GitNotFoundError('It is not a git directory')
