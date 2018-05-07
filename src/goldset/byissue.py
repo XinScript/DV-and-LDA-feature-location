@@ -1,7 +1,8 @@
 import re
 import os
 from collections import defaultdict
-from .generator import GoldsetGenerator
+from .generator import Goldset]erator
+
 
 class IssueGoldsetGenerator(GoldsetGenerator):
     def __init__(self, project):
@@ -9,13 +10,13 @@ class IssueGoldsetGenerator(GoldsetGenerator):
 
     def generate_ids(self):
 
-        map_path = os.path.join(self.project.path_dict['data'], 'ids.txt')
+        map_path= os.path.join(self.project.path_dict['data'], 'ids.txt')
 
-        pattern = re.compile('{types} #(\d+)'.format(types='|'.join(self.project.issue_keywords)))
+        pattern= re.compile('{types} #(\d+)'.format(types='|'.join(self.project.issue_keywords)))
 
         d = defaultdict(list)
 
-        commits = self.project.repo.iter_commits('{0}...{1}'.format(*self.project.release_interval))
+        commits= self.project.repo.iter_commits('{0}...{1}'.format(*self.project.by_release))
 
         for commit in commits:
             m = pattern.search(commit.message.lower())
@@ -25,46 +26,47 @@ class IssueGoldsetGenerator(GoldsetGenerator):
 
         with open(map_path, 'w') as f:
             for issueID, commitIDs in d.items():
-                content = ' '.join([issueID, ' '.join(commitIDs), '\r\n'])
+                content= ' '.join([issueID, ' '.join(commitIDs), '\r\n'])
                 f.write(content)
 
         self.logger.info('issueID commitID map generated.')
 
     def generate_queries(self):
 
-        idd = self.project.load_ids()
+        idd= self.project.load_ids()
 
         if not idd:
             self.logger.info(
                 "You need to run 'generate_issueID_commitID_map' at first.")
             return
 
-        pattern = re.compile(r'\n')
+        pattern=re.compile(r'\n')
 
         for issueID, commitIDs in idd.items():
             for i, commitID in enumerate(commitIDs):
-                commit = self.project.repo.commit(commitID)
+                commit=self.project.repo.commit(commitID)
                 with open(os.path.join(self.project.path_dict['query'], '{issueID}_{i}.txt'.format(issueID=issueID, i=i)), 'w') as f:
-                    short = pattern.split(commit.message)[0]
-                    long = commit.message
+                    short=pattern.split(commit.message)[0]
+                    long=commit.message
                     f.write('\r\n'.join([short, long]))
 
         self.logger.info('queries generated.')
 
     def generate_goldsets(self):
 
-        idd = self.project.load_ids()
+        idd=self.project.load_ids()
 
         if not idd:
-            self.logger.info(
-                "You need to run 'generate_issueID_commitID_map' at first.")
+            self.logger.info("You need to run 'generate_issueID_commitID_map' at first.")
             return
 
+
+
         for issueID, commitIDs in idd.items():
-            class_set, method_set = set(), set()
+            class_set, method_set=set(), set()
             for commitID in commitIDs:
-                commit = self.project.repo.commit(commitID)
-                c_set, m_set = self.extract_goldset_from_commit(commit)
+                commit=self.project.repo.commit(commitID)
+                c_set, m_set=self.extract_goldset_from_commit(commit)
                 for c in c_set:
                     class_set.add(c)
 

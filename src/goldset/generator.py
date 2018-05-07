@@ -8,7 +8,8 @@ from typed_ast import ast3, ast27
 from collections import defaultdict
 from common.project import GitProject
 from common.error import NotGitProjectError
-from common import util
+from common import util,CONFIG
+
 
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(funcName)s : %(message)s')
@@ -17,14 +18,13 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(func
 class GoldsetGenerator():
     def __init__(self, project):
         if not isinstance(project, GitProject):
-            raise NotGitProjectError()
+            raise NotGitProjectError
         else:
             self.project = project
-
-            self.logger = logging.getLogger(
-                '.'.join(['pfl.goldset', self.project.name]))
+            self.logger = logging.getLogger('.'.join(['pfl.goldset', self.project.name]))
             fh = logging.FileHandler(filename=path.join(project.path_dict['base'], 'log.txt'))
-            fh.setLevel(logging.DEBUG)
+            fh.setLevel(CONFIG.LOG_LEVEL)
+            self.logger.setLevel(CONFIG.LOG_LEVEL)
             self.logger.addHandler(fh)
 
             if 'master' in self.project.repo.heads:
@@ -32,16 +32,43 @@ class GoldsetGenerator():
             else:
                 remote = self.project.repo.remote()
                 remote.fetch()
-                self.project.repo.create_head('master', remote.refs.master)
-                self.project.repo.heads.master.set_tracking_branch(
-                    remote.refs.master)
-                self.project.repo.heads.master.checkout()
+                try:
+                    self.project.repo.create_head('master', remote.refs.master)
+                    self.project.repo.heads.master.set_tracking_branch(
+                        remote.refs.master)
+                    self.project.repo.heads.master.checkout()
+                except AttributeError:
+                    self.logger.info('cannot find master in local or remote repo thus just use current branch.')
+
                 # checkout to master.
 
     def generate(self):
         self.generate_ids()
         self.generate_queries()
         self.generate_goldsets()
+
+    def _generate_single_goldset(self,commit):
+        c_set, m_set = self._extract_goldset_from_commit(commit)
+        if c_set:
+            with open(path.join(self.project.path_dict['class'], commit.hexsha + '.txt'), 'w') as f:
+                [f.write(c + '\n') for c in c_set]
+
+        if m_set:
+            with open(path.join(self.project.path_dict['method'], commit.hexsha + '.txt'), 'w') as f:
+                [f.write(m + '\n') for m in m_set]
+    
+        return commit.hexsha if c_set or m_set else None
+    
+    def _generate_single_query(self,commit):
+        with open(path.join(self.project.path_dict['query'], '{idx}.txt'.format(idx=commit.hexsha)), 'w') as f:
+            f.write(commit.message)
+    
+    def _generate_single_id(self,commit):
+        map_path = path.join(self.project.path_dict['data'], 'ids.txt')
+        with open(map_path, 'a+') as f:
+            content = ''.join([commit.hexsha, '\n'])
+            f.write(content)
+
 
     def find_package(self, commit, file_path):
         index = file_path.find('/')
@@ -60,7 +87,7 @@ class GoldsetGenerator():
             finally:
                 index = file_path.find('/', index + 1)
 
-    def extract_goldset_from_commit(self, commit):
+    def _extract_goldset_from_commit(self, commit):
         class_set = set()
         method_set = set()
         pattern = re.compile(r'\n@@(.+)@@\n')
@@ -78,7 +105,7 @@ class GoldsetGenerator():
                             nodes = ast27.parse(content).body
                             ast = ast27
                         except SyntaxError:
-                            self.logger.warning('Fail to parse {src} with Py2.7 AST.'.format(src=src_path))
+                            # self.logger.warning('Fail to parse {src} with Py2.7 AST.'.format(src=src_path))
                             nodes = ast3.parse(content).body
                             ast = ast3
                             
@@ -134,5 +161,6 @@ class GoldsetGenerator():
 
                 except Exception as e:
                     self.logger.warning(e)
+
 
         return class_set, method_set

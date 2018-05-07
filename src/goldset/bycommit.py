@@ -1,5 +1,14 @@
 from os import path, remove
 from .generator import GoldsetGenerator
+import logging
+from common import CONFIG
+
+logger = logging.getLogger('plt')
+fh = logging.FileHandler(filename=path.join(CONFIG.BASE_PATH, 'log.txt'))
+fh.setLevel(CONFIG.LOG_LEVEL)
+logger.setLevel(CONFIG.LOG_LEVEL)
+logger.addHandler(fh)
+
 
 
 class CommitGoldsetGenerator(GoldsetGenerator):
@@ -8,29 +17,19 @@ class CommitGoldsetGenerator(GoldsetGenerator):
 
     def generate_ids(self):
 
-        map_path = path.join(self.project.path_dict['data'], 'ids.txt')
-
         commits = [commit.hexsha for commit in self.project.repo.iter_commits('{0}...{1}'.format(*self.project.release_interval))]
 
-        with open(map_path, 'w') as f:
-            for idx in commits:
-                content = ''.join([idx, '\n'])
-                f.write(content)
+        for commit in commits:
+            self._generate_single_id(commit)
 
         self.logger.info('commit ids generated.')
 
     def generate_queries(self):
         ids = self.project.load_ids()
 
-        if not ids:
-            self.logger.info(
-                "You need to run 'generate_issueID_commitID_map' at first.")
-            return
-        
         for idx in ids:
             commit = self.project.repo.commit(idx)
-            with open(path.join(self.project.path_dict['query'], '{idx}.txt'.format(idx=idx)), 'w') as f:
-                f.write(''.join([commit.message, '\n']))
+            self._generate_single_query(commit)
 
         self.logger.info('queries generated.')
 
@@ -38,17 +37,42 @@ class CommitGoldsetGenerator(GoldsetGenerator):
 
         ids = self.project.load_ids()
 
-        if not ids:
-            self.logger.info("You need to run 'generate_issueID_commitID_map' at first.")
-            return
-
         for idx in ids:
             commit = self.project.repo.commit(idx)
-            c_set, m_set = self.extract_goldset_from_commit(commit)
-            if c_set:
-                with open(path.join(self.project.path_dict['class'], idx + '.txt'), 'a+') as f:
-                    [f.write(c + '\n') for c in c_set]
+            self._generate_single_goldset(commit)
 
-            if m_set:
-                with open(path.join(self.project.path_dict['method'], idx + '.txt'), 'a+') as f:
-                    [f.write(m + '\n') for m in m_set]
+    def generate_goldsets_directly(self, goldset_num=50,ref_type='LATEST_COMMIT'):
+        logger.info('{}'.format(self.project.name))
+        
+        if ref_type == 'LATEST_TAG':
+            if self.project.repo.tags:
+                start_commit = self.project.repo.tags[-1].commit
+                self.logger.info('use latest tag {tag} as start ref.'.format(tag=start_commit.name))
+            else:    
+                start_commit = self.project.repo.head.commit
+                self.logger.info('No tags found thus use last commit {id} as start ref.'.format(id=start_commit.hexsha))
+        else:
+            start_commit = self.project.repo.head.commit
+            self.logger.info('use last commit {id} as start ref.'.format(id=start_commit.hexsha))
+
+        logger.info('ref:{}'.format(start_commit.hexsha))
+        commit = start_commit
+        goldset_count = 0
+        commit_count = 0
+        while commit.parents:
+            idx = self._generate_single_goldset(commit)
+            commit_count+=1
+            if idx:
+                goldset_count += 1
+                self._generate_single_id(commit)
+                self._generate_single_query(commit)
+                if goldset_count == goldset_num:
+                    self.logger.info('{} goldsets have been generated.'.format(goldset_count))
+                    logger.info('goldset:{}'.format(goldset_count))
+                    logger.info('commit visited:{}\n'.format(commit_count))
+                    return
+            commit = self.project.repo.commit(commit.hexsha + '~1')
+
+        self.logger.info('run through all commits but got only {} goldsets.'.format(goldset_count))
+        logger.info('goldset:{}'.format(goldset_count))
+        logger.info('commit visited:{}\n'.format(commit_count))

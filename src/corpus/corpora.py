@@ -10,7 +10,7 @@ import re
 import os
 from collections import namedtuple
 
-from common.project import LocalGitProject, GitProject
+from common.project import GitProject
 from common.error import NotGitProjectError
 from common import util
 from . import preprocessing

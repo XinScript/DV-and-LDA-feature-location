@@ -1,6 +1,6 @@
 import logging
 
-BASE_PATH = '/Users/chenhongxin/Code/feature-location/plt'
+BASE_PATH = '/Users/chenhongxin/Code/feature-location'
 LOG_LEVEL = logging.DEBUG
 ID2WORD_EXT = '.id2word.gz'
 CORPUS_EXT = '.corpus.gz'
