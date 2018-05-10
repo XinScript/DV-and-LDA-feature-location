@@ -102,7 +102,7 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 
 class GitCorpus(GeneralCorpus):
 
-    def __init__(self, project, ref, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
+    def __init__(self, project, id2word=None, split=True, lower=True, remove_stops=True, min_len=3, max_len=40, allow_update=True):
         if not isinstance(project, GitProject):
             raise error.NotGitProjectError
         else:
@@ -115,7 +115,6 @@ class GitCorpus(GeneralCorpus):
                 min_len=min_len,
                 max_len=max_len,
                 allow_update=allow_update)
-            self.ref = ref
 
     def _make_meta(self, **kwargs):
         return kwargs
@@ -124,7 +123,7 @@ class GitCorpus(GeneralCorpus):
 
         length = 0
 
-        self.project.repo.git.checkout(self.ref)
+        self.project.repo.git.checkout(self.project.ref)
 
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
             dirnames[:] = [d for d in dirnames if d is not '.git']

@@ -49,12 +49,13 @@ class GitProject(Project):
             return d
 
 
-class GitIssueProject(GitProject):
+class IssuGitProject(GitProject):
 
     def __init__(self, name, src_path, by_release, issue_keywords):
         super().__init__(name, src_path)
         self.by_release = tuple([str(x) for x in by_release])
         self.issue_keywords = issue_keywords
+        self.ref = self.repo.commit(by_release[1])
 
     def load_dirs(self):
 
@@ -89,8 +90,9 @@ class GitIssueProject(GitProject):
 
 class CommitGitProject(GitProject):
     def __init__(self, name, src_path, goldset_num):
-        self.goldset_num = goldset_num
         super().__init__(name, src_path)
+        self.goldset_num = goldset_num
+        self.ref = self.repo.head.commit
 
     def load_dirs(self):
 
