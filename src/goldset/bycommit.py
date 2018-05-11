@@ -2,14 +2,10 @@ from os import path, remove
 from .generator import GoldsetGenerator
 import logging
 from common import CONFIG
-
-logger = logging.getLogger('plt')
-fh = logging.FileHandler(filename=path.join(CONFIG.BASE_PATH, 'log.txt'))
-fh.setLevel(CONFIG.LOG_LEVEL)
-logger.setLevel(CONFIG.LOG_LEVEL)
-logger.addHandler(fh)
+from common import util
 
 
+share_logger = util.get_logger('goldset')
 
 class CommitGoldsetGenerator(GoldsetGenerator):
     def __init__(self, project):
@@ -41,8 +37,8 @@ class CommitGoldsetGenerator(GoldsetGenerator):
             commit = self.project.repo.commit(idx)
             self._generate_single_goldset(commit)
 
-    def generate_goldsets_directly(self, goldset_num=50,ref_type='LATEST_COMMIT'):
-        logger.info('{}'.format(self.project.name))
+    def generate_goldsets_directly(self,ref_type='LATEST_COMMIT'):
+        share_logger.info('{}'.format(self.project.name))
         
         if ref_type == 'LATEST_TAG':
             if self.project.repo.tags:
@@ -55,7 +51,7 @@ class CommitGoldsetGenerator(GoldsetGenerator):
             start_commit = self.project.repo.head.commit
             self.logger.info('use last commit {id} as start ref.'.format(id=start_commit.hexsha))
 
-        logger.info('ref:{}'.format(start_commit.hexsha))
+        share_logger.info('ref:{}'.format(start_commit.hexsha))
         commit = start_commit
         goldset_count = 0
         commit_count = 0
@@ -66,13 +62,13 @@ class CommitGoldsetGenerator(GoldsetGenerator):
                 goldset_count += 1
                 self._generate_single_id(commit)
                 self._generate_single_query(commit)
-                if goldset_count == goldset_num:
+                if goldset_count == self.project.goldset_num:
                     self.logger.info('{} goldsets have been generated.'.format(goldset_count))
-                    logger.info('goldset:{}'.format(goldset_count))
-                    logger.info('commit visited:{}\n'.format(commit_count))
+                    share_logger.info('goldset:{}'.format(goldset_count))
+                    share_logger.info('commit visited:{}\n'.format(commit_count))
                     return
             commit = self.project.repo.commit(commit.hexsha + '~1')
 
         self.logger.info('run through all commits but got only {} goldsets.'.format(goldset_count))
-        logger.info('goldset:{}'.format(goldset_count))
-        logger.info('commit visited:{}\n'.format(commit_count))
+        share_logger.info('goldset:{}'.format(goldset_count))
+        share_logger.info('commit visited:{}\n'.format(commit_count))

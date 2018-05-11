@@ -6,10 +6,6 @@ from collections import defaultdict
 from . import CONFIG
 from . import error
 
-logger = logging.getLogger('plt.project')
-
-logger.setLevel(CONFIG.LOG_LEVEL)
-
 
 class Project(object):
     def __init__(self, name):
@@ -33,19 +29,34 @@ class GitProject(Project):
             self.path_dict = self.load_dirs()
 
     def load_goldsets(self, level):
-        if level not in ['class', 'method']:
-            logger.info('{} while loading goldset:level has to be one of "method" or "class"'.format(self.name))
+        if level not in ['class', 'method','file']:
+            raise NotImplementedError
         else:
             d = defaultdict(set)
 
             ids = self.load_ids()
 
-            for idx in ids:
-                fname = path.join(path.join(self.path_dict[level]), idx + '.txt')
-                if path.exists(fname):
-                    with open(fname) as f:
-                        for line in f:
-                            d[idx].add(line.strip().split('.')[0] + '.py')
+            if level == 'file':
+                for idx in ids:
+                    fname = path.join(path.join(self.path_dict['class']), idx + '.txt')
+                    if path.exists(fname):
+                        with open(fname) as f:
+                            for line in f:
+                                d[idx].add(line.strip().split('.')[0] + '.py')
+                    
+                    fname = path.join(path.join(self.path_dict['method']), idx + '.txt')
+                    if path.exists(fname):
+                        with open(fname) as f:
+                            for line in f:
+                                d[idx].add(line.strip().split('.')[0] + '.py')
+
+            else:             
+                for idx in ids:
+                    fname = path.join(path.join(self.path_dict[level]), idx + '.txt')
+                    if path.exists(fname):
+                        with open(fname) as f:
+                            for line in f:
+                                d[idx].add(line.strip().split('.')[0] + '.py')
             return d
 
 
@@ -89,9 +100,9 @@ class IssuGitProject(GitProject):
 
 
 class CommitGitProject(GitProject):
-    def __init__(self, name, src_path, goldset_num):
-        super().__init__(name, src_path)
+    def __init__(self, name, src_path, goldset_num=50):
         self.goldset_num = goldset_num
+        super().__init__(name, src_path)
         self.ref = self.repo.head.commit
 
     def load_dirs(self):

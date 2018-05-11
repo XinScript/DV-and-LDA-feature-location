@@ -21,11 +21,7 @@ class GoldsetGenerator():
             raise NotGitProjectError
         else:
             self.project = project
-            self.logger = logging.getLogger('.'.join(['pfl.goldset', self.project.name]))
-            fh = logging.FileHandler(filename=path.join(project.path_dict['base'], 'log.txt'))
-            fh.setLevel(CONFIG.LOG_LEVEL)
-            self.logger.setLevel(CONFIG.LOG_LEVEL)
-            self.logger.addHandler(fh)
+            self.logger = util.get_logger('goldset_generation',project)
 
             if 'master' in self.project.repo.heads:
                 self.project.repo.heads.master.checkout('-f')
