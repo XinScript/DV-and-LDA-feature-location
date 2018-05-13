@@ -123,7 +123,9 @@ class GitCorpus(GeneralCorpus):
 
         length = 0
 
-        self.project.repo.git.checkout(self.project.ref)
+        # old_head = self.project.repo.head.commit.hexsha
+
+        # self.project.repo.git.checkout(self.project.ref)
 
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
             dirnames[:] = [d for d in dirnames if d is not '.git']
@@ -132,7 +134,7 @@ class GitCorpus(GeneralCorpus):
                     path = os.path.join(dirpath, filename)
                     meta = (path[len(self.project.src_path) + 1:], 'corpus')
 
-                    with open(path) as f:
+                    with open(path,'rb') as f:
                         document = f.read()
                         words = self.preprocess(document)
                         length += 1
@@ -140,7 +142,7 @@ class GitCorpus(GeneralCorpus):
 
         self.length = length
 
-        self.project.repo.git.checkout('master')
+        # self.project.repo.git.checkout('master')
         # switch back to head
 
 
@@ -208,8 +210,7 @@ class LabeledCorpus(gensim.corpora.IndexedCorpus):
     def __init__(self, filename):
         self.filename = filename
         self.length = None
-        logger.info('Creating %s corpus for file %s',
-                    self.__class__.__name__, filename)
+        logger.info('Creating %s corpus for file %s',self.__class__.__name__, filename)
 
     def __iter__(self):
         with gensim.utils.smart_open(self.filename) as f:

@@ -21,7 +21,7 @@ class General():
         self.project = project
         self.logger = util.get_logger('model_gen_rank',project)
         self.goldset_level = goldset_level
-        if self.__class__.__name__ == 'General':
+        if self.__class__ == General:
             raise InstantiationError
 
     def create_query(self):
@@ -281,8 +281,8 @@ class DV(General):
 
 class WordSum(DV):
 
-    def __init__(self, project, goldset_level, num_topics=500, min_count=1):
-        super().__init__(project, goldset_level, num_topics, min_count)
+    def __init__(self, project, goldset_level):
+        super().__init__(project, goldset_level)
 
     def predict(self, model, queries, corpus, by_ids=None):
 

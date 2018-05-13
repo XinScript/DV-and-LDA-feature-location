@@ -7,9 +7,8 @@ from os import path, remove
 from typed_ast import ast3, ast27
 from collections import defaultdict
 from common.project import GitProject
-from common.error import NotGitProjectError
+from common.error import NotGitProjectError,InstantiationError
 from common import util,CONFIG
-
 
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(funcName)s : %(message)s')
@@ -17,6 +16,8 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(func
 
 class GoldsetGenerator():
     def __init__(self, project):
+        if self.__class__ == GoldsetGenerator:
+            raise InstantiationError
         if not isinstance(project, GitProject):
             raise NotGitProjectError
         else:

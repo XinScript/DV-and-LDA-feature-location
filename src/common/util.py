@@ -15,7 +15,7 @@ SQRT2 = numpy.sqrt(2)
 
 def get_logger(issue_name,project=None):
     real_name = '.'.join(['plt', issue_name]) if not project else '.'.join(['plt', issue_name, project.name])
-    logger_path = os.path.join(CONFIG.BASE_PATH, 'plt') if not project else project.path_dict['base']
+    logger_path = CONFIG.BASE_PATH if not project else project.path_dict['base']
     fh = logging.FileHandler(filename=os.path.join(logger_path, issue_name+'.txt'))
     fh.setLevel(CONFIG.LOG_LEVEL)
     logger = logging.getLogger(real_name)

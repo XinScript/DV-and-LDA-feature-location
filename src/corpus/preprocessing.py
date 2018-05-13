@@ -16,13 +16,16 @@ def tokenize(s):
 
 
 def to_unicode(document, info=[]):
-    document = document.replace('\x00', ' ')  # remove null
+
     if isinstance(document,bytes):
-        for codec in ['utf8', 'latin1', 'ascii']:
+        for codec in ['utf8', 'latin1', 'ascii','utf16']:
             try:
-                return document.decode(codec)
+                document = document.decode(codec)
+                break
             except UnicodeDecodeError as e:
                 logger.debug('{} {} {}'.format(codec, str(e), ' '.join(info)))
+    document = document.replace('\x00', ' ')  # remove null
+    document.strip()
     return document
 
 

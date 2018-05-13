@@ -5,7 +5,7 @@ from goldset.bycommit import GoldsetGenerator, CommitGoldsetGenerator
 from common.project import CommitGitProject
 from common import CONFIG
 from common import util
-from models.doc2vec import WordSum, DV, Lda
+from models.model import WordSum, DV, Lda
 
 
 repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'python')
@@ -14,7 +14,7 @@ plt_path = os.path.join(CONFIG.BASE_PATH, 'plt')
 logger = util.get_logger('rank_stats')
 
 
-def generate_directly():
+def generate_directly(filter_list):
     git_project_paths = []
     c = 0
     for dirname, dirnames, _ in os.walk(repos_dir):
@@ -23,9 +23,10 @@ def generate_directly():
             c += 1
     for dirname in git_project_paths:
         name = dirname.split('/')[-1]
-        project = CommitGitProject(name, dirname, 50)
-        generator = CommitGoldsetGenerator(project)
-        generator.generate_goldsets_directly()
+        if name in filter_list:
+            project = CommitGitProject(name, dirname, 50)
+            generator = CommitGoldsetGenerator(project)
+            generator.generate_goldsets_directly()
 
 
 def do_science(prefixa, a_ranks, prefixb, b_ranks):
@@ -35,6 +36,8 @@ def do_science(prefixa, a_ranks, prefixb, b_ranks):
     print(prefixa + ' mrr:', x)
     print(prefixb + ' mrr:', y)
     print('wilcoxon signedrank:', scipy.stats.wilcoxon(x, y))
+
+    
 
 
 def stats():
@@ -52,17 +55,15 @@ def stats():
     for i in arr:
         print(i)
 
-
-if __name__ == '__main__':
-    # generate_directly()
-    # stats()
-    names = None
+def get_python_project_names():
     repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'python')
     for path, dirnames, _ in os.walk(repos_dir):
         if path == repos_dir:
-            names = dirnames
-            break
+            return dirnames
 
+
+if __name__ == '__main__':
+    names = get_python_project_names()
     for name in names:
         src_path = os.path.join(repos_dir, name)
         project = CommitGitProject(name,src_path)
@@ -71,7 +72,4 @@ if __name__ == '__main__':
         doc2vec_m = DV(project,'file')
         doc2vec_rank = doc2vec_m.get_ranks()
         logger.info('finish rank generation for {}.'.format(name))
-        
-    # wordsum_m = WordSum(project,'class')
-    # wordsum_rank = wordsum_m.get_ranks()
-    # do_science('doc2vec', doc2vec_rank, 'sum', wordsum_rank)
+    
