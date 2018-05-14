@@ -7,4 +7,5 @@ CORPUS_EXT = 'corpus.gz'
 PROJECT_EXT = 'project.txt'
 MODEL_EXT = 'model.gz'
 RANK_EXT = 'rank.csv'
+MRR_EXT = 'mrr.csv'
 

@@ -24,15 +24,15 @@ def get_logger(issue_name,project=None):
     return logger
 
 
-def calculate_mrr(p):
-    vals = list()
-    for item in p:
-        if item:
-            vals.append(1.0 / item)
-        else:
-            vals.append(0.0)
+# def calculate_mrr(p):
+#     vals = list()
+#     for item in p:
+#         if item:
+#             vals.append(1.0 / item)
+#         else:
+#             vals.append(0.0)
 
-    return numpy.mean(vals)
+#     return numpy.mean(vals)
 
 
 def hellinger_distance(p, q):
@@ -128,7 +128,21 @@ def is_py_file(name):
     return name.endswith('.py')
 
 
-def measure(a, b):
+# def get_frms(ranks):
+#     frms = list()
+#     for r_id, rank in ranks.items():
+#         if rank:
+#             idx, _ , meta = rank[0]
+#             frms.append((idx, r_id, meta))
+#     return frms
+
+def evaluate_mrr_with_frms(q_ranks):
+    x =  [(1/metas[0][0]) for qid , metas in q_ranks.items()]
+    return numpy.mean(x)
+
+    
+
+def calculate_mrr(a, b):
     s = {}
     for qid, metas in a.items():
         first_rank = metas[0][0]

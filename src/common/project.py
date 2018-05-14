@@ -13,21 +13,26 @@ class Project(object):
         self.path = path.join(CONFIG.BASE_PATH, 'plt', self.name)
 
 
-class GitProject(Project):
+class GitProject():
 
-    def __init__(self, name, src_path):
-        if not path.exists(src_path):
+    def __init__(self,src_path):
+        if self.__class__ == GitProject:
+            raise error.InstantiationError
+        elif not path.exists(src_path):
             raise FileNotFoundError(src_path)
 
         elif not path.exists(path.join(src_path, '.git')):
             raise error.GitNotFoundError('It is not a git directory')
 
         else:
-            super().__init__(name)
             self.src_path = src_path
+            self.name = src_path.split('/')[-1]
+            self.path = path.join(CONFIG.BASE_PATH, 'plt', self.name)
             self.repo = Repo(src_path, odbt=GitCmdObjectDB)
             self.path_dict = self.load_dirs()
 
+
+    
     def load_goldsets(self, level):
         if level not in ['class', 'method','file']:
             raise NotImplementedError
@@ -60,10 +65,10 @@ class GitProject(Project):
             return d
 
 
-class IssuGitProject(GitProject):
+class IssueGitProject(GitProject):
 
-    def __init__(self, name, src_path, by_release, issue_keywords):
-        super().__init__(name, src_path)
+    def __init__(self,src_path, by_release, issue_keywords):
+        super().__init__(src_path)
         self.by_release = tuple([str(x) for x in by_release])
         self.issue_keywords = issue_keywords
         self.ref = self.repo.commit(by_release[1])
@@ -100,9 +105,9 @@ class IssuGitProject(GitProject):
 
 
 class CommitGitProject(GitProject):
-    def __init__(self, name, src_path, goldset_num=50):
+    def __init__(self,src_path, goldset_num=50):
         self.goldset_num = goldset_num
-        super().__init__(name, src_path)
+        super().__init__(src_path)
         self.ref = self.repo.head.commit
 
     def load_dirs(self):

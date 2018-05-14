@@ -113,6 +113,8 @@ class General():
                 rels.append((idx + 1, distance, fpath))
         return rels
 
+    
+
     def write_ranks(self, ranks):
 
         fname = os.path.join(self.project.path_dict['base'], '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
@@ -141,7 +143,7 @@ class General():
         raise NotImplementedError
 
 class Lda(General):
-    def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=5, alpha='symmetric', iterations=1000):
+    def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=1000):
         super().__init__(project, goldset_level)
         self.num_topics = num_topics
         self.chunksize = chunksize
