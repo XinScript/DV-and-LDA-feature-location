@@ -7,14 +7,39 @@ import numpy
 import scipy
 import scipy.spatial
 from . import CONFIG
-
+import javalang
 
 logger = logging.getLogger('cfl.utils')
 
 SQRT2 = numpy.sqrt(2)
 
+
+def get_last_line(node):
+    while node:
+        if node.__class__ == javalang.tree.ClassDeclaration:
+            node = node.body[-1]
+        elif node.__class__ == javalang.tree.MethodDeclaration:
+            node = node.body[-1]
+        elif node.__class__ == javalang.tree.ConstructorDeclaration:
+            node = node.body[-1]
+        elif node.__class__ == javalang.tree.IfStatement:
+            node = node.children[-1]
+        elif node.__class__ == javalang.tree.WhileStatement:
+            node = node.children[-1]
+        elif node.__class__ == javalang.tree.SwitchStatement:
+            node = node.children[-1]
+        elif node.__class__ == javalang.tree.ForStatement:
+            node = node.children[-1]
+        elif node.__class__ == javalang.tree.BlockStatement:
+            node = node.statements[-1].expression
+        else:
+            break
+    print(node.position)
+    return node.position[0]
+        
+
 def get_logger(issue_name,project=None):
-    real_name = '.'.join(['plt', issue_name]) if not project else '.'.join(['plt', issue_name, project.name])
+    real_name = '.'.join(['plt', issue_name]) if not project else '.'.join(['plt'+project.file_ext, issue_name, project.name])
     logger_path = CONFIG.BASE_PATH if not project else project.path_dict['base']
     fh = logging.FileHandler(filename=os.path.join(logger_path, issue_name+'.txt'))
     fh.setLevel(CONFIG.LOG_LEVEL)
@@ -124,10 +149,6 @@ def obj_binary_search(objs, field, target):
     return lo
 
 
-def is_py_file(name):
-    return name.endswith('.py')
-
-
 # def get_frms(ranks):
 #     frms = list()
 #     for r_id, rank in ranks.items():
@@ -156,3 +177,16 @@ def calculate_mrr(a, b):
     x = [i[0] for i in s.values()]
     y = [i[1] for i in s.values()]
     return numpy.mean(x), numpy.mean(y)
+
+
+class ConfigObj(dict):
+    def __getattr__(self, name):
+        if name in self:
+            return self[name]
+        else:
+            raise AttributeError("No such attribute: " + name)
+
+    def __setattr__(self, name, value):
+        self[name] = value
+
+

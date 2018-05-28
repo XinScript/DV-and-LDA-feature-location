@@ -1,6 +1,9 @@
 import re
 import sys
 import logging
+import javalang
+from javalang.parser import JavaParserError,JavaSyntaxError
+
 from itertools import chain
 from git import GitCommandError
 from os import path, remove
@@ -45,7 +48,10 @@ class GoldsetGenerator():
         self.generate_goldsets()
 
     def _generate_single_goldset(self,commit):
-        c_set, m_set = self._extract_goldset_from_commit(commit)
+        if self.project.file_ext == '.py':
+            c_set, m_set = self._extract_goldset_from_commit_python(commit) 
+        elif self.project.file_ext == '.java':
+            c_set, m_set = self._extract_goldset_from_commit_java(commit)
         if c_set:
             with open(path.join(self.project.path_dict['class'], commit.hexsha + '.txt'), 'w') as f:
                 [f.write(c + '\n') for c in c_set]
@@ -75,7 +81,6 @@ class GoldsetGenerator():
                 cmp_str = file_path[:index]
                 r = self.project.repo.git.show(
                     ':'.join([commit.hexsha, cmp_str + '/__init__.py']))
-                # find package_name by detect if __init__.py exist
 
                 if r:
                     return cmp_str.split('/')[-1]
@@ -84,7 +89,7 @@ class GoldsetGenerator():
             finally:
                 index = file_path.find('/', index + 1)
 
-    def _extract_goldset_from_commit(self, commit):
+    def _extract_goldset_from_commit_python(self, commit):
         class_set = set()
         method_set = set()
         pattern = re.compile(r'\n@@(.+)@@\n')
@@ -95,7 +100,7 @@ class GoldsetGenerator():
             for diff in diffs:
                 file_path = diff.b_path
                 try:
-                    if util.is_py_file(file_path):
+                    if file_path.endswith('.py'):
                         src_path = ':'.join([commit.hexsha, file_path])
                         content = self.project.repo.git.show(src_path)
                         try:
@@ -159,5 +164,79 @@ class GoldsetGenerator():
                 except Exception as e:
                     self.logger.warning(e)
 
+
+        return class_set, method_set
+
+    def _extract_goldset_from_commit_java(self, commit):
+        class_set = set()
+        method_set = set()
+        pattern = re.compile(r'\n@@(.+)@@\n')
+        if commit.parents:
+            prev_commit = self.project.repo.commit(commit.hexsha + '~1')
+            diffs = prev_commit.diff(commit)
+            diffs = chain(diffs.iter_change_type('A'), diffs.iter_change_type('M'))
+            for diff in diffs:
+                file_path = diff.b_path
+                try:
+                    if file_path.endswith('.java'):
+                        src_path = ':'.join([commit.hexsha, file_path])
+                        content = self.project.repo.git.show(src_path)
+                        try:
+                            tree = javalang.parse.parse(content)
+                        except Exception as e:
+                            continue
+                        nodes = [node for _,node in tree.filter(javalang.tree.ClassDeclaration)]
+                        if nodes:
+                            class_set.add('.'.join([file_path[:-5], nodes[0].name]))
+                        # node = nodes[0] if nodes else None
+                        # if diff.change_type == 'M':
+                        #     diff_info = self.project.repo.git.diff(diff.a_blob, diff.b_blob)
+                        #     changes = pattern.findall(diff_info)
+                        #     for change in changes:
+                        #         t = change.strip().split('+')[1].split(',')
+                        #         if len(t) == 1:
+                        #             continue
+                        #         else:
+                        #             start_line, count = [int(x) for x in t]
+                        #             end_line = start_line + count - 1
+                        #             actual_start_line = start_line + 3 if start_line > 1 else start_line
+                        #             actual_end_line = end_line - 3 if content.count('\n') != end_line else end_line
+                                
+                        #             if node and node.__class__ == javalang.tree.ClassDeclaration:
+                        #                 # javalang.tree.
+                        #                 flag = False
+                        #                 sub_nodes = node.body
+                        #                 for sub_node in sub_nodes:
+                        #                     if sub_node.__class__ == javalang.tree.MethodDeclaration:
+                        #                         sub_last_line = util.get_last_line(sub_node)
+                        #                         if not (actual_start_line > sub_last_line or actual_end_line < sub_last_line):
+                        #                             method_set.add('.'.join([file_path[:-5], node.name, sub_node.name]))
+                        #                             flag = True
+                        #                     elif sub_node.__class__ == javalang.tree.FieldDeclaration:
+                        #                         if actual_start_line <= sub_node.position[0] <= actual_end_line:
+                        #                             flag = True
+                        #                 if flag:
+                        #                     class_set.add('.'.join([file_path[:-5], node.name]))
+
+                        # elif diff.change_type == 'A':
+                        #     for node in nodes:
+                        #         if node.__class__ == javalang.tree.ClassDeclaration:
+                        #             class_set.add('.'.join([file_path[:-5], node.name]))
+                        #             sub_nodes = node.body
+                        #             for sub_node in sub_nodes:
+                        #                 if sub_node.__class__ == javalang.tree.MethodDeclaration:
+                        #                     method_set.add('.'.join([file_path[:-5], node.name, sub_node.name]))
+
+                except IndexError as e:
+                    self.logger.warning('Error occurs while handing diff:{}'.format(diff))
+                    self.logger.warning(e)
+
+                except SyntaxError as e:
+                    self.logger.warning('Fail to parse {src} with Py3/Py2.7 AST hence pass.'.format(src=src_path))
+
+                except Exception as e:
+                    with open('caonima.java','w') as f:
+                        f.write(content)
+                        raise e
 
         return class_set, method_set

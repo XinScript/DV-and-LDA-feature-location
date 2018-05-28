@@ -35,7 +35,7 @@ class General():
 
         else:
             queries = []
-            pp = GeneralCorpus()
+            pp = GeneralCorpus(self.project)
             ids = self.project.load_ids()
             for idx in ids:
                 with open(os.path.join(self.project.path_dict['query'], idx + '.txt')) as f:
@@ -163,7 +163,7 @@ class Lda(General):
         else:
             id2word = Dictionary()
             queries = []
-            pp = GeneralCorpus()
+            pp = GeneralCorpus(project=self.project)
             ids = self.project.load_ids()
             for idx in ids:
                 with open(os.path.join(self.project.path_dict['query'], idx + '.txt')) as f:

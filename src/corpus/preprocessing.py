@@ -143,3 +143,11 @@ PYTHON_RESERVED = set(
     continue  finally   is        return             
     def       for       lambda    try
     '''.split())
+
+
+JAVA_RESERVED = set(
+    """ abstract assert boolean break byte case catch char class const continue
+    default do double else enum extends false final finally float for goto if
+    implements import instanceof int interface long native new null package
+    private protected public return short static strictfp super switch
+    synchronized this throw throws transient true try void volatile while """.split())

@@ -8,11 +8,16 @@ from common import util
 from models.model import WordSum, DV, Lda
 
 
-repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'python')
+repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'java')
+
 plt_path = os.path.join(CONFIG.BASE_PATH, 'plt')
 
 logger = util.get_logger('rank_stats')
 
+git_project_paths = []
+for dirname, dirnames, _ in os.walk(repos_dir):
+    if '.git' in dirnames:
+        git_project_paths.append(dirname)
 
 
 def do_science(prefixa, a_ranks, prefixb, b_ranks):
@@ -41,21 +46,14 @@ def stats():
     for i in arr:
         print(i)
 
-def get_python_project_names():
-    repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'python')
-    for path, dirnames, _ in os.walk(repos_dir):
-        if path == repos_dir:
-            return dirnames
-
-
 if __name__ == '__main__':
-    names = get_python_project_names()
-    for name in names[1:]:
-        src_path = os.path.join(repos_dir, name)
-        project = CommitGitProject(src_path)
+    for src_path in git_project_paths[:1]:
+        project = CommitGitProject(src_path,file_ext='.java')
         lda_m = Lda(project,'file')
         lda_ranks = lda_m.get_ranks()
         doc2vec_m = DV(project,'file')
         doc2vec_rank = doc2vec_m.get_ranks()
         logger.info('finish rank generation for {}.'.format(project.name))
     
+
+

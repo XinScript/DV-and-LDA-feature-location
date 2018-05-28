@@ -6,16 +6,9 @@ from collections import defaultdict
 from . import CONFIG
 from . import error
 
-
-class Project(object):
-    def __init__(self, name):
-        self.name = name
-        self.path = path.join(CONFIG.BASE_PATH, 'plt', self.name)
-
-
 class GitProject():
 
-    def __init__(self,src_path):
+    def __init__(self,src_path,file_ext):
         if self.__class__ == GitProject:
             raise error.InstantiationError
         elif not path.exists(src_path):
@@ -25,9 +18,10 @@ class GitProject():
             raise error.GitNotFoundError('It is not a git directory')
 
         else:
+            self.file_ext = file_ext
             self.src_path = src_path
             self.name = src_path.split('/')[-1]
-            self.path = path.join(CONFIG.BASE_PATH, 'plt', self.name)
+            self.path = path.join(CONFIG.BASE_PATH, 'plt'+file_ext, self.name)
             self.repo = Repo(src_path, odbt=GitCmdObjectDB)
             self.path_dict = self.load_dirs()
 
@@ -47,13 +41,13 @@ class GitProject():
                     if path.exists(fname):
                         with open(fname) as f:
                             for line in f:
-                                d[idx].add(line.strip().split('.')[0] + '.py')
+                                d[idx].add(line.strip().split('.')[0] + self.file_ext)
                     
                     fname = path.join(path.join(self.path_dict['method']), idx + '.txt')
                     if path.exists(fname):
                         with open(fname) as f:
                             for line in f:
-                                d[idx].add(line.strip().split('.')[0] + '.py')
+                                d[idx].add(line.strip().split('.')[0] + self.file_ext)
 
             else:             
                 for idx in ids:
@@ -61,7 +55,7 @@ class GitProject():
                     if path.exists(fname):
                         with open(fname) as f:
                             for line in f:
-                                d[idx].add(line.strip().split('.')[0] + '.py')
+                                d[idx].add(line.strip().split('.')[0] + self.file_ext)
             return d
 
 
@@ -105,9 +99,9 @@ class IssueGitProject(GitProject):
 
 
 class CommitGitProject(GitProject):
-    def __init__(self,src_path, goldset_num=50):
+    def __init__(self,src_path,file_ext,goldset_num=50):
         self.goldset_num = goldset_num
-        super().__init__(src_path)
+        super().__init__(src_path,file_ext)
         self.ref = self.repo.head.commit
 
     def load_dirs(self):

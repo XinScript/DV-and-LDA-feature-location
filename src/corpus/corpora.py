@@ -79,8 +79,11 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 
         if self.remove_stops:
             words = preprocessing.remove_stops(words, preprocessing.FOX_STOPS)
-            words = preprocessing.remove_stops(
-                words, preprocessing.PYTHON_RESERVED)
+            if self.project.file_ext == '.py':
+                reversed_word = preprocessing.PYTHON_RESERVED
+            elif self.project.file_ext == '.java':
+                reversed_word = preprocessing.JAVA_RESERVED
+            words = preprocessing.remove_stops(words, reversed_word)
 
         words = (word for word in words if len(word) >=
                  self.min_len and len(word) <= self.max_len)
@@ -130,7 +133,7 @@ class GitCorpus(GeneralCorpus):
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
             dirnames[:] = [d for d in dirnames if d is not '.git']
             for filename in filenames:
-                if util.is_py_file(filename):
+                if filename.endswith(self.project.file_ext):
                     path = os.path.join(dirpath, filename)
                     meta = (path[len(self.project.src_path) + 1:], 'corpus')
 
