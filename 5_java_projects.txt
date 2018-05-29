@@ -1,0 +1,5 @@
+facebook-android-sdk:418
+astrid:1259
+netty:2359
+hadoop-common:5697
+hibernate-orm:9419

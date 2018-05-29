@@ -60,8 +60,7 @@ class General():
         else:
             corpus = GitCorpus(self.project)
 
-            OrderedCorpus.serialize(
-                corpus_fname, corpus, metadata=True)
+            OrderedCorpus.serialize(corpus_fname, corpus, metadata=True)
 
             corpus = OrderedCorpus(corpus_fname)
 
@@ -117,7 +116,12 @@ class General():
 
     def write_ranks(self, ranks):
 
-        fname = os.path.join(self.project.path_dict['base'], '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+
+        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
         if not os.path.exists(fname):
             with open(fname, 'w') as f:
                 writer = csv.writer(f)
@@ -129,7 +133,12 @@ class General():
 
     def read_ranks(self):
         ranks = defaultdict(list)
-        fname = os.path.join(self.project.path_dict['base'], '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+
+        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
         if os.path.exists(fname):
             with open(fname, 'r') as f:
                 reader = csv.reader(f)
@@ -158,7 +167,7 @@ class Lda(General):
 
         if os.path.exists(corpus_fname) and os.path.exists(dict_fname):
             id2word = Dictionary.load(dict_fname)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word, metadata=True)
+            corpus = MalletCorpus(corpus_fname, id2word=id2word)
 
         else:
             id2word = Dictionary()
@@ -174,7 +183,7 @@ class Lda(General):
                 queries.append((bow, (idx, 'query')))
 
             MalletCorpus.serialize(corpus_fname, queries, id2word=id2word, metadata=True)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word, metadata=True)
+            corpus = MalletCorpus(corpus_fname, id2word=id2word)
         return corpus
 
     def create_corpus(self):
@@ -185,7 +194,7 @@ class Lda(General):
 
         if os.path.exists(corpus_fname) and dict_fname:
             id2word = Dictionary.load(dict_fname)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word, metadata=True)
+            corpus = MalletCorpus(corpus_fname, id2word=id2word)
 
         else:
             corpus = GitCorpus(self.project)
@@ -199,7 +208,12 @@ class Lda(General):
         return corpus
 
     def create_model(self, corpus):
-        base_path = self.project.path_dict['base']
+        # base_path = self.project.path_dict['base']
+
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
 
         model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.MODEL_EXT]))
 
@@ -255,7 +269,12 @@ class DV(General):
 
     def create_model(self, corpus):
 
-        base_path = self.project.path_dict['base']
+        base_path = os.path.join(self.project.path_dict['base'],self.__class__.__name__,str(self.num_topics))
+
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+
+        # base_path = self.project.path_dict['base']
 
         model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.MODEL_EXT]))
 
