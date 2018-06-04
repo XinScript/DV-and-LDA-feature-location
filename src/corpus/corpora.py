@@ -4,6 +4,7 @@
 Code for generating the corpora.
 """
 import os
+import dulwich.patch
 import gensim
 import logging
 import re
@@ -34,7 +35,6 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
         self.id2word = id2word
 
         self.split = split
-        self.lower = split
         self.lower = lower
         self.remove_stops = remove_stops
         self.min_len = remove_stops
@@ -131,17 +131,30 @@ class GitCorpus(GeneralCorpus):
         # self.project.repo.git.checkout(self.project.ref)
 
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
-            dirnames[:] = [d for d in dirnames if d is not '.git']
+            # dirnames[:] = [d for d in dirnames if d is not '.git']
+            if '.git' in dirpath:
+                continue
             for filename in filenames:
                 if filename.endswith(self.project.file_ext):
                     path = os.path.join(dirpath, filename)
                     meta = (path[len(self.project.src_path) + 1:], 'corpus')
-
                     with open(path,'rb') as f:
                         document = f.read()
                         words = self.preprocess(document)
                         length += 1
                         yield words, meta
+
+                # path = os.path.join(dirpath, filename)
+                # meta = (path[len(self.project.src_path) + 1:], 'corpus')
+                # try:
+                #     with open(path,'rb') as f:
+                #         document = f.read()
+                #         if not dulwich.patch.is_binary(document):
+                #             words = self.preprocess(document)
+                #             length += 1
+                #             yield words, meta
+                # except FileNotFoundError:
+                #     continue
 
         self.length = length
 

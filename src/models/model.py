@@ -95,8 +95,8 @@ class General():
     def get_ranks(self):
         ranks = self.read_ranks()
         if not ranks:
-            queries = self.create_query()
             corpus = self.create_corpus()
+            queries = self.create_query()
             model = self.create_model(corpus)
             query_topics = self.get_topics(model, queries)
             doc_topics = self.get_topics(model, corpus)
@@ -116,7 +116,7 @@ class General():
 
     def write_ranks(self, ranks):
 
-        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, 'num_topics_'+str(self.num_topics)+'_iter_'+str(self.iterations))
 
         if not os.path.exists(base_path):
             os.makedirs(base_path)
@@ -133,7 +133,7 @@ class General():
 
     def read_ranks(self):
         ranks = defaultdict(list)
-        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, 'num_topics_' + str(self.num_topics) + '_iter_' + str(self.iterations))
 
         if not os.path.exists(base_path):
             os.makedirs(base_path)
@@ -152,7 +152,7 @@ class General():
         raise NotImplementedError
 
 class Lda(General):
-    def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=1000):
+    def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=30):
         super().__init__(project, goldset_level)
         self.num_topics = num_topics
         self.chunksize = chunksize
@@ -163,13 +163,9 @@ class Lda(General):
     def create_query(self):
         base_path = self.project.path_dict['base']
         corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.CORPUS_EXT]))
-        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.ID2WORD_EXT]))
-
-        if os.path.exists(corpus_fname) and os.path.exists(dict_fname):
-            id2word = Dictionary.load(dict_fname)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word)
-
-        else:
+        # dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.ID2WORD_EXT]))
+        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', CONFIG.ID2WORD_EXT]))
+        if not os.path.exists(corpus_fname):
             id2word = Dictionary()
             queries = []
             pp = GeneralCorpus(project=self.project)
@@ -181,9 +177,13 @@ class Lda(General):
                 doc_vec = list(pp.preprocess(content))
                 bow = id2word.doc2bow(doc_vec, allow_update=True)
                 queries.append((bow, (idx, 'query')))
-
-            MalletCorpus.serialize(corpus_fname, queries, id2word=id2word, metadata=True)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word)
+            MalletCorpus.serialize(corpus_fname, queries, id2word=id2word,metadata=True)
+        else:
+            self.logger.info('load previous queries.')
+        id2word = None
+        if os.path.exists(dict_fname):
+            id2word = Dictionary.load(dict_fname)
+        corpus = MalletCorpus(corpus_fname, id2word=id2word)
         return corpus
 
     def create_corpus(self):
@@ -194,23 +194,25 @@ class Lda(General):
 
         if os.path.exists(corpus_fname) and dict_fname:
             id2word = Dictionary.load(dict_fname)
-            corpus = MalletCorpus(corpus_fname, id2word=id2word)
-
+            # corpus = MalletCorpus(corpus_fname, id2word=id2word,metadata=True)
+            self.logger.info('load previous corpus.')
         else:
             corpus = GitCorpus(self.project)
 
-            MalletCorpus.serialize(corpus_fname, corpus,id2word=corpus.id2word, metadata=True)
+            id2word = corpus.id2word
 
-            corpus.id2word.save(dict_fname)
+            MalletCorpus.serialize(corpus_fname, corpus,id2word=id2word, metadata=True)
 
-            corpus = MalletCorpus(corpus_fname, id2word=corpus.id2word)
+            id2word.save(dict_fname)
+
+        corpus = MalletCorpus(corpus_fname, id2word=id2word)
 
         return corpus
 
     def create_model(self, corpus):
         # base_path = self.project.path_dict['base']
 
-        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, str(self.num_topics))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, 'num_topics_'+str(self.num_topics)+'_iter_'+str(self.iterations))
 
         if not os.path.exists(base_path):
             os.makedirs(base_path)
@@ -218,6 +220,7 @@ class Lda(General):
         model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.MODEL_EXT]))
 
         if os.path.exists(model_fname):
+            self.logger.info('load previous Lda model.')
             model = LdaModel.load(model_fname)
         else:
             model = LdaModel(corpus=corpus,
@@ -249,8 +252,8 @@ class Lda(General):
                     topics = sparse2full(topics, model.num_topics)
 
                 # this gets the "full" vector that includes low topic values
-                # topics = model.__getitem__(doc, eps=0)
-                # topics = [val for id, val in topics]
+                topics = model.__getitem__(doc, eps=0)
+                topics = [val for id, val in topics]
 
                 doc_topic.append((meta[0], topics))
 
@@ -262,14 +265,15 @@ class Lda(General):
 
 
 class DV(General):
-    def __init__(self, project, goldset_level, num_topics=500, min_count=1):
+    def __init__(self, project, goldset_level, num_topics=500,iterations=30, min_count=1):
         super().__init__(project, goldset_level)
         self.num_topics = num_topics
         self.min_count = min_count
+        self.iterations = iterations
 
     def create_model(self, corpus):
 
-        base_path = os.path.join(self.project.path_dict['base'],self.__class__.__name__,str(self.num_topics))
+        base_path = os.path.join(self.project.path_dict['base'], self.__class__.__name__, 'num_topics_' + str(self.num_topics) + '_iter_' + str(self.iterations))
 
         if not os.path.exists(base_path):
             os.makedirs(base_path)
@@ -282,11 +286,12 @@ class DV(General):
 
         if not os.path.exists(model_fname):
             # model = Doc2Vec(corpus, min_count=self.min_count, size=self.num_topics, workers=multiprocessing.cpu_count())
-            model = Doc2Vec(corpus, min_count=self.min_count, vector_size=self.num_topics, workers=multiprocessing.cpu_count())
+            model = Doc2Vec(corpus, min_count=self.min_count, vector_size=self.num_topics, workers=multiprocessing.cpu_count(), epochs=self.iterations)
             model.save(model_fname)
+
         else:
             model = Doc2Vec.load(model_fname)
-
+            self.logger.info('load previous DV model.')
         return model
 
     def get_topics(self, model, corpus):

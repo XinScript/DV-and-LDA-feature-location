@@ -46,14 +46,14 @@ def stats():
     for i in arr:
         print(i)
 
-if __name__ == '__main__':
-    for src_path in git_project_paths[:1]:
-        project = CommitGitProject(src_path,file_ext='.java')
-        lda_m = Lda(project,'file')
-        lda_ranks = lda_m.get_ranks()
-        doc2vec_m = DV(project,'file')
-        doc2vec_rank = doc2vec_m.get_ranks()
-        logger.info('finish rank generation for {}.'.format(project.name))
+# if __name__ == '__main__':
+#     for src_path in git_project_paths[:1]:
+#         project = CommitGitProject(src_path,file_ext='.java')
+#         lda_m = Lda(project,'file')
+#         lda_ranks = lda_m.get_ranks()
+#         doc2vec_m = DV(project,'file')
+#         doc2vec_rank = doc2vec_m.get_ranks()
+#         logger.info('finish rank generation for {}.'.format(project.name))
     
 
 
