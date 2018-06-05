@@ -12,7 +12,7 @@ from collections import defaultdict
 from models.model import WordSum, DV, Lda
 import shutil
 
-lan = 'java'
+lan = 'python'
 
 repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', lan)
 topic_num, goldset_level, iterations = '50', 'file', '30'
@@ -56,15 +56,17 @@ def generate_models(topic_nums, iterations, filter_list=[], start_index=None):
             for n in topic_nums:
                 for i in iterations:
                     project = CommitGitProject(dirname, file_ext)
-                    lda_m = Lda(project, goldset_level, num_topics=n,iterations=i)
-                    lda_ranks = lda_m.get_ranks()
+                    # lda_m = Lda(project, goldset_level, num_topics=n,iterations=i)
+                    # lda_ranks = lda_m.get_ranks()
                     # doc2vec_m = DV(project, goldset_level, num_topics=n, iterations=i)
                     # doc2vec_rank = doc2vec_m.get_ranks()
+                    # print(util.evaluate_mrr_with_frms(doc2vec_m.read_ranks()))
 
                     # print(util.calculate_mrr(lda_ranks,doc2vec_rank))
                     # print(util.evaluate_mrr_with_frms(lda_ranks))
                     # print(util.evaluate_mrr_with_frms(doc2vec_rank))
                     logger.info('finish rank generation for {}.'.format(project.name))
+
     # exit()
 
 
@@ -248,10 +250,15 @@ def mrr_compare(topic_nums, iterations, filter_list=[]):
 # lan='python'``
 # plt_scatter()
 # plot_line_charts_for_projects()
+
 # print(len([x for x in read_size() if int(x)>100]))
 # remove_data()
+# generate_models([500], [10,30,50,80,100], compare_projects)
 # generate_models([500], [10,30,50,80,100], compare_projects)
 # mrr_compare([100, 200, 300, 400, 500], [10, 30, 50, 80, 100], compare_projects)
 plt_line_chart()
 # remove_data()
+# t = CommitGitProject(git_project_paths[0],file_ext)
+# ranks = Lda(t,'file').read_ranks()
+# util.evaluate_mrr_with_frms(ranks)
 

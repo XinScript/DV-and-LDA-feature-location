@@ -286,7 +286,7 @@ class DV(General):
 
         if not os.path.exists(model_fname):
             # model = Doc2Vec(corpus, min_count=self.min_count, size=self.num_topics, workers=multiprocessing.cpu_count())
-            model = Doc2Vec(corpus, min_count=self.min_count, vector_size=self.num_topics, workers=multiprocessing.cpu_count(), epochs=self.iterations)
+            model = Doc2Vec(corpus, min_count=self.min_count, vector_size=self.num_topics, workers=multiprocessing.cpu_count(), epochs=self.iterations,window=10)
             model.save(model_fname)
 
         else:
