@@ -188,44 +188,7 @@ class GoldsetGenerator():
                         nodes = [node for _,node in tree.filter(javalang.tree.ClassDeclaration)]
                         if nodes:
                             class_set.add('.'.join([file_path[:-5], nodes[0].name]))
-                        # node = nodes[0] if nodes else None
-                        # if diff.change_type == 'M':
-                        #     diff_info = self.project.repo.git.diff(diff.a_blob, diff.b_blob)
-                        #     changes = pattern.findall(diff_info)
-                        #     for change in changes:
-                        #         t = change.strip().split('+')[1].split(',')
-                        #         if len(t) == 1:
-                        #             continue
-                        #         else:
-                        #             start_line, count = [int(x) for x in t]
-                        #             end_line = start_line + count - 1
-                        #             actual_start_line = start_line + 3 if start_line > 1 else start_line
-                        #             actual_end_line = end_line - 3 if content.count('\n') != end_line else end_line
-                                
-                        #             if node and node.__class__ == javalang.tree.ClassDeclaration:
-                        #                 # javalang.tree.
-                        #                 flag = False
-                        #                 sub_nodes = node.body
-                        #                 for sub_node in sub_nodes:
-                        #                     if sub_node.__class__ == javalang.tree.MethodDeclaration:
-                        #                         sub_last_line = util.get_last_line(sub_node)
-                        #                         if not (actual_start_line > sub_last_line or actual_end_line < sub_last_line):
-                        #                             method_set.add('.'.join([file_path[:-5], node.name, sub_node.name]))
-                        #                             flag = True
-                        #                     elif sub_node.__class__ == javalang.tree.FieldDeclaration:
-                        #                         if actual_start_line <= sub_node.position[0] <= actual_end_line:
-                        #                             flag = True
-                        #                 if flag:
-                        #                     class_set.add('.'.join([file_path[:-5], node.name]))
-
-                        # elif diff.change_type == 'A':
-                        #     for node in nodes:
-                        #         if node.__class__ == javalang.tree.ClassDeclaration:
-                        #             class_set.add('.'.join([file_path[:-5], node.name]))
-                        #             sub_nodes = node.body
-                        #             for sub_node in sub_nodes:
-                        #                 if sub_node.__class__ == javalang.tree.MethodDeclaration:
-                        #                     method_set.add('.'.join([file_path[:-5], node.name, sub_node.name]))
+                        
 
                 except IndexError as e:
                     self.logger.warning('Error occurs while handing diff:{}'.format(diff))

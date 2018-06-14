@@ -1,7 +1,7 @@
 import re
 import os
 from collections import defaultdict
-from .generator import Goldset]erator
+from .generator import GoldsetGenerator
 
 
 class IssueGoldsetGenerator(GoldsetGenerator):

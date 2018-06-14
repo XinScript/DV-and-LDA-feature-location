@@ -1,18 +1,18 @@
 import os
-from common import CONFIG
-from common.project import CommitGitProject
-from corpus.corpora import GitCorpus
-from goldset.bycommit import CommitGoldsetGenerator
-from common import util
 import csv
 import seaborn as sb
 import pandas as pd
 import matplotlib.pyplot as plt
+import shutil
+from common import CONFIG
+from common.project import CommitGitProject
+from corpus.corpora import GitCorpus
+from goldset.generatorByCommit import CommitGoldsetGenerator
+from common import util
 from collections import defaultdict
 from models.model import WordSum, DV, Lda
-import shutil
 
-lan = 'python'
+lan = 'java'
 
 repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', lan)
 topic_num, goldset_level, iterations = '50', 'file', '30'
@@ -40,11 +40,11 @@ def generate_directly(filter_list=[]):
         name = dirname.split('/')[-1]
         if filter_list:
             if name in filter_list:
-                project = CommitGitProject(dirname, file_ext, 50)
+                project = CommitGitProject(dirname, file_ext)
                 generator = CommitGoldsetGenerator(project)
                 generator.generate_goldsets_directly()
         else:
-            project = CommitGitProject(dirname, file_ext, 50)
+            project = CommitGitProject(dirname, file_ext)
             generator = CommitGoldsetGenerator(project)
             generator.generate_goldsets_directly()
 
@@ -56,15 +56,10 @@ def generate_models(topic_nums, iterations, filter_list=[], start_index=None):
             for n in topic_nums:
                 for i in iterations:
                     project = CommitGitProject(dirname, file_ext)
-                    # lda_m = Lda(project, goldset_level, num_topics=n,iterations=i)
-                    # lda_ranks = lda_m.get_ranks()
-                    # doc2vec_m = DV(project, goldset_level, num_topics=n, iterations=i)
-                    # doc2vec_rank = doc2vec_m.get_ranks()
-                    # print(util.evaluate_mrr_with_frms(doc2vec_m.read_ranks()))
-
-                    # print(util.calculate_mrr(lda_ranks,doc2vec_rank))
-                    # print(util.evaluate_mrr_with_frms(lda_ranks))
-                    # print(util.evaluate_mrr_with_frms(doc2vec_rank))
+                    lda_m = Lda(project, goldset_level, num_topics=n,iterations=i)
+                    lda_ranks = lda_m.get_ranks()
+                    doc2vec_m = DV(project, goldset_level, num_topics=n, iterations=i)
+                    doc2vec_rank = doc2vec_m.get_ranks()
                     logger.info('finish rank generation for {}.'.format(project.name))
 
     # exit()
@@ -84,6 +79,11 @@ def read_size():
     length_path = os.path.join(base_path, lan + '_project_size.txt')
     with open(length_path, 'r') as f:
         return [x.strip().split(':')[1] for x in f]
+def write_head_commit():
+    with open(plt_path+'/goldset_generation_start_pointer.txt','w') as f:
+        for p in git_project_paths:
+            project = CommitGitProject(p,file_ext)
+            f.write(project.name+':'+project.repo.head.commit.hexsha+'\n')
 
 
 # ranks = read_ranks('sage','DV','50','file')
@@ -240,25 +240,14 @@ def mrr_compare(topic_nums, iterations, filter_list=[]):
 
 # generate_directly(['grails-core'])
 
-
-# generate_models([400,300,200,100],['gtg', 'web2py', 'heat', 'sympy', 'sage'])
-# write_mrr_info('500','30')
 # print(len(read_size()))
-# write_size()
-# plt_scatter()
-# plot_line_charts_for_projects()
-# lan='python'``
 # plt_scatter()
 # plot_line_charts_for_projects()
 
 # print(len([x for x in read_size() if int(x)>100]))
-# remove_data()
+# generate_models([500], [30])
 # generate_models([500], [10,30,50,80,100], compare_projects)
-# generate_models([500], [10,30,50,80,100], compare_projects)
-# mrr_compare([100, 200, 300, 400, 500], [10, 30, 50, 80, 100], compare_projects)
-plt_line_chart()
-# remove_data()
-# t = CommitGitProject(git_project_paths[0],file_ext)
-# ranks = Lda(t,'file').read_ranks()
-# util.evaluate_mrr_with_frms(ranks)
-
+# write_mrr_info('500','30')
+# plt_scatter()
+# plot_line_charts_for_projects()
+# write_size()

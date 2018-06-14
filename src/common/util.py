@@ -4,39 +4,13 @@
 import logging
 import os
 import numpy
-import scipy
-import scipy.spatial
 from . import CONFIG
-import javalang
 
 logger = logging.getLogger('cfl.utils')
 
 SQRT2 = numpy.sqrt(2)
 
 
-def get_last_line(node):
-    while node:
-        if node.__class__ == javalang.tree.ClassDeclaration:
-            node = node.body[-1]
-        elif node.__class__ == javalang.tree.MethodDeclaration:
-            node = node.body[-1]
-        elif node.__class__ == javalang.tree.ConstructorDeclaration:
-            node = node.body[-1]
-        elif node.__class__ == javalang.tree.IfStatement:
-            node = node.children[-1]
-        elif node.__class__ == javalang.tree.WhileStatement:
-            node = node.children[-1]
-        elif node.__class__ == javalang.tree.SwitchStatement:
-            node = node.children[-1]
-        elif node.__class__ == javalang.tree.ForStatement:
-            node = node.children[-1]
-        elif node.__class__ == javalang.tree.BlockStatement:
-            node = node.statements[-1].expression
-        else:
-            break
-    print(node.position)
-    return node.position[0]
-        
 
 def get_logger(issue_name,project=None):
     real_name = '.'.join(['plt', issue_name]) if not project else '.'.join(['plt'+project.file_ext, issue_name, project.name])
@@ -48,48 +22,9 @@ def get_logger(issue_name,project=None):
     logger.setLevel(CONFIG.LOG_LEVEL)
     return logger
 
-
-# def calculate_mrr(p):
-#     vals = list()
-#     for item in p:
-#         if item:
-#             vals.append(1.0 / item)
-#         else:
-#             vals.append(0.0)
-
-#     return numpy.mean(vals)
-
-
-def hellinger_distance(p, q):
-    p = numpy.abs(numpy.array(p))
-    q = numpy.abs(numpy.array(q))
-    return scipy.linalg.norm(numpy.sqrt(p) - numpy.sqrt(q)) / SQRT2
-
-
-def kullback_leibler_divergence(p, q):
-    p = numpy.array(p)
-    q = numpy.array(q)
-    return scipy.stats.entropy(p, q)
-
-
 def cosine_distance(p, q):
     p = numpy.array(p)
     q = numpy.array(q)
-    return scipy.spatial.distance.cosine(p, q)
-
-
-def jensen_shannon_divergence(p, q):
-    p = numpy.array(p)
-    q = numpy.array(q)
-    M = (p + q) / 2
-    return (kullback_leibler_divergence(p, M) +
-            kullback_leibler_divergence(p, M)) / 2
-
-
-def total_variation_distance(p, q):
-    p = numpy.array(p)
-    q = numpy.array(q)
-    return numpy.sum(numpy.abs(p - q)) / 2
 
 
 def score(model, fn):
@@ -109,28 +44,6 @@ def score(model, fn):
 
     return scores
 
-
-def norm_phi(model):
-    for topicid in range(model.num_topics):
-        topic = model.state.get_lambda()[topicid]
-        topic = topic / topic.sum()  # normalize to probability dist
-        yield topicid, topic
-
-
-def download_file(url, destdir):
-    # modified from http://stackoverflow.com/a/16696317
-    # delay import until now
-    import requests
-    local_filename = os.path.join(destdir, url.split('/')[-1])
-    if not os.path.exists(local_filename):
-        # NOTE the stream=True parameter
-        r = requests.get(url, stream=True)
-        with open(local_filename, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=1024):
-                if chunk:  # filter out keep-alive new chunks
-                    f.write(chunk)
-                    f.flush()
-    return local_filename
 
 
 def obj_binary_search(objs, field, target):

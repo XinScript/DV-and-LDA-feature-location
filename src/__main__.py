@@ -1,7 +1,7 @@
 import logging
 import scipy
 import os
-from goldset.bycommit import GoldsetGenerator, CommitGoldsetGenerator
+from goldset.generatorByCommit import GoldsetGenerator, CommitGoldsetGenerator
 from common.project import CommitGitProject
 from common import CONFIG
 from common import util

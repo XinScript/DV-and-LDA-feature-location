@@ -9,11 +9,8 @@ import gensim
 import logging
 import re
 import os
-from collections import namedtuple
-
 from common.project import GitProject
 from common.error import NotGitProjectError
-from common import util
 from . import preprocessing
 
 logger = logging.getLogger('pfl.corpora')
