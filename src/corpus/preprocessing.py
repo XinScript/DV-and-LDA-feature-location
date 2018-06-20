@@ -1,7 +1,7 @@
 
 """
 
-The module for preprocess.
+The module is for preprocess.
 
 """
 

@@ -14,11 +14,11 @@ import src.common.config as config
 import src.common.util as util
 
 '''
-for instance, I have a python project called "myproject".
+for instance, I have a java project called "storm" and I want to apply the methodology on file level goldsets.
 The workflow is as simple as follow, it might take a while though.
 '''
 
-project = CommitGitProject(name='storm',lan='java',level='file')
+project = CommitGitProject(name='sympy',lan='python',level='file')
 # # new a project
 gen = CommitGoldsetGenerator(project)
 # # new a generator
