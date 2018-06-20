@@ -1,6 +1,7 @@
 
 """
-Code for splitting the terms.
+
+The module for preprocess.
 
 """
 

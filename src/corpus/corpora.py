@@ -1,6 +1,6 @@
 """
 
-This module is for generating the corpora, which is inspired by Corley et al.'s work.
+This module is for generating the corpora and part of it is based on Corley et al.'s work.
 
 
 """
@@ -10,9 +10,10 @@ import gensim
 import logging
 import re
 import os
-from common.project import GitProject
-from common.error import NotGitProjectError
+from ..common.project import GitProject
+from ..common.error import NotGitProjectError
 from . import preprocessing
+from ..common import util
 
 logger = logging.getLogger('pfl.corpora')
 
@@ -77,9 +78,9 @@ class GeneralCorpus(gensim.interfaces.CorpusABC):
 
         if self.remove_stops:
             words = preprocessing.remove_stops(words, preprocessing.FOX_STOPS)
-            if self.project.file_ext == '.py':
+            if self.project.lan == 'PYTHON':
                 reversed_word = preprocessing.PYTHON_RESERVED
-            elif self.project.file_ext == '.java':
+            elif self.project.lan == 'JAVA':
                 reversed_word = preprocessing.JAVA_RESERVED
             words = preprocessing.remove_stops(words, reversed_word)
 
@@ -128,7 +129,7 @@ class GitCorpus(GeneralCorpus):
             if '.git' in dirpath:
                 continue
             for filename in filenames:
-                if filename.endswith(self.project.file_ext):
+                if filename.endswith(util.LAN_EXT[self.project.lan]):
                     path = os.path.join(dirpath, filename)
                     meta = (path[len(self.project.src_path) + 1:], 'corpus')
                     with open(path,'rb') as f:
@@ -136,9 +137,6 @@ class GitCorpus(GeneralCorpus):
                         words = self.preprocess(document)
                         length += 1
                         yield words, meta
-
-                
-
         self.length = length
 
 

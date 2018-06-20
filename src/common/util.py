@@ -1,29 +1,22 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+'''
+
+Utility Funcitons.
+
+'''
 
 import logging
 import os
 import numpy
 import scipy
 import scipy.spatial
-from . import CONFIG
+from . import config
 import javalang
 
 logger = logging.getLogger('cfl.utils')
 
 SQRT2 = numpy.sqrt(2)
-
-
-
-def get_logger(issue_name,project=None):
-    real_name = '.'.join(['plt', issue_name]) if not project else '.'.join(['plt'+project.file_ext, issue_name, project.name])
-    logger_path = CONFIG.BASE_PATH if not project else project.path_dict['base']
-    fh = logging.FileHandler(filename=os.path.join(logger_path, issue_name+'.txt'))
-    fh.setLevel(CONFIG.LOG_LEVEL)
-    logger = logging.getLogger(real_name)
-    logger.addHandler(fh)
-    logger.setLevel(CONFIG.LOG_LEVEL)
-    return logger
 
 
 def cosine_distance(p, q):
@@ -67,34 +60,16 @@ def obj_binary_search(objs, field, target):
     return lo
 
 
-# def get_frms(ranks):
-#     frms = list()
-#     for r_id, rank in ranks.items():
-#         if rank:
-#             idx, _ , meta = rank[0]
-#             frms.append((idx, r_id, meta))
-#     return frms
 
-def evaluate_mrr_with_frms(q_ranks):
-    x =  [(1/metas[0][0]) for qid , metas in q_ranks.items()]
-    return numpy.mean(x)
+# def evaluate_mrr_with_frms(q_ranks):
+#     x =  [(1/metas[0][0]) for qid , metas in q_ranks.items()]
+#     return numpy.mean(x)
 
     
 
-def calculate_mrr(a, b):
-    s = {}
-    for qid, metas in a.items():
-        first_rank = metas[0][0]
-        s[qid] = [1 / first_rank, 0]
-    for qid, metas in b.items():
-        first_rank = metas[0][0]
-        if qid in s:
-            s[qid][1] = 1 / first_rank
-        else:
-            s[qid] = [0, 1 / first_rank]
-    x = [i[0] for i in s.values()]
-    y = [i[1] for i in s.values()]
-    return numpy.mean(x), numpy.mean(y)
+def calculate_mrr(ranks):
+    x = [(1 / metas[0][0]) for qid, metas in ranks.items()]
+    return numpy.mean(x)
 
 
 class ConfigObj(dict):
@@ -108,3 +83,7 @@ class ConfigObj(dict):
         self[name] = value
 
 
+LAN_EXT = {
+    'JAVA':'.java',
+    'PYTHON':'.py'
+}

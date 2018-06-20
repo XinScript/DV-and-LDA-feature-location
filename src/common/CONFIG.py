@@ -1,7 +1,12 @@
+'''
+This file is for Configuration.
+
+'''
 import logging
 
-BASE_PATH = '/Users/chenhongxin/Code/feature-location'
-LOG_LEVEL = logging.DEBUG
+LOG_LEVEL = logging.ERROR
+BASE_PATH = '/Users/chenhongxin/Code/feature-location-copy'
+SOURCE_PATH = '/Users/chenhongxin/Code/feature-location-copy/sources'
 ID2WORD_EXT = 'id2word.gz'
 CORPUS_EXT = 'corpus.gz'
 PROJECT_EXT = 'project.txt'

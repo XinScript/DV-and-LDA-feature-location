@@ -1,6 +1,6 @@
 '''
 
-Definitions of exception classes.
+Definitions of exceptions.
 
 '''
 class GitNotFoundError(FileNotFoundError):

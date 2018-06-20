@@ -1,4 +1,10 @@
-from numpy import mean
+'''
+
+The module is about the main genres of models,which currently only support training in file level.
+which are LDA,DV and word-summation.
+
+
+'''
 import csv
 import os
 import logging
@@ -9,18 +15,16 @@ from gensim.matutils import sparse2full
 from collections import defaultdict
 
 
-from corpus.corpora import LabeledCorpus, OrderedCorpus, GeneralCorpus, GitCorpus
-from common import util
-from common import CONFIG
-
+from ..corpus.corpora import LabeledCorpus, OrderedCorpus, GeneralCorpus, GitCorpus
+from ..common import util
+from ..common import config
 
 # Abstract class cannot be instantiated 
 class GeneralModel():
     
-    def __init__(self, project, goldset_level):
+    def __init__(self, project):
         self.project = project
-        self.logger = util.get_logger('model_gen_rank',project)
-        self.goldset_level = goldset_level
+        self.logger = logging.getLogger('model')
         if self.__class__ == GeneralModel:
             raise NotImplementedError
 
@@ -28,7 +32,7 @@ class GeneralModel():
 
         base_path = self.project.path_dict['base']
 
-        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.CORPUS_EXT]))
+        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', config.CORPUS_EXT]))
 
         if os.path.exists(corpus_fname):
             corpus = OrderedCorpus(corpus_fname)
@@ -52,7 +56,7 @@ class GeneralModel():
 
         base_path = self.project.path_dict['base']
 
-        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.CORPUS_EXT]))
+        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  config.CORPUS_EXT]))
 
         if os.path.exists(corpus_fname):
             corpus = OrderedCorpus(corpus_fname)
@@ -72,7 +76,7 @@ class GeneralModel():
     def predict(self, query_topic, doc_topic, distance_measure=util.cosine_distance):
         self.logger.info('Getting ranks between %d query topics and %d doc topics',
                     len(query_topic), len(doc_topic))
-        goldsets = self.project.load_goldsets(self.goldset_level)
+        goldsets = self.project.load_goldsets()
         ranks = {}
         for qid, query in query_topic:
             q_dist = []
@@ -102,6 +106,7 @@ class GeneralModel():
             doc_topics = self.get_topics(model, corpus)
             ranks = self.predict(query_topics, doc_topics)
             self.write_ranks(ranks)
+            ranks = self.read_ranks()
         return ranks
     
     def get_rels(self, goldset, q_dist):
@@ -121,7 +126,7 @@ class GeneralModel():
         if not os.path.exists(base_path):
             os.makedirs(base_path)
 
-        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
+        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.project.level, config.RANK_EXT]))
         if not os.path.exists(fname):
             with open(fname, 'w') as f:
                 writer = csv.writer(f)
@@ -138,7 +143,7 @@ class GeneralModel():
         if not os.path.exists(base_path):
             os.makedirs(base_path)
 
-        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.goldset_level, CONFIG.RANK_EXT]))
+        fname = os.path.join(base_path, '.'.join([self.__class__.__name__, self.project.level, config.RANK_EXT]))
         if os.path.exists(fname):
             with open(fname, 'r') as f:
                 reader = csv.reader(f)
@@ -152,8 +157,8 @@ class GeneralModel():
         raise NotImplementedError
 
 class Lda(GeneralModel):
-    def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=30):
-        super().__init__(project, goldset_level)
+    def __init__(self, project, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=30):
+        super().__init__(project)
         self.num_topics = num_topics
         self.chunksize = chunksize
         self.passes = passes
@@ -162,9 +167,9 @@ class Lda(GeneralModel):
 
     def create_query(self):
         base_path = self.project.path_dict['base']
-        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.CORPUS_EXT]))
-        # dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', CONFIG.ID2WORD_EXT]))
-        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', CONFIG.ID2WORD_EXT]))
+        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', config.CORPUS_EXT]))
+        # dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'query', config.ID2WORD_EXT]))
+        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', config.ID2WORD_EXT]))
         if not os.path.exists(corpus_fname):
             id2word = Dictionary()
             queries = []
@@ -189,8 +194,8 @@ class Lda(GeneralModel):
     def create_corpus(self):
         base_path = self.project.path_dict['base']
 
-        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', CONFIG.CORPUS_EXT]))
-        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', CONFIG.ID2WORD_EXT]))
+        corpus_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', config.CORPUS_EXT]))
+        dict_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code', config.ID2WORD_EXT]))
 
         if os.path.exists(corpus_fname) and dict_fname:
             id2word = Dictionary.load(dict_fname)
@@ -217,7 +222,7 @@ class Lda(GeneralModel):
         if not os.path.exists(base_path):
             os.makedirs(base_path)
 
-        model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.MODEL_EXT]))
+        model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  config.MODEL_EXT]))
 
         if os.path.exists(model_fname):
             self.logger.info('load previous Lda model.')
@@ -265,8 +270,8 @@ class Lda(GeneralModel):
 
 
 class DV(GeneralModel):
-    def __init__(self, project, goldset_level, num_topics=500,iterations=30, min_count=1):
-        super().__init__(project, goldset_level)
+    def __init__(self, project, num_topics=500,iterations=30, min_count=1):
+        super().__init__(project)
         self.num_topics = num_topics
         self.min_count = min_count
         self.iterations = iterations
@@ -280,7 +285,7 @@ class DV(GeneralModel):
 
         # base_path = self.project.path_dict['base']
 
-        model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  CONFIG.MODEL_EXT]))
+        model_fname = os.path.join(base_path, '.'.join([self.__class__.__name__, 'code',  config.MODEL_EXT]))
 
         corpus = LabeledCorpus(corpus.fname)
 
@@ -307,14 +312,14 @@ class DV(GeneralModel):
 
 class WordSum(DV):
 
-    def __init__(self, project, goldset_level):
-        super().__init__(project, goldset_level)
+    def __init__(self, project):
+        super().__init__(project)
 
     def predict(self, model, queries, corpus, by_ids=None):
 
         queries = LabeledCorpus(queries.fname)
         corpus = LabeledCorpus(corpus.fname)
-        goldsets = self.project.load_goldsets(self.goldset_level)
+        goldsets = self.project.load_goldsets()
         self.logger.info('Getting ranks for Doc2Vec model')
 
         ranks = dict()
