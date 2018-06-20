@@ -1,3 +1,9 @@
+'''
+
+This file is not the part of systems but the scripts for experiments implementation of the research,
+including goldset generation, model training, rank generation, charts plotting, etc.
+
+'''
 import os
 import csv
 import seaborn as sb
@@ -12,10 +18,9 @@ from common import util
 from collections import defaultdict
 from models.model import WordSum, DV, Lda
 
-lan = 'java'
-
+lan = 'python'
 repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', lan)
-topic_num, goldset_level, iterations = '50', 'file', '30'
+topic_num, goldset_level, iterations = '500', 'file', '30'
 base_path = CONFIG.BASE_PATH
 logger = util.get_logger('rank_stats')
 
@@ -148,6 +153,7 @@ def plt_line_chart():
                 for j in [10, 30, 50, 80, 100]:
                     dv_ranks = DV(project,'file',i,j).read_ranks()
                     inner.append(util.evaluate_mrr_with_frms(dv_ranks))
+
                 plt.plot([10, 30, 50, 80, 100], inner, label='DV_%d'%i)
 
             lda_mrrs = []
@@ -158,6 +164,7 @@ def plt_line_chart():
             # plt.show()
             plt.xlabel('Iterations')
             plt.ylabel('MRR')
+            plt.title(project.name)
             plt.legend()
             plt.savefig(fname)
             plt.clf()
@@ -165,24 +172,93 @@ def plt_line_chart():
 
 
 def plt_violin():
-    for p in git_project_paths:
-        project = CommitGitProject(p, file_ext)
-        ids = project.load_ids()
+    
+
+    corley_arr = [0.415566,0.229730,0.791096,0.151986,0.337100,0.203929]
+    java_arr = []
+    python_arr = []
+
+    with open ('../java_project_size.txt') as java_f:
+        java_size_arr = [int(x.split(':')[1]) for x in java_f.read().strip().split()]
+    with open('../python_project_size.txt') as python_f:
+        python_size_arr = [int(x.split(':')[1]) for x in python_f.read().strip().split()]
+
+    repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'java')
+    git_project_paths = []
+    for dirname, dirnames, _ in os.walk(repos_dir):
+        if '.git' in dirnames:
+            git_project_paths.append(dirname)
+    for i, p in enumerate(git_project_paths):
+        project = CommitGitProject(p, '.java')
+        d = project.load_goldsets('file')
+        s = set()
+        for v in d.values():
+            s.update(v)
+        x = len(s) / java_size_arr[i]
+        if x>=1:
+            print(project.name)
+            print(java_size_arr[i])
+        java_arr.append(x)
+    java_arr = [x if x<=1 else 1 for x in java_arr]
+
+    repos_dir = os.path.join(CONFIG.BASE_PATH, 'sources', 'python')
+    git_project_paths = []
+    for dirname, dirnames, _ in os.walk(repos_dir):
+        if '.git' in dirnames:
+            git_project_paths.append(dirname)
+    # print(len(git_project_paths))
+    for i, p in enumerate(git_project_paths):
+        project = CommitGitProject(p, '.py')
+        d = project.load_goldsets('file')
+        s = set()
+        for v in d.values():
+            s.update(v)
+        x = len(s) / python_size_arr[i]
+        if x >=1 :
+            print(project.name)
+            print(python_size_arr[i])
+        python_arr.append(x)
+    python_arr = [x if x<=1 else 1 for x in python_arr]
+
+    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(6, 6))
+    # positions = [0.0,0.2,0.4,0.6,0.8,1.0]
+    # axes[0].violinplot(java_arr,showmeans=True, showextrema=True, showmedians=True)
+    axes[0].set_title('Java_50')
+    # axes[0].set_ylim(0,1)
+    # axes[1].violinplot(python_arr, showmeans=True, showextrema=True, showmedians=True)
+    axes[1].set_title('Python_50')
+    
+    axes[2].set_title('Corley_6')
+    # axes[2].set_ylim(0,1)
+
+    # axes[0].set_ylim(0,1)
+    # axes[1].set_ylim(0,1)
+    # axes[2].set_ylim(0, 1)
+    # sb.violinplot(data=[java_arr],ax=axes[0])
+    # sb.violinplot(data=[python_arr],ax=axes[1])
+    # sb.violinplot(data=[corley_arr],ax=axes[2])
+    # # axes[2].violinplot(corley_arr, showmeans=True, showextrema=True, showmedians=True)
+    # fig.suptitle("Violin Plots")
+    # # plt.violinplot(java_arr)
+    # # plt.violinplot(python_arr)
+    # # plt.violinplot(corley_arr)
+    # # plt.show()
+    # fig.savefig(CONFIG.BASE_PATH+'/seaborn_violin.png')
+
+    
 
 
 def remove_data():
-    for p in git_project_paths:
-        project = CommitGitProject(p, file_ext)
-        base_path = project.path_dict['base']
-        a = os.path.join(base_path, 'DV')
-        if os.path.exists(a):
-            shutil.rmtree(a)
-        a = os.path.join(base_path, 'Lda')
-        if os.path.exists(a):
-            shutil.rmtree(a)
-        for i in os.listdir(base_path):
-            if 'gz' in i or 'model_gen_rank' in i:
-                os.remove(base_path + '/' + i)
+    for dirname,dirnames,filenames in os.walk(plt_path):
+        for i in filenames:
+            if i.endswith('txt') or i.endswith('gz'):
+                os.remove(dirname + '/' + i)
+        # a = os.path.join(base_path, 'DV')
+        # if os.path.exists(a):
+        #     shutil.rmtree(a)
+        # a = os.path.join(base_path, 'Lda')
+        # if os.path.exists(a):
+        #     shutil.rmtree(a)
 
 
 def move():
@@ -235,6 +311,29 @@ def mrr_compare(topic_nums, iterations, filter_list=[]):
             ans.append(max(s))
     print(ans)
 
+def plot_displot():
+    sb.distplot([int(x) for x in read_size()],kde=False)
+    # sb.distplot([1, 2], kde=False)
+    
+    plt.xlabel('project size (number of files)')
+    plt.ylabel('number of projects')
+    # plt.show()
+    plt.savefig(base_path+'/{}_project_size_distribution.png'.format(lan))
+    # plt.clf()
+
+def write_project_description():
+    sizes = read_size()
+    with open(plt_path+'/goldset_generation_start_pointer.txt') as f:
+        commit_refs = [x.split(':') for x in f.read().strip().split()]
+    with open(base_path+'/%s_ref_commit_size.csv'%lan,'w') as w:
+        for i,p in enumerate(commit_refs):
+            w.write(','.join([p[0],sizes[i],p[1]])+'\n')
+
+
+
+# plot_displot()
+# plt_violin()
+
 
 # parameter_compare()
 
@@ -250,4 +349,8 @@ def mrr_compare(topic_nums, iterations, filter_list=[]):
 # write_mrr_info('500','30')
 # plt_scatter()
 # plot_line_charts_for_projects()
+# plt_line_chart()
 # write_size()
+# plot_displot()
+# write_project_description()
+remove_data()

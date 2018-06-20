@@ -1,7 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """
-Code for generating the corpora.
+
+This module is for generating the corpora, which is inspired by Corley et al.'s work.
+
+
 """
 import os
 import dulwich.patch
@@ -123,12 +124,7 @@ class GitCorpus(GeneralCorpus):
 
         length = 0
 
-        # old_head = self.project.repo.head.commit.hexsha
-
-        # self.project.repo.git.checkout(self.project.ref)
-
         for dirpath, dirnames, filenames in os.walk(self.project.src_path):
-            # dirnames[:] = [d for d in dirnames if d is not '.git']
             if '.git' in dirpath:
                 continue
             for filename in filenames:
@@ -141,22 +137,9 @@ class GitCorpus(GeneralCorpus):
                         length += 1
                         yield words, meta
 
-                # path = os.path.join(dirpath, filename)
-                # meta = (path[len(self.project.src_path) + 1:], 'corpus')
-                # try:
-                #     with open(path,'rb') as f:
-                #         document = f.read()
-                #         if not dulwich.patch.is_binary(document):
-                #             words = self.preprocess(document)
-                #             length += 1
-                #             yield words, meta
-                # except FileNotFoundError:
-                #     continue
+                
 
         self.length = length
-
-        # self.project.repo.git.checkout('master')
-        # switch back to head
 
 
 class OrderedCorpus(gensim.corpora.IndexedCorpus):

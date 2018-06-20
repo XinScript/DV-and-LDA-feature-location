@@ -4,7 +4,10 @@
 import logging
 import os
 import numpy
+import scipy
+import scipy.spatial
 from . import CONFIG
+import javalang
 
 logger = logging.getLogger('cfl.utils')
 
@@ -22,9 +25,11 @@ def get_logger(issue_name,project=None):
     logger.setLevel(CONFIG.LOG_LEVEL)
     return logger
 
+
 def cosine_distance(p, q):
     p = numpy.array(p)
     q = numpy.array(q)
+    return scipy.spatial.distance.cosine(p, q)
 
 
 def score(model, fn):

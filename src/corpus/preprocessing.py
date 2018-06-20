@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 """
 Code for splitting the terms.
+
 """
 
 import string
@@ -10,11 +9,11 @@ import logging
 
 logger = logging.getLogger('pfl.preprocessing')
 
-
+# Tokenization
 def tokenize(s):
     return s.split()
 
-
+# Transofrm bytes to strings.
 def to_unicode(document, info=[]):
 
     if isinstance(document,bytes):
@@ -28,7 +27,7 @@ def to_unicode(document, info=[]):
     document.strip()
     return document
 
-
+# word splitting.
 def split(iterator):
     for token in iterator:
         word = u''

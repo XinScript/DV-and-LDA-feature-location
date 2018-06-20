@@ -7,7 +7,7 @@ from gensim.corpora import Dictionary, MalletCorpus
 from gensim.models import Doc2Vec, LdaModel
 from gensim.matutils import sparse2full
 from collections import defaultdict
-from common.error import InstantiationError
+
 
 from corpus.corpora import LabeledCorpus, OrderedCorpus, GeneralCorpus, GitCorpus
 from common import util
@@ -15,14 +15,14 @@ from common import CONFIG
 
 
 # Abstract class cannot be instantiated 
-class General():
+class GeneralModel():
     
     def __init__(self, project, goldset_level):
         self.project = project
         self.logger = util.get_logger('model_gen_rank',project)
         self.goldset_level = goldset_level
-        if self.__class__ == General:
-            raise InstantiationError
+        if self.__class__ == GeneralModel:
+            raise NotImplementedError
 
     def create_query(self):
 
@@ -151,7 +151,7 @@ class General():
     def get_topics(self):
         raise NotImplementedError
 
-class Lda(General):
+class Lda(GeneralModel):
     def __init__(self, project, goldset_level, num_topics=500, chunksize=2000, passes=10, alpha='symmetric', iterations=30):
         super().__init__(project, goldset_level)
         self.num_topics = num_topics
@@ -264,7 +264,7 @@ class Lda(General):
         return doc_topic
 
 
-class DV(General):
+class DV(GeneralModel):
     def __init__(self, project, goldset_level, num_topics=500,iterations=30, min_count=1):
         super().__init__(project, goldset_level)
         self.num_topics = num_topics

@@ -1,3 +1,10 @@
+'''
+
+This module is the abstract class of goldset generator.
+Some common and meta methods are implemented.
+
+
+'''
 import re
 import sys
 import logging
@@ -10,9 +17,8 @@ from os import path, remove
 from typed_ast import ast3, ast27
 from collections import defaultdict
 from common.project import GitProject
-from common.error import NotGitProjectError,InstantiationError
+from common.error import NotGitProjectError
 from common import util,CONFIG
-
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(funcName)s : %(message)s')
 
@@ -20,7 +26,7 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : ' + '%(name)s : %(func
 class GoldsetGenerator():
     def __init__(self, project):
         if self.__class__ == GoldsetGenerator:
-            raise InstantiationError
+            raise NotImplementedError
         if not isinstance(project, GitProject):
             raise NotGitProjectError
         else:
@@ -71,23 +77,6 @@ class GoldsetGenerator():
         with open(map_path, 'a+') as f:
             content = ''.join([commit.hexsha, '\n'])
             f.write(content)
-
-
-    def find_package(self, commit, file_path):
-        index = file_path.find('/')
-
-        while index > -1:
-            try:
-                cmp_str = file_path[:index]
-                r = self.project.repo.git.show(
-                    ':'.join([commit.hexsha, cmp_str + '/__init__.py']))
-
-                if r:
-                    return cmp_str.split('/')[-1]
-            except GitCommandError:
-                pass
-            finally:
-                index = file_path.find('/', index + 1)
 
     def _extract_goldset_from_commit_python(self, commit):
         class_set = set()

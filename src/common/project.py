@@ -1,3 +1,9 @@
+'''
+
+This module is responsible for recording inforamtion of the subject software systems.
+The instances of the class will be passed to other modules.
+
+'''
 import logging
 from os import path, makedirs
 from git import Repo, GitCmdObjectDB
@@ -10,7 +16,7 @@ class GitProject():
 
     def __init__(self,src_path,file_ext):
         if self.__class__ == GitProject:
-            raise error.InstantiationError
+            raise NotImplementedError
         elif not path.exists(src_path):
             raise FileNotFoundError(src_path)
 

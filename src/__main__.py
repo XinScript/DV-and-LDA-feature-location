@@ -28,8 +28,6 @@ def do_science(prefixa, a_ranks, prefixb, b_ranks):
     print(prefixb + ' mrr:', y)
     print('wilcoxon signedrank:', scipy.stats.wilcoxon(x, y))
 
-    
-
 
 def stats():
     arr = []

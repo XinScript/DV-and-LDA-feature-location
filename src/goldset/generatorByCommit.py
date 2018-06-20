@@ -1,3 +1,9 @@
+'''
+
+This module is the implementation of goldset generators against using "commit" as basic unit.
+
+'''
+
 from os import path, remove
 from .generator import GoldsetGenerator
 import logging

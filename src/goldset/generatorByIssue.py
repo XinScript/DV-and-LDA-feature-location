@@ -1,8 +1,11 @@
+'''
+This module is the implementation of goldset generators against using "issue" as basic unit.
+'''
+
 import re
 import os
 from collections import defaultdict
 from .generator import GoldsetGenerator
-
 
 class IssueGoldsetGenerator(GoldsetGenerator):
     def __init__(self, project):
